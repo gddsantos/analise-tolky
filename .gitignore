@@ -1,0 +1,9 @@
+# Dados brutos (muito pesados para GitHub)
+*.csv
+*.xlsx
+!analises/*.csv
+
+# Python
+__pycache__/
+*.pyc
+.env
