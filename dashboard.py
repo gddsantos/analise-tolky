@@ -34,6 +34,15 @@ def load_automacao(nome):
     aval["date"] = aval["conversation_id"].map(meta["conv_dates"])
     aval["date"] = pd.to_datetime(aval["date"], errors="coerce")
 
+    # Excluir dias com dados incompletos
+    EXCLUIR = {"2026-04-07"}
+    excluidos = {c for c, d in meta["conv_dates"].items() if d in EXCLUIR}
+    aval = aval[~aval["conversation_id"].isin(excluidos)].copy()
+    n_excl = len(excluidos)
+    meta["funnel"] = dict(meta["funnel"])
+    meta["funnel"]["total"]     = max(0, meta["funnel"]["total"] - n_excl)
+    meta["funnel"]["confirmed"] = int((aval["verdict"].notna()).sum())
+
     funnel = meta["funnel"]
     funnel["correto"] = int((aval["verdict"] == "CORRETO").sum())
     funnel["errado"]  = int((aval["verdict"] == "ERRADO").sum())
