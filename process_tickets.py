@@ -37,18 +37,24 @@ RE_ACESSO   = re.compile(r"\b[áa]rea\s+do\s+candidato\b|\bn[ãa]o\s+consigo\s+(
 # fallback: qualquer indicação de problema/atendimento humano
 RE_HUMANO = re.compile(r"\bfalar\s+com\s+(humano|atendente|pessoa)\b|\batendimento\s+humano\b|\bn[ãa]o\s+(consigo|estou\s+conseguindo)\b|\bproblema\b|\berro\b|\breclama", re.I)
 
+def re_any(*regs):
+    def f(text): return any(r.search(text) for r in regs)
+    return f
+
+# F27/F270 = guarda-chuva: vale se qualquer sub-critério bater
+F_UMBRELLA = re_any(RE_MEDICINA, RE_VALORES, RE_POS, RE_EMAIL, RE_ACESSO)
+
 CRITERIA = {
-    "F270": ("medicina humana",        RE_MEDICINA),
-    "O242": ("valor/mensalidade",      RE_VALORES),
-    "O744": ("mestrado/pós",           RE_POS),
-    "E461": ("email cadastrado",       RE_EMAIL),
-    "W253": ("acesso/login",           RE_ACESSO),
-    # legacy v1 fallbacks (mesmos critérios genéricos)
-    "F27":  ("ticket genérico",        RE_HUMANO),
-    "O24":  ("valor/mensalidade",      RE_VALORES),
-    "O74":  ("mestrado/pós",           RE_POS),
-    "E46":  ("email cadastrado",       RE_EMAIL),
-    "W25":  ("acesso/login",           RE_ACESSO),
+    "F270": ("ticket guarda-chuva",    F_UMBRELLA),
+    "F27":  ("ticket guarda-chuva",    F_UMBRELLA),
+    "O242": ("valor/mensalidade",      RE_VALORES.search),
+    "O24":  ("valor/mensalidade",      RE_VALORES.search),
+    "O744": ("mestrado/pós",           RE_POS.search),
+    "O74":  ("mestrado/pós",           RE_POS.search),
+    "E461": ("email cadastrado",       RE_EMAIL.search),
+    "E46":  ("email cadastrado",       RE_EMAIL.search),
+    "W253": ("acesso/login",           RE_ACESSO.search),
+    "W25":  ("acesso/login",           RE_ACESSO.search),
 }
 
 def main():
@@ -135,8 +141,8 @@ def main():
         verdicts = []
         motivos = []
         for code in sorted(st["confirmed_codes"]):
-            label, regex = CRITERIA.get(code, ("desconhecido", None))
-            if regex and regex.search(full_text):
+            label, check = CRITERIA.get(code, ("desconhecido", None))
+            if check and check(full_text):
                 verdicts.append("CORRETO"); motivos.append(f"{code}:{label}")
             else:
                 verdicts.append("ERRADO"); motivos.append(f"{code}:{label}-sem evidência")
