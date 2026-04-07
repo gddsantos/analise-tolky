@@ -47,7 +47,11 @@ def load_automacao(nome):
     funnel["correto"] = int((aval["verdict"] == "CORRETO").sum())
     funnel["errado"]  = int((aval["verdict"] == "ERRADO").sum())
 
-    return aval, funnel
+    daily = meta.get("daily_funnel", {})
+    # excluir dias incompletos
+    daily = {d: v for d, v in daily.items() if d not in {"2026-04-07"}}
+
+    return aval, funnel, daily
 
 # ── Header ───────────────────────────────────────────────────────────
 st.title("🤖 Análise de Automações — Uniube · Tolky")
@@ -57,7 +61,7 @@ st.divider()
 # ── Seletor de automação ─────────────────────────────────────────────
 aut_nome = st.selectbox("Automação", list(AUTOMACOES.keys()))
 cfg      = AUTOMACOES[aut_nome]
-aval_df, funnel = load_automacao(aut_nome)
+aval_df, funnel, meta_daily = load_automacao(aut_nome)
 
 st.subheader(f"Automação: {aut_nome}")
 st.caption(cfg["descricao"])
@@ -87,6 +91,43 @@ st.divider()
 col_linha, col_donut = st.columns([3, 1])
 
 with col_linha:
+    st.subheader("Volumes dia a dia")
+
+    df_vol = aval_df.dropna(subset=["date"]).copy()
+    df_vol["dia"] = df_vol["date"].dt.strftime("%Y-%m-%d")
+    correto_d = df_vol[df_vol["verdict"]=="CORRETO"].groupby("dia").size()
+
+    daily_funnel = pd.DataFrame.from_dict(meta_daily, orient="index").sort_index()
+    daily_funnel = daily_funnel[~daily_funnel.index.isin(["2026-04-07"])]
+    daily_funnel["correto"] = correto_d
+    daily_funnel = daily_funnel.fillna(0).astype(int).reset_index().rename(columns={"index":"dia"})
+
+    SERIES = [
+        ("total",     "Total conversas",       "#94A3B8"),
+        ("confirmed", "Acionado",              "#3B82F6"),
+        ("injected",  "Injetado no contexto",  "#8B5CF6"),
+        ("replied",   "Enviado ao usuário",    "#F59E0B"),
+        ("correto",   "Acionamentos corretos", "#22C55E"),
+    ]
+    fig_vol = go.Figure()
+    for col, label, color in SERIES:
+        fig_vol.add_trace(go.Scatter(
+            x=daily_funnel["dia"], y=daily_funnel[col],
+            mode="lines+markers+text", name=label,
+            text=daily_funnel[col], textposition="top center",
+            textfont=dict(size=9),
+            line=dict(color=color, width=2),
+            hovertemplate=f"%{{x}}<br>{label}: %{{y}}<extra></extra>",
+        ))
+    fig_vol.update_layout(
+        legend=dict(orientation="h", yanchor="bottom", y=1.02),
+        margin=dict(t=10, b=10, l=0, r=0),
+        height=340,
+        plot_bgcolor="white",
+        xaxis_title="", yaxis_title="conversas",
+    )
+    st.plotly_chart(fig_vol, use_container_width=True)
+
     st.subheader("Taxa dia a dia")
 
     daily = (
