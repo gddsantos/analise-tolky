@@ -46,7 +46,11 @@ def load_automacao(nome):
     n_excl = len(excluidos)
     meta["funnel"] = dict(meta["funnel"])
     meta["funnel"]["total"]     = max(0, meta["funnel"]["total"] - n_excl)
-    meta["funnel"]["confirmed"] = int((aval["verdict"].notna()).sum())
+    new_confirmed = int((aval["verdict"].notna()).sum())
+    delta = meta["funnel"]["confirmed"] - new_confirmed
+    meta["funnel"]["confirmed"] = new_confirmed
+    meta["funnel"]["injected"]  = max(0, meta["funnel"]["injected"] - delta)
+    meta["funnel"]["replied"]   = max(0, meta["funnel"]["replied"]  - delta)
 
     funnel = meta["funnel"]
     funnel["correto"] = int((aval["verdict"] == "CORRETO").sum())
