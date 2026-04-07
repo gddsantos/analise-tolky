@@ -28,11 +28,11 @@ def jp(x):
 TICKETS_CODES = {"F27", "F270", "O242", "O744", "E461", "W253", "O24", "O74", "E46", "W25"}
 
 # Critérios por sub-código (regex aplicada ao texto completo da conversa)
-RE_MEDICINA = re.compile(r"\bmedicina\s+humana\b|\bcurso\s+de\s+medicina\b|\bmedicina\b", re.I)
-RE_VALORES  = re.compile(r"\bvalor(es)?\b|\bpre[çc]o\b|\bmensalidade\b|\bcusto\b|\bquanto\s+custa\b|\binvestimento\b", re.I)
-RE_POS      = re.compile(r"\bmestrado\b|\bp[óo]s[\s\-]?gradua[çc][ãa]o\b|\bdoutorado\b|\bespecializa[çc][ãa]o\b", re.I)
-RE_EMAIL    = re.compile(r"\bemail\s+(errado|incorreto|desatualizado|trocar|alterar|atualiz)|\be-?mail\s+cadastrad|\btrocar\s+(o\s+)?e?-?mail\b", re.I)
-RE_ACESSO   = re.compile(r"\b[áa]rea\s+do\s+candidato\b|\bn[ãa]o\s+consigo\s+(acessar|entrar|logar)\b|\bproblema\s+de\s+(login|acesso)\b|\bsenha\b|\besqueci\s+(a\s+)?senha\b", re.I)
+RE_MEDICINA = re.compile(r"\bmedicina\s+humana\b|(?<!veterin[áa]ria\s)\bcurso\s+de\s+medicina(?!\s+veterin)\b|(?<!veterin[áa]ria\s)\bmedicina\b(?!\s+veterin)", re.I)
+RE_VALORES  = re.compile(r"\bvalor(es)?\b|\bpre[çc]o\b|\bmensalidade(s)?\b|\bcusto\b|\bquanto\s+(custa|sai|fica|tá|ta|seria)\b|\binvestimento\b|\bdesconto\b|\bbolsa\s+\d|\bquanto\s+é\b", re.I)
+RE_POS      = re.compile(r"\bmestrado\b|\bp[óo]s[\s\-]?gradua[çc][ãa]o\b|\bdoutorado\b|\bespecializa[çc][ãa]o\b|\bMBA\b|\bp[óo]s\b", re.I)
+RE_EMAIL    = re.compile(r"\bemail\s+(errado|incorreto|desatualizado|trocar|alterar|atualiz)|\be-?mail\s+cadastrad|\btrocar\s+(o\s+)?e?-?mail\b|\bperdi\s+(o\s+)?(acesso\s+(ao|do)\s+)?(meu\s+)?e?-?mail\b|\balterar\s+(meu\s+)?e?-?mail\b", re.I)
+RE_ACESSO   = re.compile(r"\b[áa]rea\s+do\s+candidato\b|\bn[ãa]o\s+consigo\s+(acessar|entrar|logar)\b|\bproblema\s+de\s+(login|acesso)\b|\bsenha\b|\besqueci\s+(a\s+)?senha\b|\btoken\s+n[ãa]o\s+(chega|chegou)\b|\bc[óo]digo\s+n[ãa]o\s+(chega|chegou)\b|\bn[ãa]o\s+(estou\s+)?conseguindo\s+(acessar|ver\s+(as\s+)?aulas|entrar)\b", re.I)
 
 # fallback: qualquer indicação de problema/atendimento humano
 RE_HUMANO = re.compile(r"\bfalar\s+com\s+(humano|atendente|pessoa)\b|\batendimento\s+humano\b|\bn[ãa]o\s+(consigo|estou\s+conseguindo)\b|\bproblema\b|\berro\b|\breclama", re.I)
@@ -136,7 +136,7 @@ def main():
         if not st["confirmed_codes"]: continue
         if st["date"]: daily[st["date"]]["confirmed"] += 1
 
-        full_text = " ".join(st["user_msgs"] + st["ia_msgs"])
+        full_text = " ".join(st["user_msgs"])
         # Para cada código disparado, verifica se o contexto bate com o critério
         verdicts = []
         motivos = []
