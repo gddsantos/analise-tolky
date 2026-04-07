@@ -21,6 +21,11 @@ AUTOMACOES = {
         "metadata": ANALISES / "01_sae_metadata.json",
         "descricao": "Serviço de Apoio ao Estudante — deve acionar apenas para alunos ativos.",
     },
+    "Tickets": {
+        "aval":     ANALISES / "02_tickets_avaliacoes.csv",
+        "metadata": ANALISES / "02_tickets_metadata.json",
+        "descricao": "Tickets — abre atendimento humano (Medicina, valores, pós, email, acesso).",
+    },
 }
 
 # ── Carregamento ─────────────────────────────────────────────────────

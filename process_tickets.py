@@ -1,0 +1,172 @@
+import csv, json, re, datetime as dt
+from pathlib import Path
+from collections import defaultdict
+import pandas as pd
+
+csv.field_size_limit(10_000_000)
+
+FILES = [
+    "relatorio_automacoes_uniube_agregado_01.03_202603311646.csv",
+    "relatorio_automacoes_uniube_agregado_09.03_202603311542.xlsx",
+    "relatorio_automacoes_uniube_agregado_16.03_202603311537.xlsx",
+    "relatorio_automacoes_uniube_agregado_23.03_202603311534.xlsx",
+    "relatorio_automacoes_uniube_final_marco_202604071619.csv",
+    "relatorio_automacoes_uniube_abril_202604071615.csv",
+]
+
+def load(f):
+    return pd.read_excel(f) if f.endswith(".xlsx") else pd.read_csv(f, engine="python")
+
+def jp(x):
+    if x is None: return None
+    if isinstance(x, float): return None
+    if isinstance(x, (dict, list)): return x
+    try: return json.loads(str(x))
+    except Exception: return None
+
+# Códigos da automação Tickets (v1: F27, v2: F270/O242/O744/E461/W253)
+TICKETS_CODES = {"F27", "F270", "O242", "O744", "E461", "W253", "O24", "O74", "E46", "W25"}
+
+# Critérios por sub-código (regex aplicada ao texto completo da conversa)
+RE_MEDICINA = re.compile(r"\bmedicina\s+humana\b|\bcurso\s+de\s+medicina\b|\bmedicina\b", re.I)
+RE_VALORES  = re.compile(r"\bvalor(es)?\b|\bpre[çc]o\b|\bmensalidade\b|\bcusto\b|\bquanto\s+custa\b|\binvestimento\b", re.I)
+RE_POS      = re.compile(r"\bmestrado\b|\bp[óo]s[\s\-]?gradua[çc][ãa]o\b|\bdoutorado\b|\bespecializa[çc][ãa]o\b", re.I)
+RE_EMAIL    = re.compile(r"\bemail\s+(errado|incorreto|desatualizado|trocar|alterar|atualiz)|\be-?mail\s+cadastrad|\btrocar\s+(o\s+)?e?-?mail\b", re.I)
+RE_ACESSO   = re.compile(r"\b[áa]rea\s+do\s+candidato\b|\bn[ãa]o\s+consigo\s+(acessar|entrar|logar)\b|\bproblema\s+de\s+(login|acesso)\b|\bsenha\b|\besqueci\s+(a\s+)?senha\b", re.I)
+
+# fallback: qualquer indicação de problema/atendimento humano
+RE_HUMANO = re.compile(r"\bfalar\s+com\s+(humano|atendente|pessoa)\b|\batendimento\s+humano\b|\bn[ãa]o\s+(consigo|estou\s+conseguindo)\b|\bproblema\b|\berro\b|\breclama", re.I)
+
+CRITERIA = {
+    "F270": ("medicina humana",        RE_MEDICINA),
+    "O242": ("valor/mensalidade",      RE_VALORES),
+    "O744": ("mestrado/pós",           RE_POS),
+    "E461": ("email cadastrado",       RE_EMAIL),
+    "W253": ("acesso/login",           RE_ACESSO),
+    # legacy v1 fallbacks (mesmos critérios genéricos)
+    "F27":  ("ticket genérico",        RE_HUMANO),
+    "O24":  ("valor/mensalidade",      RE_VALORES),
+    "O74":  ("mestrado/pós",           RE_POS),
+    "E46":  ("email cadastrado",       RE_EMAIL),
+    "W25":  ("acesso/login",           RE_ACESSO),
+}
+
+def main():
+    dfs = [load(f) for f in FILES]
+    df = pd.concat(dfs, ignore_index=True)
+    print(f"loaded rows={len(df)} convs={df['conversation_id'].nunique()}")
+
+    convs = defaultdict(lambda: {
+        "confirmed_codes": set(),
+        "chain_codes": set(),
+        "valid_codes": set(),
+        "date": None,
+        "user_msgs": [],
+        "ia_msgs": [],
+    })
+
+    for _, row in df.iterrows():
+        cid = row["conversation_id"]
+        st = convs[cid]
+
+        msgs = jp(row.get("all_request_messages")) or jp(row.get("main_request_messages")) or []
+        if isinstance(msgs, list):
+            for m in msgs:
+                if not isinstance(m, dict): continue
+                role = m.get("role")
+                txt = m.get("content") or ""
+                if isinstance(txt, list):
+                    txt = " ".join(c.get("text","") if isinstance(c, dict) else str(c) for c in txt)
+                if role == "user" and txt and txt not in st["user_msgs"]:
+                    st["user_msgs"].append(txt)
+                elif role == "assistant" and txt and txt not in st["ia_msgs"]:
+                    st["ia_msgs"].append(txt)
+
+        responses = jp(row.get("responses")) or []
+
+        if st["date"] is None and isinstance(responses, list):
+            for item in responses:
+                if not isinstance(item, dict): continue
+                inner = jp(item.get("response") or "")
+                if isinstance(inner, dict) and "created" in inner:
+                    try:
+                        st["date"] = dt.datetime.fromtimestamp(int(inner["created"]), dt.UTC).strftime("%Y-%m-%d")
+                        break
+                    except Exception: pass
+
+        if isinstance(responses, list):
+            for item in responses:
+                if not isinstance(item, dict): continue
+                caller = (item.get("caller") or "").lower()
+                if "tickets" not in caller: continue
+                inner = jp(item.get("response") or "")
+                if not isinstance(inner, dict): continue
+                try: content = inner["choices"][0]["message"]["content"]
+                except Exception: continue
+                parsed = jp(content)
+                resp = parsed.get("response") if isinstance(parsed, dict) else None
+                if isinstance(resp, str): resp = [resp]
+                if not isinstance(resp, list): resp = []
+                codes = {str(c).upper() for c in resp if c and str(c).upper() != "NULL"}
+                codes &= TICKETS_CODES
+                if "validation" in caller:
+                    st["valid_codes"] |= codes
+                elif "decisionchain" in caller:
+                    st["chain_codes"] |= codes
+
+    for st in convs.values():
+        st["confirmed_codes"] = st["chain_codes"] & st["valid_codes"]
+
+    total = len(convs)
+    confirmed = sum(1 for c in convs.values() if c["confirmed_codes"])
+
+    out_rows = []
+    conv_dates = {}
+    daily = defaultdict(lambda: {"total":0,"confirmed":0,"correto":0})
+    for cid, st in convs.items():
+        if st["date"]:
+            conv_dates[cid] = st["date"]
+            daily[st["date"]]["total"] += 1
+        if not st["confirmed_codes"]: continue
+        if st["date"]: daily[st["date"]]["confirmed"] += 1
+
+        full_text = " ".join(st["user_msgs"] + st["ia_msgs"])
+        # Para cada código disparado, verifica se o contexto bate com o critério
+        verdicts = []
+        motivos = []
+        for code in sorted(st["confirmed_codes"]):
+            label, regex = CRITERIA.get(code, ("desconhecido", None))
+            if regex and regex.search(full_text):
+                verdicts.append("CORRETO"); motivos.append(f"{code}:{label}")
+            else:
+                verdicts.append("ERRADO"); motivos.append(f"{code}:{label}-sem evidência")
+        # Conv = CORRETO se PELO MENOS UM código disparado faz sentido no contexto
+        verdict = "CORRETO" if "CORRETO" in verdicts else "ERRADO"
+        if verdict == "CORRETO" and st["date"]:
+            daily[st["date"]]["correto"] += 1
+
+        out_rows.append({
+            "conversation_id": cid,
+            "verdict": verdict,
+            "motivo": " | ".join(motivos),
+            "codigos": ",".join(sorted(st["confirmed_codes"])),
+            "user_msgs": " | ".join(st["user_msgs"][:5]),
+        })
+
+    out = pd.DataFrame(out_rows)
+    Path("analises").mkdir(exist_ok=True)
+    out.to_csv("analises/02_tickets_avaliacoes.csv", index=False)
+
+    correto = int((out["verdict"]=="CORRETO").sum())
+    errado  = int((out["verdict"]=="ERRADO").sum())
+    meta = {
+        "funnel": {"total": total, "confirmed": confirmed, "injected": confirmed, "replied": correto},
+        "conv_dates": conv_dates,
+        "daily_funnel": {d: dict(v) for d, v in daily.items()},
+    }
+    Path("analises/02_tickets_metadata.json").write_text(json.dumps(meta, ensure_ascii=False), encoding="utf-8")
+    print(f"total={total} confirmed={confirmed} correto={correto} errado={errado}")
+    print(f"datas: {len(set(conv_dates.values()))}")
+
+if __name__ == "__main__":
+    main()
