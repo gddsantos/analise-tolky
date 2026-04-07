@@ -7,7 +7,7 @@ from pathlib import Path
 
 # ── Config ───────────────────────────────────────────────────────────
 st.set_page_config(
-    page_title="Análise de Automações — Tolky",
+    page_title="Análise de Automações — Uniube · Tolky",
     page_icon="🤖",
     layout="wide",
 )
@@ -41,7 +41,7 @@ def load_automacao(nome):
     return aval, funnel
 
 # ── Header ───────────────────────────────────────────────────────────
-st.title("🤖 Análise de Automações — Tolky")
+st.title("🤖 Análise de Automações — Uniube · Tolky")
 st.caption("Base: março/2026 · Uniube + Uberlândia")
 st.divider()
 
