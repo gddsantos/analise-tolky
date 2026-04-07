@@ -104,8 +104,16 @@ with col_linha:
 
     daily_funnel = pd.DataFrame.from_dict(meta_daily, orient="index").sort_index()
     daily_funnel = daily_funnel[~daily_funnel.index.isin(["2026-04-07"])]
-    daily_funnel["correto"] = correto_d
-    daily_funnel = daily_funnel.fillna(0).astype(int).reset_index().rename(columns={"index":"dia"})
+    if "correto" not in daily_funnel.columns:
+        daily_funnel["correto"] = correto_d
+    else:
+        daily_funnel["correto"] = daily_funnel["correto"].fillna(correto_d)
+    for col in ("total","confirmed","injected","replied","correto"):
+        if col not in daily_funnel.columns:
+            daily_funnel[col] = 0
+    daily_funnel = daily_funnel.fillna(0).astype(int)
+    daily_funnel.index.name = "dia"
+    daily_funnel = daily_funnel.reset_index()
 
     SERIES = [
         ("total",     "Total conversas",       "#94A3B8"),
