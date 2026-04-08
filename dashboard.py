@@ -411,32 +411,52 @@ if inspect_id:
         st.markdown(f"**Códigos:** `{r.get('codigos','')}`  ·  **Veredicto:** {r['verdict']}  ·  **Origem:** {r.get('origem','—')}")
         st.markdown(f"**Mensagem gatilho:** {r.get('trigger_msg','—')}")
 
+        with st.expander("💬 Conversa do usuário (até 5 primeiras mensagens)", expanded=False):
+            um = r.get("user_msgs") if "user_msgs" in r else ""
+            if um and not (isinstance(um, float) and pd.isna(um)):
+                tm = r.get("trigger_msg") or ""
+                tm = "" if (isinstance(tm, float) and pd.isna(tm)) else str(tm).strip()
+                for i, msg in enumerate(str(um).split(" | "), 1):
+                    is_trigger = tm and (msg.strip() == tm or tm in msg or msg.strip() in tm)
+                    if is_trigger:
+                        st.markdown(f"**{i}.** 🎯 `[GATILHO]` **{msg}**")
+                    else:
+                        st.markdown(f"**{i}.** {msg}")
+            else:
+                st.info("Sem mensagens de usuário registradas.")
+
+        def _ev(key):
+            v = r.get(key) if key in r else None
+            if v is None or (isinstance(v, float) and pd.isna(v)): return ""
+            s = str(v).strip()
+            return "" if s.lower() in ("", "nan", "none") else s
+
         tab1, tab2, tab3, tab4 = st.tabs(["🟢 Acionamento", "🟡 Injeção no contexto", "🔵 Envio ao usuário", "✅ Veredito (correto/errado)"])
         with tab1:
-            ev = r.get("evid_acionamento") if "evid_acionamento" in r else None
-            if ev and str(ev).strip():
-                st.code(str(ev), language="json")
+            ev = _ev("evid_acionamento")
+            if ev:
+                st.code(ev, language="json")
                 st.caption("Evidência do `decisionChain-validation` retornando o código da automação.")
             else:
                 st.info("Sem evidência de acionamento.")
         with tab2:
-            ev = r.get("evid_injecao") if "evid_injecao" in r else None
-            if ev and str(ev).strip():
-                st.code(str(ev), language="text")
+            ev = _ev("evid_injecao")
+            if ev:
+                st.code(ev, language="text")
                 st.caption("Trecho da tag `<realtime>` no system prompt do `createAssistantResponse`.")
             else:
                 st.info("Não houve injeção no contexto (ou não há evidência salva).")
         with tab3:
-            ev = r.get("evid_envio") if "evid_envio" in r else None
-            if ev and str(ev).strip():
-                st.code(str(ev), language="text")
+            ev = _ev("evid_envio")
+            if ev:
+                st.code(ev, language="text")
                 st.caption("Trecho da resposta da IA ao usuário contendo o marcador da automação.")
             else:
                 st.info("A IA não repassou a instrução ao usuário.")
         with tab4:
-            ev = r.get("evid_correto") if "evid_correto" in r else None
+            ev = _ev("evid_correto")
             st.markdown(f"**Veredito:** {r['verdict']}  ·  **Motivo:** {r.get('motivo','—')}")
-            if ev and str(ev).strip():
+            if ev:
                 st.code(str(ev), language="text")
                 st.caption("Trecho do texto do usuário (entre `« »`) que casou com o critério do classificador.")
             else:
