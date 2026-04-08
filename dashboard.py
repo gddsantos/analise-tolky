@@ -307,9 +307,17 @@ elif filtro_v == "❌ Falso positivo":
 if filtro_m != "Todos":
     tbl = tbl[tbl["motivo"] == filtro_m]
 
-tbl = tbl[["date", "verdict", "motivo", "user_msgs", "conversation_id"]].copy()
-tbl["verdict"] = tbl["verdict"].map({"CORRETO": "✅ Correto", "ERRADO": "❌ Falso positivo"})
-tbl.columns = ["Data", "Veredicto", "Motivo", "Mensagens do usuário", "ID conversa"]
+if TEM_CODIGOS:
+    tbl["sub_auto"] = tbl["codigos"].fillna("").apply(
+        lambda s: ", ".join(fmt_codigo(c.strip()) for c in s.split(",") if c.strip())
+    )
+    tbl = tbl[["date", "verdict", "sub_auto", "motivo", "user_msgs", "conversation_id"]].copy()
+    tbl.columns = ["Data", "Veredicto", "Sub-automação", "Motivo", "Mensagens do usuário", "ID conversa"]
+else:
+    tbl = tbl[["date", "verdict", "motivo", "user_msgs", "conversation_id"]].copy()
+    tbl.columns = ["Data", "Veredicto", "Motivo", "Mensagens do usuário", "ID conversa"]
+
+tbl["Veredicto"] = tbl["Veredicto"].map({"CORRETO": "✅ Correto", "ERRADO": "❌ Falso positivo"})
 tbl = tbl.sort_values("Data", ascending=False)
 
 st.dataframe(tbl, use_container_width=True, height=400)
