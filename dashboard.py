@@ -26,6 +26,17 @@ AUTOMACOES = {
         "metadata": ANALISES / "02_tickets_metadata.json",
         "descricao": "Tickets — abre atendimento humano (Medicina, valores, pós, email, acesso).",
     },
+    "Uberlândia": {
+        "aval":     ANALISES / "03_uberlandia_avaliacoes.csv",
+        "metadata": ANALISES / "03_uberlandia_metadata.json",
+        "descricao": "Uniube Uberlândia — deve acionar quando o usuário menciona Uberlândia ou quer estudar no campus.",
+    },
+}
+
+CODIGO_NOMES_AUTO = {
+    "P62":  "Tratou sobre Uberlândia",
+    "R10":  "Uberlândia",
+    "J560": "Uberlândia",
 }
 
 # ── Carregamento ─────────────────────────────────────────────────────
@@ -226,6 +237,9 @@ CODIGO_NOMES = {
     "E461": "Email cadastrado",
     "W25":  "Acesso/Login",
     "W253": "Acesso/Login",
+    "P62":  "Tratou sobre Uberlândia",
+    "R10":  "Uberlândia",
+    "J560": "Uberlândia",
 }
 def fmt_codigo(c):
     nome = CODIGO_NOMES.get(c, "?")
