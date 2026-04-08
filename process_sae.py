@@ -103,7 +103,7 @@ def main():
     df = pd.concat(dfs, ignore_index=True)
     print(f"loaded rows={len(df)} convs={df['conversation_id'].nunique()}")
 
-    convs = defaultdict(lambda: {"confirmed":False,"injected":False,"replied":False,"date":None,"user_msgs":[],"ia_msgs":[]})
+    convs = defaultdict(lambda: {"confirmed":False,"injected":False,"replied":False,"date":None,"user_msgs":[],"ia_msgs":[],"codes":set()})
 
     for _, row in df.iterrows():
         cid = row["conversation_id"]
@@ -164,8 +164,10 @@ def main():
                     valid_codes |= codes
                 elif "decisionchain" in caller or "decision-chain" in caller:
                     chain_codes |= codes
-        if (chain_codes & valid_codes) & SAE_CODES:
+        confirmed_codes = (chain_codes & valid_codes) & SAE_CODES
+        if confirmed_codes:
             st["confirmed"] = True
+            st["codes"] |= confirmed_codes
 
         if isinstance(payloads, list):
             for item in payloads:
@@ -209,6 +211,7 @@ def main():
             "conversation_id": cid,
             "verdict": verdict,
             "motivo": motivo,
+            "codigos": ",".join(sorted(st["codes"])),
             "user_msgs": " | ".join(st["user_msgs"][:5]),
         })
 
