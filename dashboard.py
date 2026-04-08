@@ -187,9 +187,7 @@ with col_linha:
     for col, label, color in SERIES:
         fig_vol.add_trace(go.Scatter(
             x=daily_funnel["dia"], y=daily_funnel[col],
-            mode="lines+markers+text", name=label,
-            text=daily_funnel[col], textposition="top center",
-            textfont=dict(size=9),
+            mode="lines+markers", name=label,
             line=dict(color=color, width=2),
             hovertemplate=f"%{{x}}<br>{label}: %{{y}}<extra></extra>",
         ))
