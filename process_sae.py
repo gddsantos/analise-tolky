@@ -34,13 +34,41 @@ SAE_CODES = {"D71", "N43", "D710"}
 SAE_INJECT_MARK = re.compile(r"Entre em contato diretamente com o SAE|WhatsApp da Mentoria", re.I)
 
 # Sinais fortes de prospectivo (não-aluno) — têm prioridade
-RE_NAO_ALUNO = re.compile(r"\bn[ãa]o\s+sou\s+aluno\b|\bn[ãa]o\s+sou\s+aluna\b|\bainda\s+n[ãa]o\s+sou\b|\bpretendo\s+ser\s+alun|\bquero\s+ser\s+alun|\bpretende\s+ser\s+alun", re.I)
+RE_NAO_ALUNO = re.compile(r"\bn[ãa]o\s+sou\s+(aluno|aluna)\b|\bn\s+sou\s+(aluno|aluna)\b|\bainda\s+n[ãa]o\s+sou\b|\bpretendo\s+ser\s+alun|\bquero\s+ser\s+alun|\bpretende\s+ser\s+alun|\bestou\s+pretendendo\b|\bcadastro\s+pra\s+ser\b|\bn[ãa]o\s+sou\s+aluno\s+(da|do)\s+uniube\b", re.I)
 RE_PROSPECT = re.compile(r"\bpretendo\b|\bvestibular\s+online\b|\bfazer\s+(a\s+)?inscri[cç][ãa]o\b|\bquero\s+(me\s+)?inscrev", re.I)
-RE_OUTRA_INSTIT = re.compile(r"\b(unifran|ufu|ifsudeste|uninter|unicamp|usp|anhanguera|estacio|unopar|unibras|cesc|unihorizontes)\b|\bsou\s+aluno\s+d[ao]\b|\boutra\s+(faculdade|institui)", re.I)
+RE_OUTRA_INSTIT = re.compile(r"\bsou\s+(aluno|aluna)\s+d[aeo]\s+(unifran|ufu|ifsudeste|uninter|unicamp|usp|anhanguera|estacio|unopar|unibras|cesc|unihorizontes|outra)\b|\bestou\s+(no\s+\d+|cursando).{0,50}(unifran|ufu|uninter|anhanguera|unibras|cesc)|\btransfer[êe]ncia\s+externa\s+para|\bsou\s+formad[ao]\s+em\s+\w+(?!\s*pela?\s+uniube)|\bex\s+aluna?.{0,40}\bsegunda\s+gradua|\benviei\s+(meu\s+)?hist[óo]rico.{0,30}an[áa]lise", re.I)
 
-# Sinais de aluno ativo
-RE_SOU_ALUNO_FORTE = re.compile(r"\b(j[áa]\s+)?sou\s+(o\s+)?(aluno|aluna)\b(?!\s+d[aeo])|\bj[áa]\s+sou\s*(\.|$|\?|!)|\bsou\s+ex[\s\-]?(aluno|aluna)\b|\bj[áa]\s+fui\s+alun|\bestudo\s+(na|no)\s+uniube\b|\bsou\s+estudante\s+d[ao]\s+uniube\b", re.I)
-RE_ALUNO_TEMA = re.compile(r"\btrancar\s+(meu|o)\s+curso\b|\bdestrancar\b|\breativar\s+matr|\breabrir\s+matr|\b(sou|j[áa]\s+sou)\s+(aluno|aluna).*\b(trancad|pagar|divida|d[íi]vida)\b|\bmeu\s+hist[óo]rico\b|\bminha\s+frequ[êe]ncia\b|\bminhas\s+aulas\b|\bminhas\s+disciplinas\b|\bn[ãa]o\s+consigo\s+acessar\s+(o\s+)?ava\b|\bmeu\s+ra\b|\batestado\s+de\s+matr[ií]cula\b|\btermo\s+de\s+est[áa]gio\b|\bdocumenta[cç][ãa]o\s+de\s+est[áa]gio\b|\bproblema\s+(com|no)\s+financeiro\b|\bnegociar\s+d[íi]vida\b|\b2[ªa]?\s+via\s+(do\s+)?diploma\b|\bdiploma\s+(da|do)\s+minha\s+gradua", re.I)
+# Sinais de aluno ativo / ex-aluno em tema acadêmico
+RE_SOU_ALUNO_FORTE = re.compile(r"\b(j[áa]\s+)?sou\s+(o\s+)?(aluno|aluna)\b|\bj[áa]\s+sou\b|\bsou\s+ex[\s\-]?(aluno|aluna)\b|\bj[áa]\s+fui\s+alun|\bsou\s+(uma\s+)?ex[\s\-]?(aluno|aluna)\b|\bestudo\s+(na|no)\s+uniube\b|\bsou\s+estudante\s+(do|da|de)\s+\d+[°º]?\s+per[ií]odo\b|\bsou\s+formad[ao]\s+(em|pela?)\s+uniube\b|\baluno\s+da\s+uniube\b|\bj[áa]\s+fa[çc]o.{0,30}\b(na\s+)?uniube\b|\bfa[çc]o\s+(o\s+)?curso.{0,30}\bpela?\s+uniube\b|\bcursando.{0,30}\buniube\b|\bme\s+formei\s+(em|na)\s+uniube\b|\bfiz\s+(com|na)\s+(voc|uniube)|\baluno\b\s*(\.|$|\?)", re.I)
+RE_ALUNO_TEMA = re.compile(
+    r"\btrancar\s+(meu|o)\s+curso\b|\bdestrancar\b|\breativar\s+(minha\s+)?matr|\breabrir\s+matr"
+    r"|\bmeu\s+hist[óo]rico\b|\bhist[óo]rico\s+(escolar|acad[êe]mico|digital)\b"
+    r"|\bdiploma\s+digital\b|\b2[ªa]?\s+via\s+(do\s+)?diploma\b|\bdiploma\s+(da|do)\s+minha\s+gradua"
+    r"|\bn[ãa]o\s+(consigo|estou\s+conseguindo|consegui)\s+(me\s+)?(conectar|acessar|logar|achar)"
+    r"|\bcomo\s+(eu\s+)?(fa[çc]o\s+(p|para)?\s*)?(acessar|entrar)"
+    r"|\baccessar?\s+(meu\s+)?ava\b|\bliberar?\s+(o\s+)?ava\b"
+    r"|\be[\s\-]?mail\s+institucional\b"
+    r"|\bmeu\s+ra\b|\bsaber\s+(o\s+)?meu\s+ra\b|\brecebi\s+o\s+ra\b"
+    r"|\batestado\s+de\s+matr[ií]cula\b"
+    r"|\btermo\s+de\s+est[áa]gio\b|\bcomprova[cç][ãa]o\s+de\s+est[áa]gio\b|\bdocumenta[cç][ãa]o\s+de\s+est[áa]gio\b"
+    r"|\bproblema\s+(com|no|cm)\s+financeiro\b|\bresolver\s+(um\s+)?problema.{0,20}\bfinanceiro\b|\bnegociar\s+d[íi]vida\b"
+    r"|\bcancelar\s+(a\s+)?minha\s+compra\b|\bquero\s+(o\s+)?estorno\b|\bfui\s+aluno.{0,40}\bdiploma\b"
+    r"|\bfiz\s+(a\s+)?minha\s+matr[íi]cula\b|\bj[áa]\s+(fiz|paguei)\s+(a\s+)?(minha\s+)?matr[íi]cula\b"
+    r"|\bpaguei\s+(a\s+)?matr[íi]cula\s+(no\s+)?(s[áa]bado|ontem|hoje|semana\s+passada)\b"
+    r"|\bs[óo]\s+uma\s+mat[ée]ria\s+foi\s+aprovada\b|\baceite\s+do\s+contrato\b"
+    r"|\borienta[cç][ãa]o\s+(quanto\s+)?(às|as|para)?\s*mensalidades\b|\bdivida\b|\bd[íi]vida\b"
+    r"|\baluno\s+na\s+uniube\b|\bser\s+aluno\s+na\s+uniube\b"
+    r"|\btratamento\s+do\s+meu\s+curso\b|\btrancamento\s+do\s+meu\s+curso\b"
+    r"|\bj[áa]\s+paguei\s+o\s+boleto.{0,30}(p[óo]s|matr)|\bpaguei\s+o\s+boleto\s+da\s+p[óo]s\b"
+    r"|\bcursando\s+(agronomia|aluno).{0,40}\b(bolsa|matr|aguardando)\b"
+    r"|\banexar\s+documentos\s+(no|do)\s+ava\b"
+    r"|\bdisciplina(s)?\s+isolada(s)?\b|\baluno\s+especial\b|\bdisciplinas?\s+avulsa"
+    r"|\bementa(s)?\s+(da|de|do)\s+disciplina"
+    r"|\bcomprei\s+(o\s+|a\s+)?(curso|p[óo]s|mba)|\bcomprei\s+ontem\s+um\b"
+    r"|\baluna?\s+da\s+uniube\b|\bsou\s+aluno\s+da\s+uniube\b"
+    r"|\bex[\s\-]?aluno.{0,30}\b(precisa|preciso|gostaria)|\bex[\s\-]?aluna.{0,30}\b(precisa|preciso|gostaria)"
+    r"|\bfa[çc]o.{0,15}\bna\s+uniube\b|\bfez\s+(com|na)\s+(voc|uniube)"
+    , re.I)
 RE_IA_CONFIRM = re.compile(r"como\s+voc[êe]\s+j[áa]\s+[ée]\s+aluno|como\s+voc[êe]\s+j[áa]\s+[ée]\s+aluna", re.I)
 
 def classify(user_text, ia_text):
