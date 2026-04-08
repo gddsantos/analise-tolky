@@ -71,11 +71,20 @@ RE_ALUNO_TEMA = re.compile(
     , re.I)
 RE_IA_CONFIRM = re.compile(r"como\s+voc[êe]\s+j[áa]\s+[ée]\s+aluno|como\s+voc[êe]\s+j[áa]\s+[ée]\s+aluna", re.I)
 
+RE_UNIUBE_EXPLICITO = re.compile(r"\b(sou|j[áa]\s+sou)\s+(aluno|aluna)\s+(d[ao]\s+)?uniube\b|\baluno\s+d[ao]\s+uniube\b|\baluna\s+d[ao]\s+uniube\b|\bj[áa]\s+sou\s+alun[oa]\s+(d[ao]\s+)?uniube\b|\bestudo\s+(na|no)\s+uniube\b|\bestudante\s+(d[ao]|de)\s+\w+.{0,30}uniube\b", re.I)
+RE_EX_SEGUNDA = re.compile(r"\bex[\s\-]?alun[oa].{0,60}\b(segunda\s+gradua|2[ªa]?\s+gradua|nova\s+gradua|qual\s+(o\s+)?valor)", re.I)
+
 def classify(user_text, ia_text):
-    # Prioridade: sinais explícitos de prospectivo
+    # Prioridade 1: menção explícita a ser aluno da Uniube
+    if RE_UNIUBE_EXPLICITO.search(user_text):
+        return "CORRETO", "aluno Uniube explicito"
+    # Prioridade 2: ex-aluno querendo nova graduação = prospectivo
+    if RE_EX_SEGUNDA.search(user_text):
+        return "ERRADO", "ex-aluno quer nova graduacao"
+    # Prioridade 3: explicita não ser aluno
     if RE_NAO_ALUNO.search(user_text):
         return "ERRADO", "explicita nao ser aluno"
-    # Se mencionou outra instituição como aluno → não é aluno Uniube
+    # Prioridade 4: aluno de outra instituição
     if RE_OUTRA_INSTIT.search(user_text):
         return "ERRADO", "aluno de outra instituicao"
     # Aluno ativo tratando tema acadêmico
