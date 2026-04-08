@@ -136,12 +136,16 @@ def main():
             daily[st["date"]]["injected"] += 1  # assume confirmado = injetado (sem marcador específico)
 
         full_text = " ".join(st["user_msgs"])
-        if RE_UBERLANDIA.search(full_text):
+        m_ub = RE_UBERLANDIA.search(full_text)
+        if m_ub:
             verdict = "CORRETO"
             motivo = "mencionou Uberlandia"
+            s = max(0, m_ub.start()-80); e = min(len(full_text), m_ub.end()+80)
+            evid_correto = f"...{full_text[s:m_ub.start()]}«{full_text[m_ub.start():m_ub.end()]}»{full_text[m_ub.end():e]}..."
         else:
             verdict = "ERRADO"
             motivo = "nao mencionou Uberlandia"
+            evid_correto = ""
 
         if verdict == "CORRETO" and st["date"]:
             daily[st["date"]]["correto"] += 1
@@ -160,6 +164,7 @@ def main():
             "trigger_msg": st["trigger_msg"] or "",
             "user_msgs": " | ".join(st["user_msgs"][:5]),
             "evid_acionamento": st["evid_acionamento"] or "",
+            "evid_correto": evid_correto,
         })
 
     out = pd.DataFrame(out_rows)

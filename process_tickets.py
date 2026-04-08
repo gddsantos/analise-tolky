@@ -245,15 +245,41 @@ def main():
             if st["replied"]:  daily[st["date"]]["replied"]  += 1
 
         full_text = " ".join(st["user_msgs"])
-        # Para cada sub-código disparado, verifica se o critério específico bate
+
+        def _ctx(text, m, before=80, after=80):
+            s = max(0, m.start()-before); e = min(len(text), m.end()+after)
+            return f"...{text[s:m.start()]}«{text[m.start():m.end()]}»{text[m.end():e]}..."
+
+        def _first_match(text, code):
+            # Retorna (nome, match_object) do primeiro regex que bate para o code
+            if code in ("F270","F27"):
+                for nome, rg in [("Medicina Humana",RE_MEDICINA_HUMANA),("Valor/Mensalidade",RE_VALORES),
+                                 ("Mestrado/Pós",RE_POS),("Email cadastrado",RE_EMAIL_CADASTRADO),("Acesso/Login",RE_ACESSO_CANDIDATO)]:
+                    m = rg.search(text)
+                    if m: return (nome, m)
+                return (None, None)
+            mapping = {"E461":("Bolsa 50%",RE_BOLSA_50),"E46":("Bolsa 50%",RE_BOLSA_50),
+                       "O242":("Dificuldade matricula",RE_DIF_MATRICULA),"O24":("Dificuldade matricula",RE_DIF_MATRICULA),
+                       "W253":("Falha na Inscricao",RE_FALHA_INSCRICAO),"W25":("Falha na Inscricao",RE_FALHA_INSCRICAO),
+                       "O744":("Atendimento Humano",RE_ATEND_HUMANO),"O74":("Atendimento Humano",RE_ATEND_HUMANO)}
+            if code in mapping:
+                nome, rg = mapping[code]
+                m = rg.search(text)
+                return (nome, m) if m else (None, None)
+            return (None, None)
+
         hits = []
         misses = []
+        evid_correto = ""
         for code in sorted(st["confirmed_codes"]):
-            nome, check = CRITERIA.get(code, ("desconhecido", None))
-            if check and check(full_text):
-                hits.append(f"{nome} ({code})")
+            nome_default = CRITERIA.get(code, ("desconhecido", None))[0]
+            nome_hit, m = _first_match(full_text, code)
+            if nome_hit and m:
+                hits.append(f"{nome_hit} ({code})")
+                if not evid_correto:
+                    evid_correto = f"[{code}/{nome_hit}] {_ctx(full_text, m)}"
             else:
-                misses.append(f"{nome} ({code})")
+                misses.append(f"{nome_default} ({code})")
         if hits:
             verdict = "CORRETO"
             motivo = "bateu: " + "; ".join(hits)
@@ -279,6 +305,7 @@ def main():
             "evid_acionamento": st["evid_acionamento"] or "",
             "evid_injecao": st["evid_injecao"] or "",
             "evid_envio": st["evid_envio"] or "",
+            "evid_correto": evid_correto,
         })
 
     out = pd.DataFrame(out_rows)

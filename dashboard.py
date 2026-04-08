@@ -411,7 +411,7 @@ if inspect_id:
         st.markdown(f"**Códigos:** `{r.get('codigos','')}`  ·  **Veredicto:** {r['verdict']}  ·  **Origem:** {r.get('origem','—')}")
         st.markdown(f"**Mensagem gatilho:** {r.get('trigger_msg','—')}")
 
-        tab1, tab2, tab3 = st.tabs(["🟢 Acionamento", "🟡 Injeção no contexto", "🔵 Envio ao usuário"])
+        tab1, tab2, tab3, tab4 = st.tabs(["🟢 Acionamento", "🟡 Injeção no contexto", "🔵 Envio ao usuário", "✅ Veredito (correto/errado)"])
         with tab1:
             ev = r.get("evid_acionamento") if "evid_acionamento" in r else None
             if ev and str(ev).strip():
@@ -433,3 +433,11 @@ if inspect_id:
                 st.caption("Trecho da resposta da IA ao usuário contendo o marcador da automação.")
             else:
                 st.info("A IA não repassou a instrução ao usuário.")
+        with tab4:
+            ev = r.get("evid_correto") if "evid_correto" in r else None
+            st.markdown(f"**Veredito:** {r['verdict']}  ·  **Motivo:** {r.get('motivo','—')}")
+            if ev and str(ev).strip():
+                st.code(str(ev), language="text")
+                st.caption("Trecho do texto do usuário (entre `« »`) que casou com o critério do classificador.")
+            else:
+                st.info("Nenhum critério específico bateu — veredito é o fallback (sem evidência textual).")

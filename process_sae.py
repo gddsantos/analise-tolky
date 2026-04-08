@@ -71,29 +71,33 @@ RE_IA_CONFIRM = re.compile(r"como\s+voc[êe]\s+j[áa]\s+[ée]\s+aluno|como\s+voc
 RE_UNIUBE_EXPLICITO = re.compile(r"\b(sou|j[áa]\s+sou)\s+(aluno|aluna)\s+(d[ao]\s+)?uniube\b|\baluno\s+d[ao]\s+uniube\b|\baluna\s+d[ao]\s+uniube\b|\bj[áa]\s+sou\s+alun[oa]\s+(d[ao]\s+)?uniube\b|\bestudo\s+(na|no)\s+uniube\b|\bestudante\s+(d[ao]|de)\s+\w+.{0,30}uniube\b", re.I)
 RE_EX_SEGUNDA = re.compile(r"\bex[\s\-]?alun[oa].{0,60}\b(segunda\s+gradua|2[ªa]?\s+gradua|nova\s+gradua|qual\s+(o\s+)?valor)", re.I)
 
+def _ctx(text, m, before=80, after=80):
+    s = max(0, m.start()-before); e = min(len(text), m.end()+after)
+    return f"...{text[s:m.start()]}«{text[m.start():m.end()]}»{text[m.end():e]}..."
+
 def classify(user_text, ia_text):
     # Prioridade 1: menção explícita a ser aluno da Uniube
-    if RE_UNIUBE_EXPLICITO.search(user_text):
-        return "CORRETO", "aluno Uniube explicito"
+    m = RE_UNIUBE_EXPLICITO.search(user_text)
+    if m: return "CORRETO", "aluno Uniube explicito", _ctx(user_text, m)
     # Prioridade 2: ex-aluno querendo nova graduação = prospectivo
-    if RE_EX_SEGUNDA.search(user_text):
-        return "ERRADO", "ex-aluno quer nova graduacao"
+    m = RE_EX_SEGUNDA.search(user_text)
+    if m: return "ERRADO", "ex-aluno quer nova graduacao", _ctx(user_text, m)
     # Prioridade 3: explicita não ser aluno
-    if RE_NAO_ALUNO.search(user_text):
-        return "ERRADO", "explicita nao ser aluno"
+    m = RE_NAO_ALUNO.search(user_text)
+    if m: return "ERRADO", "explicita nao ser aluno", _ctx(user_text, m)
     # Prioridade 4: aluno de outra instituição
-    if RE_OUTRA_INSTIT.search(user_text):
-        return "ERRADO", "aluno de outra instituicao"
+    m = RE_OUTRA_INSTIT.search(user_text)
+    if m: return "ERRADO", "aluno de outra instituicao", _ctx(user_text, m)
     # Aluno ativo tratando tema acadêmico
-    if RE_ALUNO_TEMA.search(user_text):
-        return "CORRETO", "aluno tema academico"
-    if RE_SOU_ALUNO_FORTE.search(user_text):
-        return "CORRETO", "declarou ser aluno ativo"
-    if RE_IA_CONFIRM.search(ia_text):
-        return "CORRETO", "IA confirmou aluno"
-    if RE_PROSPECT.search(user_text):
-        return "ERRADO", "prospectivo"
-    return "ERRADO", "sem sinais de aluno"
+    m = RE_ALUNO_TEMA.search(user_text)
+    if m: return "CORRETO", "aluno tema academico", _ctx(user_text, m)
+    m = RE_SOU_ALUNO_FORTE.search(user_text)
+    if m: return "CORRETO", "declarou ser aluno ativo", _ctx(user_text, m)
+    m = RE_IA_CONFIRM.search(ia_text)
+    if m: return "CORRETO", "IA confirmou aluno", _ctx(ia_text, m)
+    m = RE_PROSPECT.search(user_text)
+    if m: return "ERRADO", "prospectivo", _ctx(user_text, m)
+    return "ERRADO", "sem sinais de aluno", ""
 
 def main():
     dfs = [load(f) for f in FILES]
@@ -252,7 +256,7 @@ def main():
         if not st["confirmed"]: continue
         ut = " ".join(st["user_msgs"]).lower()
         it = " ".join(st["ia_msgs"]).lower()
-        verdict, motivo = classify(ut, it)
+        verdict, motivo, evid_correto = classify(ut, it)
         if st["confirmed_main"] and st["confirmed_followup"]:
             origem = "principal+followup"
         elif st["confirmed_main"]:
@@ -270,6 +274,7 @@ def main():
             "evid_acionamento": st["evid_acionamento"] or "",
             "evid_injecao": st["evid_injecao"] or "",
             "evid_envio": st["evid_envio"] or "",
+            "evid_correto": evid_correto,
         })
 
     out = pd.DataFrame(out_rows)
