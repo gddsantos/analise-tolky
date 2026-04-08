@@ -20,16 +20,41 @@ AUTOMACOES = {
         "aval":     ANALISES / "01_sae_avaliacoes.csv",
         "metadata": ANALISES / "01_sae_metadata.json",
         "descricao": "Serviço de Apoio ao Estudante — deve acionar apenas para alunos ativos.",
+        "prompt": """O usuário demonstrar claramente que é aluno da instituição e estiver tratando de assuntos acadêmicos de aluno.
+
+Considere acionar quando o usuário mencionar temas relacionados à vida acadêmica de aluno ativo, como:
+- curso em andamento
+- disciplinas
+- conclusão de curso
+- estágio
+- TCC
+- rematrícula
+- portal do aluno / sistema da instituição
+- coordenação
+- SAE
+- financeiro acadêmico
+- boleto em aberto
+- cancelamento de matrícula
+- transferência interna
+- mudança de curso ou turno""",
     },
     "Tickets": {
         "aval":     ANALISES / "02_tickets_avaliacoes.csv",
         "metadata": ANALISES / "02_tickets_metadata.json",
         "descricao": "Tickets — abre atendimento humano (Medicina, valores, pós, email, acesso).",
+        "prompt": """- O usuário mencionar ou solicitar informações sobre o curso de Medicina Humana.
+- O usuário perguntar sobre valor, preço, mensalidade ou custo de qualquer curso.
+- O usuário solicitar informações sobre Mestrado ou Pós-graduação.
+- O usuário informar que o e-mail cadastrado está incorreto, desatualizado ou precisa ser corrigido.
+- O usuário informar que não consegue acessar a área do candidato ou possui problema de login/acesso.""",
     },
     "Uberlândia": {
         "aval":     ANALISES / "03_uberlandia_avaliacoes.csv",
         "metadata": ANALISES / "03_uberlandia_metadata.json",
         "descricao": "Uniube Uberlândia — deve acionar quando o usuário menciona Uberlândia ou quer estudar no campus.",
+        "prompt": """- O usuário desejar saber de cursos no campus de UBERLÂNDIA.
+- O usuário tiver interesse em se inscrever em qualquer curso QUE SEJA NO CAMPUS DE UBERLÂNDIA.
+- A palavra UBERLÂNDIA for mencionada pelo usuário na conversa.""",
     },
 }
 
@@ -86,24 +111,32 @@ aval_df, funnel, meta_daily = load_automacao(aut_nome)
 st.subheader(f"Automação: {aut_nome}")
 st.caption(cfg["descricao"])
 
+with st.expander("📋 Ver prompt/critério da automação"):
+    st.markdown(f"```\n{cfg.get('prompt','(sem prompt)')}\n```")
+
 # ── Cards do funil ───────────────────────────────────────────────────
 pct = lambda n, d: f"{n/d*100:.1f}%" if d else "—"
 
 c1, c2, c3, c4, c5 = st.columns(5)
 c1.metric("Total conversas",
-          f"{funnel['total']:,}".replace(",", "."))
+          f"{funnel['total']:,}".replace(",", "."),
+          help="Número total de conversas únicas no período analisado (uma linha por conversation_id).")
 c2.metric("1. Acionado",
           f"{funnel['confirmed']:,}".replace(",", "."),
-          f"{pct(funnel['confirmed'], funnel['total'])} do total")
+          f"{pct(funnel['confirmed'], funnel['total'])} do total",
+          help="Conversas em que o `decisionChain-validation` confirmou o código da automação pelo menos uma vez (seja na mensagem principal ou em follow-up).")
 c3.metric("2. Injetado no contexto",
           f"{funnel['injected']:,}".replace(",", "."),
-          f"{pct(funnel['injected'], funnel['confirmed'])} do acionado")
+          f"{pct(funnel['injected'], funnel['confirmed'])} do acionado",
+          help="Conversas em que a instrução da automação foi efetivamente inserida como tag `<realtime>` no system prompt do createAssistantResponse.")
 c4.metric("3. Enviado ao usuário",
           f"{funnel['replied']:,}".replace(",", "."),
-          f"{pct(funnel['replied'], funnel['injected'])} do injetado")
+          f"{pct(funnel['replied'], funnel['injected'])} do injetado",
+          help="Conversas em que a IA de fato repassou a instrução para o usuário (marcador específico da automação aparece na resposta).")
 c5.metric("4. Acionamentos corretos",
           f"{funnel['correto']:,}".replace(",", "."),
-          f"{pct(funnel['correto'], funnel['confirmed'])} do acionado")
+          f"{pct(funnel['correto'], funnel['confirmed'])} do acionado",
+          help="Dos acionamentos confirmados, quantos foram considerados CORRETO pelo classificador (regex validado manualmente em 200 amostras, ~95% de acurácia).")
 
 st.divider()
 
