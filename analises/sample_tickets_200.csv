@@ -1,0 +1,464 @@
+conversation_id,verdict,motivo,codigos,user_msgs
+b1694ea7-5d9b-4131-bd98-4bf947bd89d3,CORRETO,E46:email cadastrado-sem evidência | O24:valor/mensalidade,"E46,O24","Olá | Boa tarde | Pretendo ser aluna | Psicologia presencial 
+Chaiimadaa@gmail.com | 099.842.606-74 
+Uberlândia 
+19.04.1991"
+53d79447-0813-4892-85f3-1e9eca63c2ff,CORRETO,F27:ticket guarda-chuva,F27,Oi boa tarde | Pretendo | EAD | Pedagogia ou educação especial | Gostaria ter ter mas informações
+0e7ea2f3-e4ea-403e-8ae2-b3919f00657a,CORRETO,F270:ticket guarda-chuva,F270,"Bom dia | Pretendo ser aluno | Gostaria de informações sobre especialização em Terapia Cognitivo Comportamental | 00211106038
+Cintiathiesen@yahoo.com.br 
+51 98423-5664 
+27/12/1982 | Uberlandia/MG"
+75a1f7e6-1a9c-419a-8183-b48168751e5c,CORRETO,F270:ticket guarda-chuva,F270,Gostaria de saber mais sobre Especialização em Nutrição do Idoso. | Gostaria de mais informações | EAD e gostaria de saber se é apenas para formados em nutrição? | Estudante de Gastronomia; Bacharel em Agroindústria; Mestrado em Tecnologia de Alimentos e Doutorando em Ciências de Alimentos. Modalidade EAD. João Pessoa/PB
+dba0663d-09e4-4a61-b95a-e2b8987e3189,CORRETO,F270:ticket guarda-chuva,F270,"Olá, tudo bem? Eu gostaria de saber mais informações sobre a pós em estética | Campus aeroporto Uberaba"
+5b6c65a1-d500-4fc1-a7f4-5990b1215e27,CORRETO,F27:ticket guarda-chuva,F27,"Olá, gostaria tirar uma dúvida sobre os valores de um curso | Biomedicina | Cursos que estão disponíveis na unidade de Coluna-MG | Coluna , modalidade presencial | Semipresencial"
+88246fa8-1657-41f3-8935-8c913d354527,CORRETO,F27:ticket guarda-chuva,F27,"Boa noite | Oi Letícia,
+na verdade estou aqui porque fiz inscrição em um curso porém não vou poder seguir com ele, queria saber se o boleto emitido é cancelado por falta de pagamento, ou como devo proceder | inscrição como candidato | pelo site | Curso de Espanhol
+juniorabaj@gmail.com"
+29f4e814-167f-459f-81e6-149b366b7110,CORRETO,F27:ticket guarda-chuva,F27,Bom dia | Quero ser alun9 | Mestrado profissional em educacao
+f0b4ee2d-2985-45e5-b472-04623699c325,CORRETO,F27:ticket guarda-chuva,F27,Boa tarde | Ser aluno | Ed fisica | Queria saber valores | Não tem em Uberlândia
+5db417db-4f66-47d8-af1d-295309ba09d7,CORRETO,F270:ticket guarda-chuva,F270,"Olá, gostaria de saber o valor da especialização em tradução | Mas qual o valor? Poderia escrever aqui por favor? | Eu clico no link mas não aparece o valor | Ok, obrigada."
+abe737ac-2471-4c8b-8323-ea227c0a6bb3,CORRETO,F27:ticket guarda-chuva,F27,Olá | mudei para o ead recentemente mas não estou conseguindo ver onde ficam as aulas ao vivo | aparecem aqui![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1773785402388_1657516611928762.jpg) | ?
+f429e148-6f95-4fa9-8389-a700b9aac174,CORRETO,F27:ticket guarda-chuva,F27,Olá | Não sou aluno | EAD | Nutrição e educação física | Regia7777776@gmail.com
+89c77cc3-e98d-4b41-9070-b26a0fe1255b,CORRETO,F270:ticket guarda-chuva,F270,Boa tarde | Gostaria de saber sobre pos em segurança do trabalho
+8543ea4b-9dc8-4990-9e17-db1d34b20f6b,CORRETO,F27:ticket guarda-chuva,F27,"Bom dia | Gostaria de saber mais sobre o curso de engenharia química | Existe na forma 100% ead? | Qual o valor? | Eu moro em duas cidades, Catalão Goiás e Campo alegre do Fidalgo, PI."
+b56449c9-24ea-4a10-b039-4f7c7ac1cbd7,CORRETO,F27:ticket guarda-chuva,F27,"Queria saber sobre minhas futuras mensalidades qual será o valor delas? | Engenharia de software 
+peedpinhal@gmail.com | Eu fiz Enem 100 minha matricula foi 99 reais essa vai ser minha mensalidade? Noturno no bairro centro Uberlândia | 16110338613 | Onde eu vejo minhas futuras parcelas?"
+f818e661-271d-4cd3-b3aa-99890cdfb0cb,CORRETO,F27:ticket guarda-chuva,F27,Boa tarde | Tudo bem | Pretendo ser aluno | Quero saber valores
+403c3e39-77ba-4cce-a44c-d6af8da5c0e3,CORRETO,F27:ticket guarda-chuva,F27,"Olá, gostaria tirar uma dúvida sobre os valores de um curso"
+70b02afc-8919-43fd-9ae9-8a4418ff44c7,CORRETO,F27:ticket guarda-chuva,F27,"Olá, gostaria tirar uma dúvida sobre os valores de um curso | Boa noite. Gostaria de saber os valores com desconto para Letras Português/Inglês para portadora de Diploma Superior."
+a3a19ca8-9d9f-4954-910f-3184370f9be1,CORRETO,F27:ticket guarda-chuva,F27,Oi | Gostaria de informações sobre pos graduação em psicopatologia | Eu gostaria de saber sobre a grade de aulas | Araguaina tocantins | Ao vivo
+a3ca97d2-a880-405c-bdf2-e38e9cdba3bd,CORRETO,F27:ticket guarda-chuva,F27,"Olá, gostaria tirar uma dúvida sobre os valores de um curso | Engenharia de Produção , EAD | Uberlândia MG 
+Tibery 
+Minas Gerais"
+f4d948eb-288f-41ad-910c-498681e5d7df,CORRETO,F270:ticket guarda-chuva,F270,"Boa noite | Gostaria de saber informações sobre o curso de Direito Notarial e Registral | Pretendo ser aluno | Virginopolis/MG
+marconnyleao@hotmail.com | Nome completo: Layla Magalhães Rocha Leão 
+CPF: 099.000.326-40
+RG e órgão emissor: MG-16.737.342/ PC/MG
+Estado civil: casada
+Celular (Com DDD): (33) 98709-9030
+E-mail: marconnyleao@hotmail.com
+Data de nascimento: 02/06/1992
+CEP: 39730-000
+Endereço: Rua Marcial de Magalhães Barbalho, n• 635, Bairro: Tanque, Virginopolis/MG
+Data de colação de grau da graduação: 03/03/2020"
+93f7c00d-0f83-4ea2-8128-84cee1dd3838,CORRETO,F27:ticket guarda-chuva,F27,Boa noite | Gostaria de saber mais sobre o programa de reconhecimento de mestrado internacional | Reconhecimento de mestrado realizado no exterior | Mestrado em Educação | Ecolojubio91@gmail.com
+3ec3fc4e-decf-44e3-9607-dffa0b93c6d7,CORRETO,F27:ticket guarda-chuva,F27,Oi | Mestrado | Educação
+6d16dd1c-632d-4e26-969e-d7d4c33e5fe1,CORRETO,F27:ticket guarda-chuva,F27,Boa tarde | Preciso saber quais as documentações pra fazer a matrícula
+d4839c85-e7f6-403b-a427-9a85a21ad3f7,CORRETO,F27:ticket guarda-chuva,F27,"Bom dia | Oi Letícia, bom dia | Não sou aluna | Ciência de Dados | Gostaria de mais informações sobre os valores do curso"
+25c46549-99f3-4cf0-8925-3191c585d6f3,CORRETO,F270:ticket guarda-chuva,F270,"Olá, gostaria tirar uma dúvida sobre os valores de um curso | Pretendo ser aluno | Qual o custo do curso de secretario executivo trilingue | Quantos semestres tem o curso? | Modalidade EAD São Paulo, SP"
+d693f44b-b2b2-4321-bd03-12df4a4d10ce,CORRETO,F27:ticket guarda-chuva,F27,"Ola
+Teria desconto nessa pós https://uniube.br/curso/ead/pos-graduacao/especializacao-em-nutricao-do-idoso | goiania GO
+geovanna.salcantara@gmai.com | geovanna.salcantara@gmail.com | gostaria de saber primeiro o valor que iria ficar | universitario"
+0c490298-1345-40d8-a9b6-62e54c53c074,CORRETO,F27:ticket guarda-chuva,F27,boa noite | qual seria o valor do curso de biomedicina? | pretendo ser | presencial noturno
+7c9095fd-d326-447d-953f-517a6bf1df8c,CORRETO,F27:ticket guarda-chuva,F27,"Olá, gostaria tirar uma dúvida sobre os valores de um curso | Boa tarde!
+Gostaria de saber mais sobre o EAD Agronomia.
+Sou graduado em Veterinária UFMG, quais os polos disponíveis, custo mensal, matrícula, funcionamento geral, ...... ? | Qual a forma de ingresso para nova graduação. 
+Qual o Polo? Sou de Dores do Indaiá - MG.
+Qual diferença entre os polos? | ranierepinto23@gmail.com | Me encaminhe todas as informações possíveis sobre o curso.
+Será que consigo conciliar outro curso ao mesmo tempo, Gestão de Agronegócios?"
+9f927ea8-9d54-42a9-90d4-7822b7d2ac83,CORRETO,F27:ticket guarda-chuva | O24:valor/mensalidade-sem evidência,"F27,O24","Oi, boa noite! Tudo bem? Eu realizei o pagamento e a minha inscrição para o vestibular 2026-02, porém está constatando que eu não paguei. Onde posso mandar o comprovante para provar o pagamento realizado? | Medicina, helenagdias09@gmail.com | Nenhuma, muito obrigada! | Nao, obrigada!"
+0a983090-6cfd-4af7-9ed7-fd5278284ffd,CORRETO,F27:ticket guarda-chuva,F27,"Bom dia | Quero saber se tem pedagogia EAD? | E qual valor da mensalidade? | Espírito Santo
+Moro em Santa Leopoldina"
+9d2af86d-7580-4a96-a2fa-389009f2cddf,CORRETO,F270:ticket guarda-chuva,F270,Olá | Pretendo ser aluno. | Desejo mais informação sobre o curso.
+64f97b6c-c175-470b-97b2-607a2085443f,CORRETO,F27:ticket guarda-chuva,F27,Boa tarde | Pretendo ser | Especialização em Enologia e Negócios EAD | Sommnatymacluf@gmail.com | 37451988830
+1f87b926-46ba-4d31-8b06-22580a61697b,CORRETO,F27:ticket guarda-chuva,F27,"Bom dia | Pretendo ser | Técnico de enfermagem 
+150.062.766-02
+03/07/2006
+blackwoman98271883@gmail.com | Uberaba | 34 99668‑3068"
+9cb340ab-e14e-4c76-bf86-289be6b7d862,CORRETO,F27:ticket guarda-chuva,F27,"Eu tenho formação em engenharia, com mestrado e doutorado. Queria fazer graduação EAD em Contabilidade e queria saber se posso aproveitar disciplinas que já cursei? | Queria graduação em ciências contáveis. | Obrigado. | Obrigado, porem nao estou interessado nisso. | Si EAD. Obrigado."
+c31595e9-c744-401d-900d-bfb159c5bc7c,CORRETO,F27:ticket guarda-chuva,F27,"oi | pretendo ser aluno | kamillymedeirosm18@gmail.com
+49744750880
+18/11/2007 | administração ead | sim
+18997027113
+frutal mg nossa senhora aparecida"
+4ba33d20-2a44-4bd8-b503-b434528f4f23,CORRETO,F27:ticket guarda-chuva,F27,Bom dia | Pretendo ser aluno de Pós Graduação
+3c28538b-7f59-4b21-8368-4b87995f7dcc,CORRETO,F270:ticket guarda-chuva,F270,Boa Tarde! Gostaria de conversar com vcs sobre o curso de fisioterapia da Uniube! Na Uniube de Uberlandia tem esse curso? poderia me dar as informações como preço e turno
+bda93825-19aa-40b4-b311-fa562de52b75,CORRETO,F270:ticket guarda-chuva,F270,"Oi, bom dia. | Tudo jóia? | Como funciona para se tornar um aluno no mestrado de vocês? | Como funciona para se tornar um aluno no curso de mestrado de vocês? | Mestrado em educação."
+822c188f-6d7e-401c-bf0d-06eaf8c95000,CORRETO,F27:ticket guarda-chuva,F27,"Olá, boa noite! | Estou interessada na graduação de Sistemas de Internet, começo das aulas e mensalidade. Poderia me informar melhor? | Vou dar uma olhada nas informações dos links e te aviso | Obrigada!"
+1b9e1ee6-ec23-47b1-a6b2-c4ae86740a10,CORRETO,F27:ticket guarda-chuva,F27,Olá tudo bem | Sim | Gostaria de saber o nome dos professores | Presencial previdenciário | Prática previdência
+67c48ae3-cb2a-42c3-ad6b-9180bf3ae352,CORRETO,F27:ticket guarda-chuva,F27,Bom dia | Pretendo | Gestão | Gestão hospitalar | Aceito
+08d625d1-2dcd-4fb6-aa8e-7d365265c614,CORRETO,F27:ticket guarda-chuva,F27,Olá | Quanto está pra fazer a faculdade de nutrição? | Pretendo ser
+daff11d4-d4b1-426e-9450-9bc59deb65c5,CORRETO,F27:ticket guarda-chuva,F27,"Ola bom dia | Entrando em contato pra saber se vcs tem o curso de matemática licenciatura | Vestibular online | kaibbjj@gmail.com | Uberlândia mg 
+CPF 09075590695
+Telefone 34984302662"
+2fe6bcde-802f-47be-8a8f-2eac99166482,CORRETO,F27:ticket guarda-chuva,F27,"![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1772626949816_2034169607158962.ogg) | Irecê Bahia | ![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1772629827525_1636308907377975.ogg) | Uibaí Bahia região de Irecê 
+Rua José Ruberto Machado 
+Fazenda Boa Sorte"
+eed65348-473b-4e10-9526-b5375e202333,CORRETO,F27:ticket guarda-chuva,F27,"Ola | Pretendo ser aluno de mestrado | jackeline.enf18@gmail.com
+Mestrado para docência 
+Uberaba MG"
+59c38564-10d3-447d-b502-091e1fed1f7f,CORRETO,F27:ticket guarda-chuva,F27,Bom dia | Gostaria de saber quanto é a mensalidade da faculdade de medicina veterinária
+3d7cd9bb-6a5e-4e34-8885-91edeb3ceacf,CORRETO,F27:ticket guarda-chuva,F27,Boa noite | Não consigo acessar o ava
+615655f6-4dd4-4a69-9e43-df05eaa4200c,CORRETO,F270:ticket guarda-chuva,F270,"Olá, gostaria tirar uma dúvida sobre os valores de um curso"
+cc23bef4-b3fa-42be-91fa-7b63283ad508,CORRETO,F27:ticket guarda-chuva,F27,"boa noite! | eu estou bem, obrigado! | como você está? | pretendo ser aluno | curso: administração
+e-mail: thiagoalvesdefranca@gmail.com 
+CPF: 10309477409
+telefone: 81989761566
+data de nascimento: 16/07/1993"
+0f7fb397-9d10-4674-bc72-b81f02ee0d02,CORRETO,F27:ticket guarda-chuva,F27,Bom dia! | Bacharelado | Administração | EAD
+72dd15ff-86de-4ff0-9ec6-7bf25f8922f8,CORRETO,E461:email cadastrado-sem evidência | F270:ticket guarda-chuva,"E461,F270",Boa tarde qual valor curso de odontologia | Cunharita de Cássia Alves @ gmail com | 1 graduação | 20 /4/64 | ![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1774635271664_1222556950058884.ogg)
+a07a8a85-4cc2-419b-89d4-3b91c24f237e,CORRETO,F270:ticket guarda-chuva | O242:valor/mensalidade,"F270,O242","tarde | tô querendo adquirir a pós em nutrição esportiva | pretendo ser aluno | e-mail: renneralmeida queiroz@gmail.com
+cidade: Jales
+bairro: centro
+estado: São Paulo | CPF: 123.487.996-42
+data de nascimento: 09/07/1996
+telefone: (34) 99673-8521"
+00640160-111b-4ca4-a5a3-1613190303bd,CORRETO,F270:ticket guarda-chuva,F270,Bom dia! | Gostaria de informações sobre o mestrado em educação
+dba1bc3a-2b93-4986-be7f-871d0f7d9555,CORRETO,F27:ticket guarda-chuva,F27,"Boa noite | Pretende ser aluno da uniu e | Perfeito, Gabi De Sá!
+Para eu dar andamento na sua *inscrição* na Uniube, preciso destes dados:
+- *Nome do curso* engenheira de software 
+- *CPF* 14157092627
+- *E-mail* gabisouzadesa@hotmail.com
+- *Telefone* 038988457244
+- *Data de nascimento* 25/05/2000 | Ead"
+44db27d2-73b2-4634-890f-c77063b613f6,CORRETO,F27:ticket guarda-chuva,F27,Qual o valor da mensalidade? | Boa noite | Gestão ambiental | EAD | Tecnólogo
+19310e82-7fb8-46ef-bcdd-aa3c69612d76,CORRETO,F27:ticket guarda-chuva,F27,"Boa tarde | Pretendo ser aluno | Eu estou pensando em cursar fonoaudióloga semi presencial | Eu sou portadora de diploma, qual seria a mensalidade?
+Fonoaudióloga Uberaba"
+4aa5fabc-9c9f-4b07-91b2-6676a94e029e,CORRETO,F27:ticket guarda-chuva,F27,Olá ! | Pretendo ser | Há um vestibular no meio do ano ? | Gostaria de saber sobre o vestibular para o curso de medicina.
+1232eacf-fd11-417f-aff0-9f1e188ae8e8,CORRETO,F270:ticket guarda-chuva,F270,"Esquece minha senha da área do candidato | Bom dia | Como faço pra recuperar | Ok , obrigada"
+cc0a7406-c51d-4c79-b43a-7c54b5503105,CORRETO,F27:ticket guarda-chuva,F27,boa tarde! | queria saber como que funciona a tranferencia da uniaraxa pra uniube | curso de fonaudiologia | 34999899593 WhatsApp | Seria semipresencial
+b1c56183-4272-4dcf-b767-506ecb97621d,CORRETO,F27:ticket guarda-chuva,F27,"Olá | Gostaria de maiores informações sobre a pós de Fisioterapia Cardiorrespiratória: Hospitalar e Ambulatorial | daianegrupodecimus@hotmail.com
+Bairro funcionários - Barbacena/MG"
+06e16d86-c2c0-4d2a-b9bc-9c2b0198fa9f,CORRETO,F270:ticket guarda-chuva | W253:acesso/login-sem evidência,"F270,W253",Boa tarde | Pretendo | Queria saber mais sobre o curso | Especialização em máquinas mecanização e agricultura de precisão | Gostaria de saber mais sobre o curso em EAD
+57b5d33e-027c-4247-ac92-fb9818635e98,CORRETO,F27:ticket guarda-chuva,F27,Olá | Quando inicia a turma de terapia cognitivo comportamental (pós graduação)? | lorenacamposcamargo@hotmail.com | Manaus Amazonas | Gostaria da modalidade ao vivo
+b9959821-2159-4ca6-a508-b16c89bd19b3,CORRETO,F270:ticket guarda-chuva,F270,"Olá | Já sou aluna | Gostaria de fazer um novo curso, vejo com vc | Gestão comercial
+lohaynesouza20@gmail.com
+020.815.236-98
+34992705202
+30/09/1998 | Lohayne Souza de Carvalho 
+Graduação ead 
+2° graduação 
+Aceito"
+80aca914-3033-43bb-83bb-5fee253792ee,CORRETO,F27:ticket guarda-chuva | O74:mestrado/pós,"F27,O74",Bom dia | estava dando uma olhada na sua grade de pos graduações EAD e gostei de alguns cursos na area de agronomia | vcs teriam uma promoção para fazer 3x1? | ![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1774348024746_1682409006101189.jpg) | ![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1774348038477_1492229919090228.jpg)
+5e0b629f-027a-4c74-bf3c-5dea0d67848c,CORRETO,O24:valor/mensalidade | O74:mestrado/pós-sem evidência | W25:acesso/login,"O24,O74,W25",Tudo joia ! | Olá | Eu efetuei o pagamento da matrícula no sábado | Quero saber se já deu certo a matrícula | É que dia que começa as aulas
+1dacb1e7-6ba0-4a7c-8401-48729f2d77e7,CORRETO,F27:ticket guarda-chuva,F27,"Oi Boa tarde, gostaria de saber quanto tá o curso de técnico em segurança do trabalho"
+948dcc74-3a49-46d0-80c9-0fdbf5e24155,CORRETO,F27:ticket guarda-chuva,F27,"Olá | Pretendo ser aluno | Engenharia de Produção | EAD turno livre | Araraquara, SP
+Centro. 
+16992305839
+453359208-23
+01/04-1998"
+3a2db3dd-ff1f-4223-81fb-8a3a822be72a,CORRETO,F27:ticket guarda-chuva,F27,Boa tarde | Tenho o curso de Letras Português | E gostaria de fazer complementação em Inglês. | Gostaria de saber em relação a valores e o tempo. | Segunda graduação
+bd14081c-9d26-4203-a7c2-bead8b693a55,CORRETO,F27:ticket guarda-chuva,F27,"Bom dia, tudo bem? | Não sou aluno | Pós graduação em gestão estratégica em cooperativas | Referente a esse MBA? | ![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1773492665144_922694847212571.jpg)"
+3e8db2e4-d868-4582-83bb-f7f9048c7d46,CORRETO,F270:ticket guarda-chuva,F270,"Ola, bom dia | Eu queria saber quantos é a mensalidade do curso de educação física bacharelado | Semipresencial | Email: aniviaeriane@gmail.com 
+Bairro: monte hebron 
+Cidade: Uberlândia 
+Uf: centro | UF: Uberlândia, MG
+Cpf: 704.176.556-30 
+Data de nascimento: 20/04/2006
+Telefone: (34) 99217-6127"
+bdadb769-ef8a-4250-82d0-240970412369,CORRETO,F270:ticket guarda-chuva,F270,"Boa tarde , queria um mestrado na Uniube , fui aluna da faculdade ,preciso de informações por gentileza | Ah desculpe | Vou ver as informações aqui | Por enqto não , agradeço | Meu e-mail :estelact@hotmail.com"
+026fef4f-f790-4eb4-9717-f03e0b027444,CORRETO,F27:ticket guarda-chuva,F27,"Boa tarde | Oi | Pretendo voltar a ser aluno | Agronomia 
+112.379.816-89 
+28/10/2000
+Analauraalmeidasilva@gmail.com 
+34999903142 | Vestibular"
+afc67d01-9eca-419e-9141-93e34e648d31,CORRETO,F27:ticket guarda-chuva,F27,"Boa tarde!! | Quais os cursos ead disponíveis? | Moça, quando eu acesso o site e entro no curso que eu quero, pq fica escrito “transfira-se”? | Caloura e o curso é psicologia | Eu quero fazer primeiro a graduação, tem disponível?"
+d8c5ba09-46ef-4c8c-a28b-834245105a0e,CORRETO,F27:ticket guarda-chuva,F27,Boa tarde | Gostaria de saber se comigo fazer análise de aproveitamento de matérias | Pretendo ser aluno | Engenharia elétrica Uff e quero fazer engenharia de controle e automação aí. Essa análise eu preciso fazer a inscrição ou consigo antes de me inscrever | ![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1773434821384_1971888947063124.ogg)
+6ab2cd6f-763e-4933-9b16-12d5cfba2657,CORRETO,E461:email cadastrado-sem evidência | F270:ticket guarda-chuva,"E461,F270","Olá, boa tarde | Pretendo ser | Engenharia civil 
+16008394607
+pcsdo20215467@gmail com
+34 991062032
+31/03/2006 | Tenho sim, caso eu já tenha assinado o contrato e venha a ser aprovado p desconto de 50% pra mim os valores a partir do dia que eu for começar serão com o desconto??"
+007de84c-87da-4751-a1a3-f8dbbee4cfaf,CORRETO,F270:ticket guarda-chuva,F270,Boa tarde | Busco informações sobre a graduação de engenharia agronomia EAD. | Saberia me informar qual a diferença da engenharia agronômica da agronomia? | E sobre valores?
+735d634d-0fc6-49ce-a692-9265c696eea0,CORRETO,F27:ticket guarda-chuva | O74:mestrado/pós,"F27,O74",Boa noite | Não sou aluno | Pós graduação imaginologia presencial | biomed.rodovalho@gmail.com | 09363959660
+86a9714a-5e65-4e61-ab11-0e25cc2f35c8,CORRETO,F27:ticket guarda-chuva,F27,Unidade Araxá | Terá odontologia em Araxá? | Presencial ou semipresencial | Alexandramarianunes@hotmail.com | Graduação
+367ac7e5-53c8-452c-bbec-c6ece2ed11d3,CORRETO,F27:ticket guarda-chuva,F27,"Oi | Pretendo mas queria saber quanto sai o valor do curso de estética e cosmética. Não tem como eu fazer inscrição sem saber o valor que será cobrado, estou em duvida | nathyb481@gmail.com | quero saber os valores"
+bd40a427-1455-47ff-9eea-32cb0980c1a5,CORRETO,F27:ticket guarda-chuva,F27,Ola | Quero ser aluno | Psicológia | Qual valor da mensalidade
+f6b2b658-a97f-4c43-900a-7d9ddeb97033,CORRETO,F270:ticket guarda-chuva,F270,Oi boa tarde | Qual valor do curso direito? | Lá não informa valores | Ok | karolinyanny46@gmail.com
+ab1ff5db-fcea-40f2-a9c8-4bd148757c89,CORRETO,F27:ticket guarda-chuva,F27,Bom dia | Não | Quero fazer reconhecimento de diplomas estrangeiros pela plataforma Carolina Bori | Com vocês | Mestrado em Educação
+b6228d45-2129-4104-9877-089c4404db69,CORRETO,F27:ticket guarda-chuva,F27,"Oii boa tarde | sou aluna da unifran ( psicologia ) gostaria de saber sobre transferência | Uberaba noturno | Mariafernandacaliman63@gmail.com
+Maria Fernanda Caliman de Oliveira 
+48014238842
+21/02/2005 | Telefone 16981515484"
+3f20f834-853a-44a1-8fcb-8c011fdb2580,CORRETO,F270:ticket guarda-chuva,F270,"Olá, gostaria tirar uma dúvida sobre os valores de um curso | pretendo ser aluno | josegomes01023@gmail.com | geografia licenciatura | EAD"
+f63a130a-186c-4d07-90ad-c8a90d047bea,CORRETO,F27:ticket guarda-chuva,F27,"Olá | Quero fazer a pós graduação em história da arte | sallyelen95@gmail.com
+Lagoa da prata bairro cidade nova Minas Gerais"
+fda2f340-8cd5-4787-84a7-57457a738033,CORRETO,F27:ticket guarda-chuva,F27,"Oi | Pretendo ser aluno | Ead | Pedagogia | sabrinalimasilva2005@gmail.com
+066.651.399-64 
+02/12/1990
+44 99733 1886
+Maringa pr"
+7f73b97c-5e97-422d-862a-0886343f0526,CORRETO,F27:ticket guarda-chuva,F27,"Bom dia | Preciso saber informações sobre mestrado em
+Educação (ensino superior)"
+0d51fae1-a630-4654-ad0b-4b74b500cf12,CORRETO,F27:ticket guarda-chuva | O74:mestrado/pós-sem evidência,"F27,O74","Bom dia | você pode me dar mais informações sobre o início de algumas Pós Ao Vivo? | encaminho seu atendimento para o setor de atendimento | MBA em Gestão Comercial, Negociação e Inteligência de Mercado | sportjrv@hotmail.com"
+da4adaa6-f6e5-4d11-82ff-74c4eb9cc8fe,CORRETO,F270:ticket guarda-chuva,F270,Eu quero saber o valor do curso de engenharia de produção | Presencial noturno Uberlândia
+e40de7a7-2034-4e81-8ca8-ec381152cd53,CORRETO,F27:ticket guarda-chuva,F27,"Boa noite, td bem | Pretendo ser aluno | Engenharia mecânica | Qual eo valor ?"
+c59acd04-10ec-4f0c-b380-971a746acbd7,CORRETO,F27:ticket guarda-chuva,F27,"Bom dia | Pretendo ser | Especialização em Terapia Familiar e de Casal
+Lylyaretiro@hotmail.com 
+04050082527
+10011989
+75981442324 | Riachão do jacuipe- Bahia | Especialização"
+ed2878dc-1c8a-4ed9-a033-867a7e230bc6,CORRETO,F270:ticket guarda-chuva,F270,boa tarde! bem? consigo me matricular sem meu histórico escolar da outra faculdade? | é para fazer a inscrição? precisa do histórico escolar também? ou posso mandar depois | para fazer uma nova inscrição precisa do histórico escolar? | 2 graduação
+a582b9a3-058c-4c39-ac3a-82d7c5563a68,CORRETO,F27:ticket guarda-chuva,F27,"Olá, gostaria tirar uma dúvida sobre os valores de um curso | Engenharia de produção"
+bb80e3c2-c188-4131-9bd6-b06516583480,CORRETO,F27:ticket guarda-chuva,F27,Boa tarde | Gostaria de saber mais informações sobre os cursos de mestrado | Mestrado em clínica odontológica
+7aec7cba-04be-4ce7-85ba-105b81ab0fe8,CORRETO,F270:ticket guarda-chuva,F270,"Olá boa tarde | Pós graduação em gerontologia na fisioterapia | Na pós EAD em fisioterapia tem para quais cursos? | Essa especialização em fisio em geriatria e gerontologia, está sendo ofertada? | Londrina PR 
+fernandabd.santos1@gmail.com"
+4d3179bb-aea4-40a2-98dc-d32f11252c85,CORRETO,F27:ticket guarda-chuva,F27,Boa tarde | Vcs possuem medicina. Veterinária ? | Pretendo estudar | Medicina veterinária | Semi presencial
+96ab4ab7-beaa-4a5a-bc05-57af7efca949,CORRETO,F27:ticket guarda-chuva | O74:mestrado/pós-sem evidência,"F27,O74","Olá | Pretendo ser aluno, quero saber informações sobre a matrícula e mensalidade do curso de nutrição | Quero informações de forma detalhada sobre valores | Presencial
+Uberlândia | Qualquer polo
+Noturno"
+21083ff0-cf77-4da3-b822-26b46e226832,CORRETO,F27:ticket guarda-chuva,F27,"Olá, gostaria tirar uma dúvida sobre os valores de um cursoz | Nutrição - EAD | Uberlândia, polo Centro"
+12af4085-ec62-40e7-8d30-42c44700fae7,CORRETO,F27:ticket guarda-chuva,F27,bom dia | Pretendo ser aluno da Pós graduação | Georreferenciamento de imóveis | isabelymartins_16@hotmail.com | Ao vivo
+d1a79dda-0991-4ef5-93fd-6adb087fe5c8,ERRADO,F27:ticket guarda-chuva-sem evidência,F27,"Olá, boa tarde | Pretendo ser | Gostaria de saber mais sobre o curso biomedicina"
+104d1a64-fc68-418c-980d-ab8a0e1d5197,ERRADO,F27:ticket guarda-chuva-sem evidência,F27,boa tarde | gostaria de tirar uma dúvida sobre a matrícula. | não sou aluna.
+4405d31a-64ea-4d9a-9fa9-4c3006c3a2aa,ERRADO,F27:ticket guarda-chuva-sem evidência,F27,"Olá, boa tarde | Tenho interesse em fazer assistência social EAD, poderia me explicar mais sobre? | Não"
+ce0d836d-b694-49ed-83a6-811bb5695959,ERRADO,O74:mestrado/pós-sem evidência,O74,Bom dia | Sou aluno | Mas pretendo fazer outro curso | Ainda não sou aluno | Nutrição
+d85e1ab7-9afa-4610-b236-fdcb8ec0fa9d,ERRADO,W25:acesso/login-sem evidência,W25,"Transferência | Pretendo ser | Ciências biológicas licenciatura 
+anajuneri1@gmail.com | Quebra Castanha - Prados - Minas Gerais | Ana Júlia de Oliveira Neri 
+023.140.496-40 
+32 99848-6881 
+25/03/2005
+Transferência"
+2a7a3f06-09e6-430e-a31b-8e7717794040,ERRADO,F27:ticket guarda-chuva-sem evidência,F27,"Boa noite, tudo bem? | Pretendo ser | MBA em gestão da construção civil"
+48a4aa13-ca28-4a9d-9e1e-ec23395180e3,ERRADO,W25:acesso/login-sem evidência,W25,"Boa tarde | Não sou aluna | Pretendo | Urgência e emergência 
+marcia12021987@ gmail.
+com 
+CPF 07715410667
+28/12 /1983 
+34 999066192 | Sacramento Mg"
+a85b3955-5cff-4690-af1c-d900b09fad1a,ERRADO,O74:mestrado/pós-sem evidência,O74,"oi | quero falar com humano | sou jornalista, quero o contato da assessoria de imprensa de vocês | sim"
+b345738d-4898-42e3-ae5a-1440fd22c006,ERRADO,W25:acesso/login-sem evidência,W25,"Ola | Pretendo | Pedagogia 
+vitoriagrau00@gmail.com 
+09939686609 
+11042006 | Semipresencial campus
+Enem | Aceito 
+34997986099"
+062931fd-842e-46e3-8957-dbaf71afa55d,ERRADO,O24:valor/mensalidade-sem evidência,O24,"olá | gostaria de saber como
+anda o andamento do minha solicitação de modalidade | sou aluna"
+a3cb3050-ce83-49fb-b460-6098de14e048,ERRADO,O242:valor/mensalidade-sem evidência,O242,"Oi | Pretendo | Engenharia civil EAD turno livre | 131.627.527-28
+elbermartinsfiscal.seduma@gmail.com 
+27998157228
+01/11/1988 | Colatina espírito santo"
+df219989-5ff0-49a8-9d7b-e46f00aede7a,ERRADO,O74:mestrado/pós-sem evidência,O74,"Bom dia, 
+Tenho a graduação em GESTÃO DE RH na UNIUBE. Poderia me dizer exatamente quais disciplinas é possivel aproveitar nas seguintes graduações:
+Técnologia da Informação, Ciência de Dados e Analise e Desenvolvimento de Sistemas. 
+Em quanto tempo conseguiria termidar cada curso?
+Qual a carga horaria de cada um no total com aproveitamento, e se no novo diploma a carga horária aparece integral mesmo com o aprovoveitamento.
+Desde já agradeço. | se te enviar a grade consegue analisar? | preciso decidir entre TECNOLOGIA DA INFORMAÇÃO E CIENCIA DE DADOS![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1773497520975_1652034849284625.pdf) | Po de verificar agora? | ![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1773497796408_4368603129953009.jpg)"
+0a9c1c98-a687-44bb-a1e0-c2ab05e273b4,ERRADO,F27:ticket guarda-chuva-sem evidência,F27,"Boa tarde | Pretendo | Técnico em administração 
+12881256660
+Polly.a.borges@gmail.com 
+34 99893-4927 
+06/12/1995 | Polo ramid mauad"
+66cb8aca-826e-42a5-b342-ea7c9a6a26d4,ERRADO,E46:email cadastrado-sem evidência,E46,Olá | Gostaria de saber mais sobre o curso de estética | Não sou aluna | Vestibular on-line | danielacipriano.cipriano089@gmail.com
+bd40201f-8837-46fd-bd35-335e6c0cef21,ERRADO,F27:ticket guarda-chuva-sem evidência,F27,"Olá, bom dia. | Eu comecei o processo de matrícula e fiz a redação, mas fiz o cadastro com um e-mail e perdi o acesso a ele. E agora pra finalizar a matrícula prévia do código que é enviado nesse e-mail mas tá sem acesso. Você poderia alterar meu email, por favor. | Ok. | Só sobre a matrícula mesmo, por enquanto."
+8f36e8c3-5c48-4356-bdec-0508608e256e,ERRADO,F270:ticket guarda-chuva-sem evidência,F270,"Boa tarde, gostaria do atestado de matrícula por favor. | Me matriculei hoje."
+921bb4e6-d2fe-4263-9c78-4b8fc887df54,ERRADO,O74:mestrado/pós-sem evidência,O74,"olá, Jacqueline. Tudo bem? Precisava de uma informação | na verdade, estou auxiliando minha namorada. ela era acadêmica do último semestre de ciências biológicas. Está em busca de transferência. Queríamos ver a análise de dois cursos (análise de aproveitamento). Como fazemos? | então temos que fazer a inscrição em ambos os cursos e anexar? mas caso não seja proveitoso, como é feito o cancelamento? ou não há? o que há é uma pré matrícula? | falar com atendimento humano | não"
+1d75552d-d108-4fc5-8cc0-27926ddd12cc,ERRADO,F27:ticket guarda-chuva-sem evidência | O24:valor/mensalidade-sem evidência,"F27,O24","Boa tarde, nao estou conseguindo fazer a matrícula | Poderia me ajudar | Eu ja fui aluno mas precisei parar, ai quero retorna | Gestao do agronegócio 
+Uanderson_figueiredo@hotmail.com | Ok entao vou ligar la pq no whats do sae nao resolvem"
+e8e95d17-c9c1-4a07-ab11-1be280ff762e,ERRADO,F270:ticket guarda-chuva-sem evidência,F270,Olá bom diaa | Pretendo ser aluno | Sou portadora de diploma gostaria de verificar uma segunda graduacao | Em matemática | 064 910 726 81
+c5459376-0591-40e8-8cc7-661e284c2013,ERRADO,F27:ticket guarda-chuva-sem evidência,F27,"Oi | Pretendo ser aluno | Pedagogia 
+ataidevs400@gmail.com
+60766158268
+13/07/1975
+91993948245
+Aceito | A distância | Belém Pará"
+1117e751-54e9-4177-9637-e0509587b421,ERRADO,F27:ticket guarda-chuva-sem evidência,F27,"Bom dia | Pretendo ser aluno | Fisioterapia Ead ou semi presencial 
+Yasminpessoal1995@outlook.com
+125.203.296.02 | Primeira graduação 
+Ead 34984190420
+07/02/1995
+Uberaba 
+Maracana 
+Uberaba MG | Curso novo"
+ea2656bb-95ea-4c64-9008-19eabcecc471,ERRADO,W25:acesso/login-sem evidência,W25,"Boa noite | Pretendo ser | Engenharia de produção 
+03465059255
+94991751584
+14/12/1996 | Aceito"
+9b7259e8-3b68-427d-b3e5-138243a8447e,ERRADO,O744:mestrado/pós-sem evidência,O744,"Boa noite | Quero fazer transferência da minha faculdade atual | Para vocês | Engenharia de controle e automação 
+pedrosobral.pl83@outlook.com
+15129263618
+28/08/2001 
+31995489612 | Graduação 
+Transferência 
+EAD 
+Campus mais próximo"
+ab0e9c4e-4a83-4af3-b712-b478596007b8,ERRADO,O74:mestrado/pós-sem evidência,O74,"Bom dia | Pretendo ser | Licenciatura em Matemática
+09073079659
+28/05/1989
+wtsmorais.25@gmail.com | Graduação | Licenciatura — Matemático— Semipresencial (Polos) - turno livre | A uniube tem parceria com a cesc cursos?"
+a4312251-4015-49ca-8b83-51bdce70cbaf,ERRADO,O74:mestrado/pós-sem evidência,O74,Oi | Tem direito | Em mooc | No futuro | Me manda o zaap da unidade de Uberlândia
+e279f8a8-903d-4478-a609-fe86eeeaaa18,ERRADO,W25:acesso/login-sem evidência,W25,"❤️ | 🙏 | Os cursos de administração públicas e Ciências biológicas bacharelado por gentileza¿ | Aqui em Goiânia, | EAD"
+e3da690f-0959-4479-8c78-73e2bfe6acb0,ERRADO,O24:valor/mensalidade-sem evidência,O24,"oi boa tarde | eu estou mandando os documentos em PDF mas nao está enviando | tem que ligar? nao conseguem me ajudar no zap? | se eu for no polo da uniube eles conseguem me ajudar a enviar? mas eu digo na prática | Então eu posso levar todos os documentos que pedem, tanto os que eu tenho fisicamente e os digitais que eles me ajudam a enviar?"
+487ad7d7-e312-41d7-aca8-9cde85d3556c,ERRADO,F27:ticket guarda-chuva-sem evidência,F27,Oi | Boa tarde | Curso | Quem sim | Licentura matemática
+55d9e6a1-bcf0-4499-b23a-be0df7fdf984,ERRADO,F27:ticket guarda-chuva-sem evidência,F27,preciso de ajuda | quero reabrir a matricula para concluir meu curso | fazer nova inscrição | geografia | 10331729792
+3d80c176-d704-4714-8e40-a1e36a0da13e,ERRADO,O74:mestrado/pós-sem evidência,O74,Boa tarde | Preciso entrar em contato com a Juliana | Sou aluno
+b20faee5-cd21-4d97-824a-6abccd541d69,ERRADO,O74:mestrado/pós-sem evidência,O74,Bom dia! | Pretendo ser | Engenharia elétrica EAD | Patos de Minas MG | Bairro caiçara
+24d21176-7841-4e4f-8111-e159c917af6c,ERRADO,F270:ticket guarda-chuva-sem evidência | O242:valor/mensalidade-sem evidência,"F270,O242",Olá boa noite | Como faço para matricular pq tenho que pagar 99 reais | 10/08/2007 | Ok obrigado
+b68f814c-e7d4-49a2-ae9c-0717dd310c08,ERRADO,F27:ticket guarda-chuva-sem evidência,F27,Bom dia | Pretendo | Vocês ofertam disciplina isoladas? | São whats esses números? | Melhoramento genético de plantas
+8d65fdfb-c40b-427c-adc5-0fd614e4f67a,ERRADO,O74:mestrado/pós-sem evidência,O74,Oi bom dia tudo bem? | Gostaria de falar com algum representante
+ec19617d-7fc7-4352-9fcc-a4cd44d35b6a,ERRADO,F27:ticket guarda-chuva-sem evidência,F27,"Ola boa noite tudo bem? | Estou me matriculando para o curso de Educação física | Semi presencial | Adenizia de Paula Gonçalves 
+07517975617
+25/04/1979
+adeniziadepaula25@gmail.com 
+Educação física 
+Já sim a mais de 11 anos | Semi presencial (Polos) turno Livre"
+8440a64a-5de3-4028-b758-700e24a494d6,ERRADO,O24:valor/mensalidade-sem evidência,O24,Opa bom dia | ?? | Ainda estou aguardando minha solicitação pra entrar | 13995194680 | Sim
+6714e647-7273-4913-97a7-c23d9f39464d,ERRADO,F270:ticket guarda-chuva-sem evidência,F270,Quero saber mais sobre o meu ingresso enem e online semi presencial campus 2026.2
+ea804ee8-2625-43b7-9a91-64ddcb2872fe,ERRADO,W25:acesso/login-sem evidência,W25,Boa noite | Pretendo | Veterinária
+330690ec-6ba8-43a6-90d1-c59861222fa8,ERRADO,F270:ticket guarda-chuva-sem evidência,F270,"Boa noite | Pretendo ser aluno | Ciências biológica 
+07192201650
+09/01/1986
+taniaewillian@gmail.com"
+b0a5f4f0-8cb1-45da-9b59-59d9c0877af8,ERRADO,O74:mestrado/pós-sem evidência,O74,"Boa tarde | Pretendo | Biomedicina, matéria isoladas | Quero cursar algumas disciplinas avulsas | Aluno especial"
+e62d9a75-7b01-4b14-a5a6-4183b71ab9fb,ERRADO,W25:acesso/login-sem evidência,W25,Tem técnico em enfermagem ai | Curso técnico em enfermagem tem ai | Não vou matrícula sem saber sobre o curso técnico em enfermagem | Presencial Uberlândia MG | anoite
+5c216d7f-ab46-4128-9fb0-1a0e85f6c4ba,ERRADO,F27:ticket guarda-chuva-sem evidência,F27,Oi | Quero ser
+65e1368b-21be-483a-92da-172fe5b0b67e,ERRADO,F27:ticket guarda-chuva-sem evidência,F27,"Oi | Já realizei a inscrição | Pedagogia | kariinacomercial@gmal.com | 32116793831
+Graduação 
+Transferência 
+São Paulo SP"
+9728894d-188d-4c6c-b98c-53de76d4f16d,ERRADO,O242:valor/mensalidade-sem evidência,O242,Boa noite | Estou com dificuldade para copiar o código de pagamento da minha matrícula | Está falando q é privado
+404754b9-1208-4fa2-a601-c5901225b11e,ERRADO,O242:valor/mensalidade-sem evidência | W253:acesso/login-sem evidência,"O242,W253","Olá! Fiz minha pré-matrícula em um curso com vocês! Arquitetura e urbanismo. Mas eu já sou aluna do Ead... quero cancelar meu curso no ead e fazer apenas esse presencial noturmo. Mas estou em uma tela aqui esperando receber um token e ele não chega. | Vestibular on-line 
+Meu e-mail: ribeiroanaclararocha@gmail.com | 15033531689
+34999840338
+17/06/2002 | Ficou não! | Mas eu já fiz esse passo a passo pelo link e já fui aprovada! Já fiz a prova on-line"
+b89e7323-6528-4f38-b921-b19e30d8bf90,ERRADO,O744:mestrado/pós-sem evidência,O744,"oi boa tarde | Falo com a faculdade UNIUBE ? | de Goiânia | Setor Jardim presidente 
+GO 
+Ciencias contabies 
+thuanycavalcante213@gmail.com | Preciso falar com um atendente"
+907d684f-083b-4b60-b293-ef4997d8f6f1,ERRADO,O744:mestrado/pós-sem evidência,O744,"falar com atendente | mhnegocios2023@gmail.com | CPF 05726290100
+TELEFONE 66984512989
+DATA NASCIMENTO 09/09/1995 | MATICULANDO NO CURSO EAD DEPOIS EU CONSIGO MUDAR PARA PRESENCIAL"
+fc21c0fa-b001-44de-84f8-ee106037e7fd,ERRADO,O74:mestrado/pós-sem evidência,O74,Boa tarde | Pretendo ser | Psicologia | Falar com atendente | Uberlândia Noturno
+634fd7ce-c8f5-4812-8501-b2a9764c3203,ERRADO,F27:ticket guarda-chuva-sem evidência,F27,"Olá bom dia! | Pretendo ser aluno | Engenharia química 
+Igorborgesaraujo2020@gmail.com
+15133845626
+18092004
+34992079157 | Semipresencial 
+Vestibular | Araguari rua Antônio Lopes da Silva Mg"
+c8047bcb-c008-4e6c-86df-e59a550fced2,ERRADO,O74:mestrado/pós-sem evidência,O74,"Olá | Pretendo ser | Engenharia Química 
+natsouza2002@gmail.com
+11954974979 | Falar com atendente"
+f0facacb-a9d4-4ccc-9103-0b03f9503b75,ERRADO,O74:mestrado/pós-sem evidência,O74,"Olá | Pretendo ser aluno | Ead 
+Engenharia de produção | Bairro Cabral 
+Contagem, Minas Gerais | Lucassilvatrindade99@gmail.com
+137.151.326-04
+31999230386
+26/10/2000"
+718d7b8e-aba5-43ed-b3de-90e2caff9068,ERRADO,O74:mestrado/pós-sem evidência,O74,Oiii | Tudo bem | ![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1772643729360_1475514727625948.jpg) | Estou procurando atendimento nesse local | Psicologico
+d05f65e5-09c4-4803-ad1d-426d6a5b73cc,ERRADO,O242:valor/mensalidade-sem evidência,O242,Tarde | Olá boa tarfe
+156af162-78ec-426d-b08a-91aa90afbfe7,ERRADO,W25:acesso/login-sem evidência,W25,https://gauib.cn/suxweaad/2583274733380626917488cd08
+5395ca5d-74f9-49e4-831c-77018a157db2,ERRADO,W25:acesso/login-sem evidência,W25,"Bom dia tudo bem? | Curso de engenharia civil vocês tem EAD? | Sou formada em Adm | Eliminaria algumas disciplinas? | Sim, Uberlândia - mg, moro no Tubalina 
+rayanerezendeap@gmail.com
+Quero mais informações a respeito"
+00975017-8b71-4369-b467-507d3cef6f71,ERRADO,O744:mestrado/pós-sem evidência,O744,"Olá | Sou ex aluna e gostaria de retornar | Letras (português/inglês ead)
+13157842625
+02/11/1999
+carolinaand7@gmail.com
+34997712412 | *Graduação (Licenciatura) - Letras-Português e Inglês - Licenciatura* (*EAD*, turno *Livre*) | Falar com atendente"
+59c5c685-450e-4ee5-a438-c40c2f340c95,ERRADO,O744:mestrado/pós-sem evidência,O744,"Olá | Boa tarde! Estou bem e com você? | Letícia, o curso de fonoaudiologia, eu consigo fazer estando em Atibaia SP? | Sim, mas poderia ser semipresencial em Atibaia SP | Muito obrigada!"
+e4790e49-63ec-4966-8933-1a350dd10b8a,ERRADO,F27:ticket guarda-chuva-sem evidência | W25:acesso/login-sem evidência,"F27,W25","Ola | Pretendo ser aluno | Curso :Agronomia 
+Mariotokamilla@gmail.com 
+CPF:18584652655
+Telefone:3496888459
+Data de nascimento:08/02/2006 | Início da faculdade | Kamilla Marioto *"
+6983dc47-97ff-48d8-a5d8-905ad7ceb879,ERRADO,O24:valor/mensalidade-sem evidência,O24,Boa tarde | Estou com problemas para pagamento da matrícula via pix
+9a0be66d-4ba8-4c08-8acb-d1f4b7dcf57f,ERRADO,O744:mestrado/pós-sem evidência,O744,"Bom dia | Ola | Eu cursei sistemas de informação inicialmente na Uniube e dps fiz transferência pra UFU, tenho aqui o histórico escolar de ambas faculdades, com as matérias que cursei cada uma. 
+Agora eu gostaria de ver de voltar para a uni no curso de sistemas de informação, porém na modalidade EAD
+Mas antes eu gostaria de ver, fazendo a inscrição, primeiro quantas matérias eu consigo cortar ao ingressar novamente na Uniube, para que eu consiga ter uma média de quanto tempo ainda faltaria para formar | Moro no Santa Monica em Uberlandia, Minas Gerais
+CPF: 02273593643
+Email: gabriel.misao08@gmail.com
+Telefone: 34998275292
+Nascimento: 08/11/2000
+Sim, aceito prosseguir com a inscrição | Transferência"
+2c66f2c6-c8f5-453a-8a6d-ce8b953aba64,ERRADO,F27:ticket guarda-chuva-sem evidência,F27,"Olá | Não sou aluno | Engenharia civil 
+isadorasilvafelix123456@gmail.com | Presencial Uberlândia"
+1d99c0c0-7531-4dda-aeed-ec40272a5f6e,ERRADO,O74:mestrado/pós-sem evidência,O74,Olá | Pretensão de ser | Falar com atendimento humano | Não
+8f879980-024a-4556-b9fd-2a18b86038b6,ERRADO,O744:mestrado/pós-sem evidência,O744,"Olá | Pretendo ser aluno | Gestão de Recursos humanos
+frantierrepabloperes@gmail.com
+70594116155
+18/03/1999 | Ead | Fala com atendente"
+6492b608-cd44-46ac-a2b1-0696aeae6777,ERRADO,W25:acesso/login-sem evidência,W25,Boa tarde. | Licenciatura ou bacharelado | Ead | rjslourdes@gmail.com | Poderia me tirar uma dúvida?
+4c4c4611-ef03-44a3-9f8d-4930251275e2,ERRADO,E461:email cadastrado-sem evidência,E461,Boa tarde | Olá | Gostaria de saber o porque a bolsa não foi validada | Tem como eu entender | Educação física matutino
+63d40ecf-02e3-4987-8681-18de9748d8dc,ERRADO,O744:mestrado/pós-sem evidência,O744,Boa tarde | Falar com um atendente. | Não.
+2a11b892-84f5-4948-a635-6138a8d7cd82,ERRADO,F27:ticket guarda-chuva-sem evidência,F27,"Boa noite! | Tenho pretensão em ser aluno. | Técnico em segurança do trabalho.
+CPF : 111.600.67406
+Imail : phylypejonas@gmail.com
+Fone: 349926195933
+Nascido : 15/08/1991 | Infelizmente não tenho interesse em outro curso que não seja o técnico em segurança do trabalho. | Nenhuma dúvida. Agradecido pela atenção."
+4a35cceb-1421-446b-b7de-bea8f8c968c7,ERRADO,F27:ticket guarda-chuva-sem evidência | W25:acesso/login-sem evidência,"F27,W25","Boa tarde | Sabe me dizer a minha sala do curso Arquitetura e urbanismo??? | Vestibular online. 
+164.680.716-23 
+Bacharelado | av136055@gmail.com 
+(34) 999073605 | 23/08/2005"
+b5bbf6cd-bbcb-44a6-a3ea-100745690e50,ERRADO,O74:mestrado/pós-sem evidência,O74,"Boa tarde | Gostaria de saber sobre a graduação acelerada em pedagogia, por favor | Quero ser alina | Aluna | Semi presencial"
+a1d94aa0-42cf-46fd-803d-36a289e8375c,ERRADO,O744:mestrado/pós-sem evidência,O744,Boa tarde | Estou perguntando de ajuda | gostaria de falar com alguém ou um atendente
+eca655e4-cfd8-47ba-a434-4d38a30f9796,ERRADO,O74:mestrado/pós-sem evidência,O74,Oii | Pretendo ser aluno | Quero falar com atendente
+0424b90d-0123-4724-9794-9bac40e9ce20,ERRADO,F27:ticket guarda-chuva-sem evidência,F27,Oi | Vocês colocaram minha matrícula para presencial??? | Eu fiz para semi presencial | Não presencial | Eu já paguei a matrícula
+40b53332-98e5-4309-935f-139b0d525879,ERRADO,O74:mestrado/pós-sem evidência,O74,boa tarde | pretendo fazer nova graduacao | sim ja sou graduado e pos graduado quero na parte de engenharia de ia | humano | quero falar com humano
+6b864f63-4f93-4d87-8771-b6a36fd7bba4,ERRADO,F27:ticket guarda-chuva-sem evidência,F27,Bom dia | Tudo bem | ?? | Não sou aluno | Psicologia
+d4cdade3-47ac-4795-833f-3609ffdb4684,ERRADO,E46:email cadastrado-sem evidência,E46,"boa tarde | pretendo ser | psicologia 
+42055472852 | noturno em Uberaba | marianacucato@hotmail.com 
+11/11/1997
+vestibular online"
+ec00584d-c9ae-4164-a7f2-501b06463407,ERRADO,O242:valor/mensalidade-sem evidência,O242,OLA | NÃO ESTOU CONSEGUINDO FINALIZAR A INSCRIÇÃO PARA VESTIBULAR MEDICINA | PRETENDO SER ALUNO | otavio@gaia.ind.br
+8e785763-bade-4c73-97d5-77389f28ec43,ERRADO,O242:valor/mensalidade-sem evidência,O242,Bom dia | A unidade de Uberlândia é aberta em qual momento para tirar dúvidas? | E como funciona o vestibular de vocês?
+c7fca039-79e5-4062-a4cc-d08c8da52752,ERRADO,O74:mestrado/pós-sem evidência,O74,"Bom dia | Pretendo | Preciso de conversar com um atendente | Preciso de informações pois vai ser transferência de outra universidade, já estou no quinto período | Ciência da computação ead"
+a1b26b11-f0df-4322-bed1-e846bcd8f6c7,ERRADO,O74:mestrado/pós-sem evidência,O74,Ola | pretendo ser | agronomia | ead | Jardim America Goiania GO
+d0d8d4d0-5a6b-4cd9-9c1e-2446c9b1fc58,ERRADO,F27:ticket guarda-chuva-sem evidência | W25:acesso/login-sem evidência,"F27,W25","Boa Noite ! | pretendo ser | -Psicologia
+hamiltoncesar1964@hotmail.com
+037.128.478-31
+. | 34-99866-1691
+05/03/1964 | Hamilton Cesar Wanderley
+Uberaba
+Noturno"
+1589ef0b-ff0e-4689-9abd-36ea052144f1,ERRADO,W25:acesso/login-sem evidência,W25,"Oi, tudo bem? | Pretendo ser aluno | Educação física bacharelado 
+15808775671
+maria987868@gmail.com 
+01/06/2007 | Eu consigo fazer matrícula pela transferência? | Por exemplo, eu consegui bolsa pelo ProUni de 100% eu consigo fazer a transferência pra essa faculdade?"
+5017120e-7a71-4519-8fd9-c2a2762fd4b1,ERRADO,W25:acesso/login-sem evidência,W25,"Olá | Boa tarde | Pretendo ser aluna | Educação Física bacharelado 
+121.030.286-19
+26/05/1995
+izaa.cristtina@hotmail.com
+34.99105-3589 | Sim . 
+Semi presencial"
+d8f80f99-3a3c-436f-9f11-652e9094a9af,ERRADO,F270:ticket guarda-chuva-sem evidência,F270,"Boa Tarde | Pretendo ser aluno | Engenheira Mecânica 
+barbaruivat@gmail.com 
+09912504607
+35 992261083
+15051988"
+8848a41d-c1aa-40dd-b65f-6eca683c9e54,ERRADO,O24:valor/mensalidade-sem evidência,O24,Boa noite | Nao estou conseguindo realizar a matrícula
+ae42818a-2e41-4066-b0b1-20ed7ce8728f,ERRADO,W25:acesso/login-sem evidência,W25,"Boa tarde! Tudo bem?! 
+Gostaria de saber como funciona para eu pedir transferência para a faculdade Uniube | Administração EAD | Guará SP | É mai perto de Uberaba | Flávia Ramos Cravo 
+18/01/2006 
+45971843842 
+16991159954 
+flaviaramo2903@gmail.com"
+c90b6431-90be-4800-ae6b-e9d84a60f41f,ERRADO,O744:mestrado/pós-sem evidência,O744,oi | pretendo | analise desenvolvimento de sistemas carolinarodriguespereira21@gmail.com | falar com atendente
+510c850b-885f-425d-8b38-56c9eea87c11,ERRADO,F27:ticket guarda-chuva-sem evidência,F27,"Oi | Pretendo ser | Pedagogia 
+lauramayannamps18@gmail.com | *Graduação em Pedagogia (Licenciatura) – Semipresencial (Polos)* | *Turno livre* | 15796674650
+23/03/2004
+32998404157
+Enem 
+Sim"
+cf34b51c-e3c7-4c4a-bf2a-dd2339e4827a,ERRADO,W25:acesso/login-sem evidência,W25,"Boa tarde, tem curso de logística ?"
+2bf34e3e-3c79-4db4-9fde-ead2d4cd87e2,ERRADO,F27:ticket guarda-chuva-sem evidência,F27,"Olá boa tarde | Quero iniciar agronomia | EAD
+Rogerio Mendonça de Souza 
+128.229.166-16 
+rogeriodkss@gmail.com 
+34999690818
+23/04/1997
+Ensino médio completo | Bairro progresso 
+Cidade de Frutal 
+Minas Gerais | Não"
+59742f7d-568c-4938-b1cc-00de8fa6faea,ERRADO,F27:ticket guarda-chuva-sem evidência,F27,"Ola | Pretendo ser aluno | Sistemas de Informação EAD | Quero tirar algumas duvidas antes | Eu já curso na UFU, quero ir como transferencia e cortar matérias, como posso ver as matérias que da pra cortar e saber o tempo pra eu finalizar a faculdade"
+4847b874-4f25-4c8c-a392-91ab835dee79,ERRADO,O242:valor/mensalidade-sem evidência,O242,"Bom dia,ja paguei o boleto,qual o próximo passo? | Psicologia"
+35b92d34-bf1b-4dfb-855b-bab0810d05a5,ERRADO,W25:acesso/login-sem evidência,W25,"Bom dia | queria informações sobre o curso de agronomia mais proxximo de mim
+cep 38785000 | Lagamar-MG | Agronomia EAD Bacharelado | Centro"
+3ff59d38-57d3-4714-b8c1-66bffff692ac,ERRADO,O24:valor/mensalidade-sem evidência,O24,Bom dia | Pretendo | Ser aluno | Quero apenas pagar a matrícula | ricbrutosistematico@gmail.com
+e7fb8d15-19c8-4e5b-a2df-0c1d4aa26eea,ERRADO,E461:email cadastrado-sem evidência,E461,"Bom dia, tudo bem? | Qual o proximo passo?![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1774437208391_960400649777584.jpg) | soussvitoria12@gmail.com"
+5b586812-3461-4a65-b434-b6577d701d8d,ERRADO,W25:acesso/login-sem evidência,W25,"Boa tarde | Pretendo ser | Presencial 
+Biomedicina 
+Jaiane Araújo Mendes da Silva 
+07/04/2002 | 159.023.056-67 cpf"
+32362f8a-50d7-4924-995f-985458621c78,ERRADO,F270:ticket guarda-chuva-sem evidência,F270,"Boa tarde | Queria fazer como faço para fazer curso de agro | Uberlândia vila Gávea noturno 
+Rayssa Gabriele de Souza Silva 
+70147368685
+10/02/2009
+rayssagabriele2009@gmail.com
+34997122466 | Como funciona ? | Vestibular on-line"
+52852072-02e9-464b-b454-6609c3c2e740,ERRADO,O242:valor/mensalidade-sem evidência,O242,Olá | Pretendo ser um aluno | Já fiz a inscrição | Medicina veterinária grande porte | Eu fiz a inscrição dessa presencial integral campus aeroporto
+56c41f88-918a-4d51-8489-9679e999544d,ERRADO,O24:valor/mensalidade-sem evidência,O24,"Boa tarde | Aluno pós | Letícia, estou fazendo a inscrição agora | Eu queira o boleto | Queria *"
+231996b2-ef4b-4d0f-b48e-6281f53d9962,ERRADO,O74:mestrado/pós-sem evidência,O74,"Boa tarde! Vcs tem o curso superior em estética | Vc tem somente presencial? Ou teria o semi presencial? | Segunda graduação | elianefreitasunipro@gmail.com 
+86327976620
+20/07)1972 | Não quero 100% presencial"
+d77dc9d4-e783-4221-850b-8e47714e46eb,ERRADO,F27:ticket guarda-chuva-sem evidência | O24:valor/mensalidade-sem evidência,"F27,O24","Boa tarde! Tentei fazer o pagamento da matrícula, porém expirou o QR Code do Pix | Cm faço agr? | N achei a opção de gerar um novo QR Code pelo portal do candidato | victorhugocghcarvalho@gmail.com educação física"

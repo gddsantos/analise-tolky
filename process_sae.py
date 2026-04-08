@@ -23,11 +23,8 @@ def jparse(x):
     if x is None: return None
     if isinstance(x, float): return None
     if isinstance(x, (dict, list)): return x
-    s = str(x)
-    try: return json.loads(s)
-    except Exception:
-        try: return ast.literal_eval(s)
-        except Exception: return None
+    try: return json.loads(str(x))
+    except Exception: return None
 
 SAE_CODES = {"D71", "N43", "D710"}
 # unused placeholder kept
@@ -197,9 +194,21 @@ def main():
                 if not isinstance(item, dict): continue
                 caller = (item.get("caller") or "").lower()
                 if "createassistantresponse" not in caller: continue
-                blob = json.dumps(item, ensure_ascii=False)
-                if "<realtime>" in blob and SAE_INJECT_MARK.search(blob):
-                    st["injected"] = True
+                pl = jparse(item.get("payload") or "")
+                if not isinstance(pl, dict): continue
+                for m in pl.get("messages", []):
+                    if not isinstance(m, dict): continue
+                    if m.get("role") != "system": continue
+                    c = m.get("content", "")
+                    if not isinstance(c, str): continue
+                    # Só conta como injetado se o marcador SAE está DENTRO de <realtime>
+                    for rt in re.findall(r"<realtime>(.*?)</realtime>", c, re.S):
+                        if SAE_INJECT_MARK.search(rt):
+                            st["injected"] = True
+                            break
+                    if st["injected"]:
+                        break
+                if st["injected"]:
                     break
 
         for t in st["ia_msgs"]:

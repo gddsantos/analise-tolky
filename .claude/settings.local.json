@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__plugin_context-mode_context-mode__ctx_execute",
+      "mcp__plugin_context-mode_context-mode__ctx_search",
+      "Bash(pip install:*)",
+      "Bash(where streamlit:*)",
+      "Bash(streamlit run:*)",
+      "Bash(gh --version)",
+      "Bash(gh repo:*)",
+      "Bash(railway:*)",
+      "Bash(pip show:*)",
+      "Bash(huggingface-cli whoami:*)",
+      "Bash(gh api:*)"
+    ]
+  }
+}

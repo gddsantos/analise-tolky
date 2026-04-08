@@ -1,0 +1,200 @@
+id,clf,manual,nota
+d77dc9d4,ERRADO,ERRADO,pix expirado nao e criterio
+ed2878dc,CORRETO,ERRADO,historico escolar 2grad sem criterio
+63d40ecf,ERRADO,ERRADO,falar atendente generico
+c8047bcb,ERRADO,ERRADO,eng quim inscricao sem criterio
+ab1ff5db,CORRETO,ERRADO,reconhecimento diploma estrangeiro
+2a7a3f06,ERRADO,CORRETO,MBA = pos
+0a983090,CORRETO,CORRETO,valor mensalidade pedagogia
+75a1f7e6,CORRETO,CORRETO,especializacao nutricao idoso
+a3ca97d2,CORRETO,CORRETO,valores eng producao
+3d7cd9bb,CORRETO,CORRETO,nao acessa ava
+d1a79dda,ERRADO,ERRADO,biomedicina sem criterio
+bda93825,CORRETO,CORRETO,mestrado educacao
+86a9714a,CORRETO,ERRADO,odontologia graduacao sem criterio
+0f7fb397,CORRETO,ERRADO,adm ead sem criterio
+59742f7d,ERRADO,ERRADO,transferencia sem criterio
+e7fb8d15,ERRADO,ERRADO,email novo nao errado
+70b02afc,CORRETO,CORRETO,valores letras desconto
+a1d94aa0,ERRADO,ERRADO,falar atendente
+93f7c00d,CORRETO,CORRETO,reconhecimento mestrado
+b6228d45,CORRETO,CORRETO,mensalidade transf psico
+a582b9a3,CORRETO,CORRETO,valores eng prod
+948dcc74,CORRETO,ERRADO,inscricao eng prod sem criterio
+c31595e9,CORRETO,CORRETO,vestibular nao abre acesso
+dba1bc3a,CORRETO,ERRADO,inscricao eng software
+3a2db3dd,CORRETO,CORRETO,valores letras 2grad
+bdadb769,CORRETO,CORRETO,mestrado odontopediatria
+96ab4ab7,CORRETO,CORRETO,mensalidade nutricao
+afc67d01,CORRETO,ERRADO,cursos ead psicologia info
+1589ef0b,ERRADO,ERRADO,transferencia
+c90b6431,ERRADO,ERRADO,falar atendente
+35b92d34,ERRADO,ERRADO,info agronomia
+0a9c1c98,ERRADO,ERRADO,tecnico administracao
+5b586812,ERRADO,ERRADO,biomedicina inscricao
+8440a64a,ERRADO,ERRADO,med vet aguardando
+e3da690f,ERRADO,CORRETO,nao envia documentos sistema
+6714e647,ERRADO,ERRADO,ingresso enem
+3ff59d38,ERRADO,ERRADO,qr code matricula
+9d2af86d,CORRETO,ERRADO,info generico curso
+8f36e8c3,ERRADO,ERRADO,atestado matricula
+bd40201f,ERRADO,CORRETO,perdi acesso email cadastro
+cc23bef4,CORRETO,CORRETO,valores adm desconto
+5395ca5d,ERRADO,ERRADO,aproveitamento eng civil
+08d625d1,CORRETO,CORRETO,valor nutricao
+f0b4ee2d,CORRETO,CORRETO,valores ed fisica
+e4790e49,ERRADO,ERRADO,agronomia inscricao
+cf34b51c,ERRADO,ERRADO,info logistica
+b345738d,ERRADO,ERRADO,pedagogia inscricao
+65e1368b,ERRADO,ERRADO,pedagogia inscricao
+735d634d,CORRETO,CORRETO,pos imaginologia valor
+b1694ea7,CORRETO,ERRADO,psico bolsa sem valor claro
+4aa5fabc,CORRETO,CORRETO,vestibular medicina
+822c188f,CORRETO,CORRETO,sistemas mensalidade
+f0facacb,ERRADO,ERRADO,eng prod inscricao
+df219989,ERRADO,ERRADO,aproveitamento disciplinas
+d4839c85,CORRETO,CORRETO,valores ciencia dados
+7f73b97c,CORRETO,CORRETO,mestrado educacao
+7c9095fd,CORRETO,CORRETO,valores agronomia
+9a0be66d,ERRADO,ERRADO,si transferencia
+5017120e,ERRADO,ERRADO,ed fisica
+24d21176,ERRADO,ERRADO,99 reais matricula
+0c490298,CORRETO,CORRETO,valor biomedicina
+fc21c0fa,ERRADO,ERRADO,psico atendente
+00975017,ERRADO,ERRADO,letras retornar
+eca655e4,ERRADO,ERRADO,atendente generico
+b5bbf6cd,ERRADO,ERRADO,pedagogia atendente
+3ec3fc4e,CORRETO,CORRETO,mestrado educacao
+330690ec,ERRADO,ERRADO,bio inscricao
+1117e751,ERRADO,ERRADO,fisio inscricao
+ec19617d,ERRADO,ERRADO,ed fisica polo
+404754b9,ERRADO,CORRETO,token nao chega acesso
+64f97b6c,CORRETO,CORRETO,esp enologia
+026fef4f,CORRETO,CORRETO,valores agronomia
+55d9e6a1,ERRADO,ERRADO,reabrir matricula
+a3a19ca8,CORRETO,CORRETO,pos psicopatologia
+eed65348,CORRETO,CORRETO,mestrado docencia
+ce0d836d,ERRADO,ERRADO,nutricao
+e40de7a7,CORRETO,CORRETO,valor eng mecanica
+f4d948eb,CORRETO,CORRETO,pos direito notarial valor
+a85b3955,ERRADO,ERRADO,jornalista
+b9959821,CORRETO,CORRETO,onde vejo valores
+59c5c685,ERRADO,ERRADO,fonoaudio info
+a1b26b11,ERRADO,ERRADO,agronomia transf
+59c38564,CORRETO,CORRETO,mensalidade vet
+5db417db,CORRETO,CORRETO,valor traducao
+1d75552d,ERRADO,ERRADO,ex aluno matricula
+8f879980,ERRADO,ERRADO,rh atendente
+2fe6bcde,CORRETO,CORRETO,audio mkt digital valor
+367ac7e5,CORRETO,CORRETO,valor estetica
+403c3e39,CORRETO,CORRETO,valores curso
+ab0e9c4e,ERRADO,ERRADO,matematica
+4c4c4611,ERRADO,ERRADO,bolsa nao validada
+8e785763,ERRADO,ERRADO,funciona vestibular
+1d99c0c0,ERRADO,ERRADO,atendente
+bd40a427,CORRETO,CORRETO,valor psicologia
+9b7259e8,ERRADO,ERRADO,eng controle transf
+b0a5f4f0,ERRADO,ERRADO,disciplinas avulsas
+062931fd,ERRADO,ERRADO,solicitacao aluna
+907d684f,ERRADO,ERRADO,ead presencial
+8848a41d,ERRADO,ERRADO,nao consigo matricula
+1f87b926,CORRETO,ERRADO,tec enfermagem
+c5459376,ERRADO,ERRADO,pedagogia transf
+a3cb3050,ERRADO,ERRADO,eng civil reingresso
+66cb8aca,ERRADO,ERRADO,bolsa estetica
+6492b608,ERRADO,ERRADO,letras bolsa100
+89c77cc3,CORRETO,CORRETO,pos seguranca trabalho
+d0d8d4d0,ERRADO,CORRETO,erro email cadastro
+bb80e3c2,CORRETO,CORRETO,mestrado odonto
+3f20f834,CORRETO,CORRETO,valores geografia
+b56449c9,CORRETO,CORRETO,mensalidade eng soft
+1232eacf,CORRETO,CORRETO,senha area candidato
+4ba33d20,CORRETO,CORRETO,pos graduacao
+da4adaa6,CORRETO,CORRETO,valor eng prod
+5e0b629f,CORRETO,ERRADO,confirmar matricula
+2a11b892,ERRADO,ERRADO,tec seg trabalho
+4a35cceb,ERRADO,ERRADO,qual sala
+231996b2,ERRADO,ERRADO,estetica semipres
+1b9e1ee6,CORRETO,ERRADO,nome professores
+718d7b8e,ERRADO,ERRADO,atend psicologico
+d8f80f99,ERRADO,ERRADO,eng mecanica
+19310e82,CORRETO,CORRETO,mensalidade fono
+daff11d4,CORRETO,CORRETO,valores matematica
+615655f6,CORRETO,CORRETO,valores curso
+fda2f340,CORRETO,CORRETO,valores pedagogia
+9cb340ab,CORRETO,ERRADO,quer graduacao contabeis
+6b864f63,ERRADO,ERRADO,psico inscricao
+44db27d2,CORRETO,CORRETO,valor gestao amb
+88246fa8,CORRETO,ERRADO,cancelar boleto
+8d65fdfb,ERRADO,ERRADO,representante
+0424b90d,ERRADO,ERRADO,reembolso matricula
+a07a8a85,CORRETO,CORRETO,pos nutricao ava
+5b6c65a1,CORRETO,CORRETO,valores biomedicina
+d4cdade3,ERRADO,CORRETO,desconto vestibular
+ae42818a,ERRADO,ERRADO,adm transferencia
+e8e95d17,ERRADO,ERRADO,2grad matematica
+dba0663d,CORRETO,CORRETO,pos estetica
+ea804ee8,ERRADO,ERRADO,veterinaria
+921bb4e6,ERRADO,ERRADO,bio transferencia
+56c41f88,ERRADO,ERRADO,aluna pos boleto
+487ad7d7,ERRADO,ERRADO,lic matematica
+0d51fae1,CORRETO,CORRETO,pos ao vivo
+21083ff0,CORRETO,CORRETO,valores nutricao
+5c216d7f,ERRADO,ERRADO,quero ser
+d693f44b,CORRETO,CORRETO,pos nutricao idoso
+2c66f2c6,ERRADO,ERRADO,eng civil
+b68f814c,ERRADO,ERRADO,disciplinas isoladas
+80aca914,CORRETO,CORRETO,pos agronomia 3x1
+52852072,ERRADO,ERRADO,vet pagamento travado
+72dd15ff,CORRETO,CORRETO,valor odontologia
+cc0a7406,CORRETO,CORRETO,transf fono valores
+abe737ac,CORRETO,CORRETO,nao acessa aulas ead
+40b53332,ERRADO,ERRADO,eng ia 2grad
+9728894d,ERRADO,ERRADO,codigo pagamento
+104d1a64,ERRADO,ERRADO,duvida matricula
+b1c56183,CORRETO,CORRETO,pos fisio
+b89e7323,ERRADO,ERRADO,contabeis atendente
+3d80c176,ERRADO,ERRADO,falar juliana
+2bf34e3e,ERRADO,ERRADO,agronomia inscricao
+634fd7ce,ERRADO,ERRADO,eng quimica
+d05f65e5,ERRADO,ERRADO,vazio
+25c46549,CORRETO,CORRETO,valores trilingue
+6d16dd1c,CORRETO,ERRADO,documentacao
+ec00584d,ERRADO,CORRETO,vest medicina
+f6b2b658,CORRETO,CORRETO,valor direito
+6983dc47,ERRADO,ERRADO,pagamento pix
+f63a130a,CORRETO,CORRETO,pos historia arte
+12af4085,CORRETO,CORRETO,pos georref
+0e7ea2f3,CORRETO,CORRETO,esp tcc
+4405d31a,ERRADO,ERRADO,assist social
+f429e148,CORRETO,ERRADO,nutricao ead
+f818e661,CORRETO,CORRETO,valores
+1dacb1e7,CORRETO,CORRETO,quanto tec seg
+48a4aa13,ERRADO,CORRETO,esp urg emerg
+d8c5ba09,CORRETO,CORRETO,valores eng aut
+4d3179bb,CORRETO,ERRADO,med vet
+c59acd04,CORRETO,CORRETO,esp tfc
+57b5d33e,CORRETO,CORRETO,pos tcc
+29f4e814,CORRETO,CORRETO,mestrado prof educ
+00640160,CORRETO,CORRETO,mestrado educ
+007de84c,CORRETO,CORRETO,valores eng agro
+7aec7cba,CORRETO,CORRETO,pos geront valores
+8543ea4b,CORRETO,CORRETO,valor eng quim
+156af162,ERRADO,ERRADO,link spam
+32362f8a,ERRADO,ERRADO,agronomia inscricao
+6ab2cd6f,CORRETO,CORRETO,desconto 50
+e62d9a75,ERRADO,ERRADO,tec enfermagem
+c7fca039,ERRADO,ERRADO,cc transferencia
+06e16d86,CORRETO,CORRETO,esp valor duracao
+9f927ea8,CORRETO,CORRETO,vest medicina
+e279f8a8,ERRADO,ERRADO,adm publica bio
+bd14081c,CORRETO,CORRETO,pos cooperativas
+53d79447,CORRETO,ERRADO,pedagogia ead
+a4312251,ERRADO,ERRADO,direito mooc
+3e8db2e4,CORRETO,CORRETO,mensalidade ed fis
+d85e1ab7,ERRADO,ERRADO,bio transf
+ea2656bb,ERRADO,ERRADO,eng prod inscricao
+3c28538b,CORRETO,CORRETO,fisio preco turno
+4847b874,ERRADO,ERRADO,paguei boleto
+b20faee5,ERRADO,ERRADO,eng eletrica atendente
+510c850b,ERRADO,ERRADO,pedagogia

@@ -1,0 +1,15 @@
+<allInstructions>
+A seguir, as opções de tags disponíveis para escolha:
+<available_tags_enum>
+[{"id":"D710","name":"SAE","description":"O usuário demonstrar claramente que é aluno da instituição e estiver tratando de assuntos acadêmicos de aluno.\n\nConsidere acionar quando o usuário mencionar temas relacionados à vida acadêmica de aluno ativo, como:\n- curso em andamento\n- disciplinas\n- conclusão de curso\n- estágio\n- TCC\n- rematrícula\n- portal do aluno / sistema da instituição\n- coordenação\n- SAE\n- financeiro acadêmico\n- boleto em aberto\n- cancelamento de matrícula\n- transferência interna\n- mudança de curso ou turno"}]
+</available_tags_enum>
+</allInstructions>
+--- A seguir dados do usuário: --- <userAuthStatus>
+Este usuário está logado e seu email está validado. - É SEGURO compartilhar os dados em compliance com LGPD. O usuário terá uma experiência bem superior com o *tolky* enquanto estiver logado. - CHAME O USUÁRIO PELO NOME DISPONÍVEL NO CONTEXTO, sem ser repetitivo. - Considere todos os dados disponíveis. Procure coletar dados faltantes no cadastro. - UTILIZE os dados que estão neste contexto e chame-o pelo nome se disponível.
+Dados do usuário: phone: "553498122079"
+pending: true
+userName: Patrícia Duarte
+validated: true
+createdAt: "2026-04-02T15:06:25.873914+00:00"
+O nome do usuário é Patrícia Duarte. Utilize esta informação.
+</userAuthStatus>
