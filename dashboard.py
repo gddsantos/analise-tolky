@@ -212,6 +212,25 @@ st.divider()
 # ── Sub-códigos (quando disponível) ──────────────────────────────────
 TEM_CODIGOS = "codigos" in aval_df.columns
 
+CODIGO_NOMES = {
+    "D71":  "SAE",
+    "D710": "SAE",
+    "N43":  "SAE 2",
+    "F27":  "Tickets Geral",
+    "F270": "Tickets Geral",
+    "O24":  "Valor/Mensalidade",
+    "O242": "Valor/Mensalidade",
+    "O74":  "Mestrado/Pós",
+    "O744": "Mestrado/Pós",
+    "E46":  "Email cadastrado",
+    "E461": "Email cadastrado",
+    "W25":  "Acesso/Login",
+    "W253": "Acesso/Login",
+}
+def fmt_codigo(c):
+    nome = CODIGO_NOMES.get(c, "?")
+    return f"{nome} ({c})"
+
 if TEM_CODIGOS:
     st.subheader("Sub-automações acionadas")
     exploded = (
@@ -220,16 +239,17 @@ if TEM_CODIGOS:
     )
     exploded["codigo"] = exploded["codigo"].str.strip()
     exploded = exploded[exploded["codigo"] != ""]
+    exploded["label"] = exploded["codigo"].map(fmt_codigo)
 
     cnt = (
-        exploded.groupby(["codigo", "verdict"])
+        exploded.groupby(["label", "verdict"])
         .size().reset_index(name="n")
         .sort_values("n", ascending=False)
     )
     fig_cod = px.bar(
-        cnt, x="codigo", y="n", color="verdict",
+        cnt, x="label", y="n", color="verdict",
         color_discrete_map={"CORRETO": "#22C55E", "ERRADO": "#EF4444"},
-        labels={"n": "Conversas", "codigo": "Sub-código", "verdict": ""},
+        labels={"n": "Conversas", "label": "Sub-automação", "verdict": ""},
         text="n",
     )
     fig_cod.update_layout(
