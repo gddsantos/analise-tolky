@@ -72,7 +72,14 @@ def main():
         "user_msgs": [],
         "ia_msgs": [],
         "trigger_msg": None,
+        "injected": False,
+        "replied": False,
     })
+
+    TICKETS_INJECT_MARK = re.compile(
+        r"passar(?:\s+o)?\s+atendimento\s+para\s+o\s+setor\s+de\s+atendimento\s+ao\s+candidato",
+        re.I
+    )
 
     for _, row in df.iterrows():
         cid = row["conversation_id"]
@@ -109,6 +116,35 @@ def main():
             for it in payloads:
                 if isinstance(it, dict) and "followup" in (it.get("caller") or "").lower():
                     is_followup = True
+                    break
+
+        # Detecta Tickets INJETADO dentro de <realtime> no system prompt
+        if not st["injected"] and isinstance(payloads, list):
+            for it in payloads:
+                if not isinstance(it, dict): continue
+                if (it.get("caller") or "").lower() != "createassistantresponse": continue
+                pl = jp(it.get("payload") or "")
+                if not isinstance(pl, dict): continue
+                for m in pl.get("messages", []):
+                    if not isinstance(m, dict) or m.get("role") != "system": continue
+                    c = m.get("content", "")
+                    if not isinstance(c, str): continue
+                    for rt in re.findall(r"<realtime>(.*?)</realtime>", c, re.S):
+                        if TICKETS_INJECT_MARK.search(rt):
+                            st["injected"] = True
+                            break
+                    if st["injected"]: break
+                if st["injected"]: break
+
+        # Detecta Tickets ENVIADO nas mensagens do assistant
+        if not st["replied"]:
+            for m in (msgs if isinstance(msgs, list) else []):
+                if not isinstance(m, dict) or m.get("role") != "assistant": continue
+                t = m.get("content") or ""
+                if isinstance(t, list):
+                    t = " ".join(c.get("text","") if isinstance(c, dict) else str(c) for c in t)
+                if isinstance(t, str) and TICKETS_INJECT_MARK.search(t):
+                    st["replied"] = True
                     break
 
         if isinstance(responses, list):
@@ -151,16 +187,21 @@ def main():
 
     total = len(convs)
     confirmed = sum(1 for c in convs.values() if c["confirmed_codes"])
+    injected  = sum(1 for c in convs.values() if c["injected"])
+    replied   = sum(1 for c in convs.values() if c["replied"])
 
     out_rows = []
     conv_dates = {}
-    daily = defaultdict(lambda: {"total":0,"confirmed":0,"correto":0})
+    daily = defaultdict(lambda: {"total":0,"confirmed":0,"injected":0,"replied":0,"correto":0})
     for cid, st in convs.items():
         if st["date"]:
             conv_dates[cid] = st["date"]
             daily[st["date"]]["total"] += 1
         if not st["confirmed_codes"]: continue
-        if st["date"]: daily[st["date"]]["confirmed"] += 1
+        if st["date"]:
+            daily[st["date"]]["confirmed"] += 1
+            if st["injected"]: daily[st["date"]]["injected"] += 1
+            if st["replied"]:  daily[st["date"]]["replied"]  += 1
 
         full_text = " ".join(st["user_msgs"])
         # Identifica quais critérios bateram
@@ -202,7 +243,7 @@ def main():
     correto = int((out["verdict"]=="CORRETO").sum())
     errado  = int((out["verdict"]=="ERRADO").sum())
     meta = {
-        "funnel": {"total": total, "confirmed": confirmed, "injected": confirmed, "replied": correto},
+        "funnel": {"total": total, "confirmed": confirmed, "injected": injected, "replied": replied},
         "conv_dates": conv_dates,
         "daily_funnel": {d: dict(v) for d, v in daily.items()},
     }
