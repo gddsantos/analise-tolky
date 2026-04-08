@@ -1,9 +1,16 @@
 import json
+import difflib
 import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 from pathlib import Path
+
+@st.cache_data
+def load_prompt_versions():
+    p = Path(__file__).parent / "analises" / "prompt_versions.json"
+    if not p.exists(): return {}
+    return json.loads(p.read_text(encoding="utf-8"))
 
 # ── Config ───────────────────────────────────────────────────────────
 st.set_page_config(
@@ -253,6 +260,16 @@ with col_linha:
     ))
     fig.add_hline(y=50, line_dash="dot", line_color="#94A3B8",
                   annotation_text="50%", annotation_position="right")
+
+    # Marca mudanças de prompt como linhas verticais
+    _versions = load_prompt_versions().get(aut_nome, [])
+    for v in _versions[1:]:  # pula v1, marca v2+
+        fig.add_vline(
+            x=pd.Timestamp(v["primeiro_dia"]).timestamp() * 1000,
+            line_dash="dash", line_color="#6366F1", line_width=2,
+            annotation_text=f"📝 v{v['versao']}", annotation_position="top",
+            annotation_font_color="#6366F1",
+        )
     fig.update_layout(
         yaxis=dict(range=[0, 105], ticksuffix="%", title=""),
         yaxis2=dict(overlaying="y", side="right", showgrid=False, title="Volume"),
@@ -264,6 +281,19 @@ with col_linha:
         bargap=0.2,
     )
     st.plotly_chart(fig, use_container_width=True)
+
+    if len(_versions) > 1:
+        with st.expander(f"📜 Histórico de prompts ({len(_versions)} versões)", expanded=False):
+            for i, v in enumerate(_versions):
+                st.markdown(f"**v{v['versao']}** · `{v['hash']}` · {v['primeiro_dia']} a {v['ultimo_dia']}")
+                if i == 0:
+                    st.code(v["prompt"], language="text")
+                else:
+                    prev = _versions[i-1]["prompt"].splitlines()
+                    curr = v["prompt"].splitlines()
+                    diff = "\n".join(difflib.unified_diff(prev, curr, fromfile=f"v{i}", tofile=f"v{i+1}", lineterm=""))
+                    st.code(diff or "(sem mudança textual significativa)", language="diff")
+                st.divider()
 
 with col_donut:
     st.subheader("Distribuição")

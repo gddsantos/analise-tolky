@@ -1,0 +1,74 @@
+{
+  "SAE": [
+    {
+      "hash": "5058f1af",
+      "primeiro_dia": "2026-03-01",
+      "ultimo_dia": "2026-03-11",
+      "ocorrencias_dias": 11,
+      "prompt": ".",
+      "versao": 1
+    },
+    {
+      "hash": "a42a3bfd",
+      "primeiro_dia": "2026-03-11",
+      "ultimo_dia": "2026-04-07",
+      "ocorrencias_dias": 28,
+      "prompt": "O número do SAE é APENAS para alunos da Uniube.\n**NÃO acionar esta tag quando:**\n- O usuário ainda não é aluno e demonstra interesse em ingressar na instituição.\n- O usuário estiver falando sobre processo de inscrição ou matrícula inicial.\n- O usuário solicitar atendimento humano.\n- O usuário estiver pedindo informações sobre cursos, valores ou ingresso.\nNessas situações, seguir o fluxo de captação ou atendimento humano, e não o contato do atendimento ao aluno.",
+      "versao": 2
+    }
+  ],
+  "Tickets": [
+    {
+      "hash": "13941c57",
+      "primeiro_dia": "2026-03-01",
+      "ultimo_dia": "2026-03-11",
+      "ocorrencias_dias": 11,
+      "prompt": "**ATENÇÃO:**\n- As tags deste fluxo criam tickets. Acione somente quando a condição estiver claramente atendida.\n- Não acione tags por suposição ou interpretação ambígua.\n- Se já houver ticket encerrado por transferência para Uberlândia, não acionar nova tag.\n- A tag de Atendimento Humano deve ser acionada exclusivamente quando o usuário solicitar explicitamente atendimento humano.\n**Não utilizar estas tags quando:**\n- O usuário desejar falar com o financeiro.\n- O usuário se identificar como aluno da instituição.\n- A demanda envolver rematrícula, renovação, período, semestre ou disciplinas.\n- A solicitação estiver relacionada a assuntos acadêmicos de aluno ativo (rematrícula, boletos, AVA, histórico, estágio etc.).\n- O usuário mencionar matrícula (casos de aluno).",
+      "versao": 1
+    },
+    {
+      "hash": "b7822760",
+      "primeiro_dia": "2026-03-11",
+      "ultimo_dia": "2026-04-07",
+      "ocorrencias_dias": 28,
+      "prompt": "As tags deste fluxo criam tickets de atendimento e devem ser acionadas somente quando a condição da tag estiver claramente presente na conversa.\n**Regras gerais:**\nNão acionar tags por suposição, dúvida ou interpretação ambígua.\nAvaliar sempre o contexto da mensagem do usuário antes de acionar qualquer tag.\nSe já existir ticket encerrado por transferência para Uberlândia, não acionar nova tag.\n**Atendimento humano:**\nA tag Atendimento Humano deve ser acionada apenas quando o usuário solicitar explicitamente falar com um atendente ou suporte humano.\n**Quando NÃO utilizar estas tags:**\nNão acionar nenhuma tag deste fluxo quando:\nO usuário solicitar atendimento do financeiro.\nO usuário se identificar como aluno da instituição.\nA demanda envolver rematrícula, renovação de matrícula, período, semestre ou disciplinas.\nA solicitação estiver relacionada a assuntos acadêmicos de aluno ativo (ex: boletos, AVA, histórico, estágio).\nO usuário mencionar número de matrícula em contexto de aluno.",
+      "versao": 2
+    }
+  ],
+  "Uberlândia": [
+    {
+      "hash": "dbd00396",
+      "primeiro_dia": "2026-03-01",
+      "ultimo_dia": "2026-03-26",
+      "ocorrencias_dias": 25,
+      "prompt": "Never output repeated characters or gibberish in your JSON output. --- NUNCA utilize dados do contexto antigo da conversa para acionar uma automação, utilize apenas dados enviados no momento atual. --- <checkRepetition> Use context to determine if the **tag** has already been selected in the conversation. For this verification, the dialogue will include a message block of type \"system\" that will indicate which tag has already been chosen. Avoid using unnecessary tags that might trigger APIs or other CRUD actions, causing confusion. </checkRepetition>",
+      "versao": 1
+    },
+    {
+      "hash": "8afab716",
+      "primeiro_dia": "2026-03-26",
+      "ultimo_dia": "2026-04-07",
+      "ocorrencias_dias": 11,
+      "prompt": "ATENÇÃO: \n- Esta TAG é para INTERESSE APENAS EM UBERLÂNDIA. \n- JAMAIS acione se NÃO for de interesse o campus UBERLÂNDIA",
+      "versao": 2
+    }
+  ],
+  "Bolsa 100": [
+    {
+      "hash": "c55cd792",
+      "primeiro_dia": "2026-03-25",
+      "ultimo_dia": "2026-03-27",
+      "ocorrencias_dias": 3,
+      "prompt": "ATENÇÃO: \nEsta condição é APENAS para usuários com interesse em BOLSA 100%\n**Regras gerais:**\n- **JAMAIS acione o fluxo se o usuário NÃO tiver mencionado sobre o BOLSA 100**\n- Não acionar tags por suposição, dúvida ou interpretação ambígua.\n- Avaliar sempre o contexto da mensagem do usuário antes de acionar qualquer tag.\n**Não acionar nenhuma tag deste fluxo quando:**\n- O usuário solicitar atendimento do financeiro.\n- O usuário se identificar como aluno da instituição.\n- A demanda envolver rematrícula, renovação de matrícula, período, semestre ou disciplinas.\n- A solicitação estiver relacionada a assuntos acadêmicos de aluno ativo (ex: boletos, AVA, histórico, estágio).\n- O usuário mencionar número de matrícula em contexto de aluno.",
+      "versao": 1
+    },
+    {
+      "hash": "8df3f51e",
+      "primeiro_dia": "2026-04-01",
+      "ultimo_dia": "2026-04-07",
+      "ocorrencias_dias": 7,
+      "prompt": "ATENÇÃO: \nAs tags a seguir são exclusivas para situações claramente elegíveis para BOLSA 100%\n**Regras gerais:**\n- **JAMAIS acione qualquer tag se o usuário NÃO tiver mencionado sobre o BOLSA 100**\n- Não acionar tags por suposição, dúvida ou interpretação ambígua.\n- Avaliar sempre o contexto da mensagem do usuário antes de acionar qualquer tag.\n**Não acionar nenhuma tag deste fluxo quando:**\n- O usuário solicitar atendimento do financeiro.\n- O usuário se identificar como aluno da instituição.\n- A demanda envolver rematrícula, renovação de matrícula, período, semestre ou disciplinas.\n- A solicitação estiver relacionada a assuntos acadêmicos de aluno ativo (ex: boletos, AVA, histórico, estágio).\n- O usuário mencionar número de matrícula em contexto de aluno.",
+      "versao": 2
+    }
+  ]
+}
