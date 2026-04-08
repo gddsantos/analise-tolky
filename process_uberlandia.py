@@ -42,6 +42,7 @@ def main():
         "injected": False,
         "replied": False,
         "trigger_msg": None,
+        "evid_acionamento": None,
     })
 
     for _, row in df.iterrows():
@@ -96,6 +97,8 @@ def main():
                 codes &= UBE_CODES
                 if "validation" in caller:
                     st["valid_codes"] |= codes
+                    if codes and st["evid_acionamento"] is None:
+                        st["evid_acionamento"] = f"caller: {item.get('caller')}\nresponse: {content[:400]}"
                     if is_followup:
                         st["valid_codes_followup"] |= codes
                     else:
@@ -133,12 +136,16 @@ def main():
             daily[st["date"]]["injected"] += 1  # assume confirmado = injetado (sem marcador específico)
 
         full_text = " ".join(st["user_msgs"])
-        if RE_UBERLANDIA.search(full_text):
+        m_ub = RE_UBERLANDIA.search(full_text)
+        if m_ub:
             verdict = "CORRETO"
             motivo = "mencionou Uberlandia"
+            s = max(0, m_ub.start()-80); e = min(len(full_text), m_ub.end()+80)
+            evid_correto = f"...{full_text[s:m_ub.start()]}«{full_text[m_ub.start():m_ub.end()]}»{full_text[m_ub.end():e]}..."
         else:
             verdict = "ERRADO"
             motivo = "nao mencionou Uberlandia"
+            evid_correto = ""
 
         if verdict == "CORRETO" and st["date"]:
             daily[st["date"]]["correto"] += 1
@@ -156,6 +163,8 @@ def main():
             "origem": origem,
             "trigger_msg": st["trigger_msg"] or "",
             "user_msgs": " | ".join(st["user_msgs"][:5]),
+            "evid_acionamento": st["evid_acionamento"] or "",
+            "evid_correto": evid_correto,
         })
 
     out = pd.DataFrame(out_rows)

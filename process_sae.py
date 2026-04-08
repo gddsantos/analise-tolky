@@ -71,36 +71,40 @@ RE_IA_CONFIRM = re.compile(r"como\s+voc[êe]\s+j[áa]\s+[ée]\s+aluno|como\s+voc
 RE_UNIUBE_EXPLICITO = re.compile(r"\b(sou|j[áa]\s+sou)\s+(aluno|aluna)\s+(d[ao]\s+)?uniube\b|\baluno\s+d[ao]\s+uniube\b|\baluna\s+d[ao]\s+uniube\b|\bj[áa]\s+sou\s+alun[oa]\s+(d[ao]\s+)?uniube\b|\bestudo\s+(na|no)\s+uniube\b|\bestudante\s+(d[ao]|de)\s+\w+.{0,30}uniube\b", re.I)
 RE_EX_SEGUNDA = re.compile(r"\bex[\s\-]?alun[oa].{0,60}\b(segunda\s+gradua|2[ªa]?\s+gradua|nova\s+gradua|qual\s+(o\s+)?valor)", re.I)
 
+def _ctx(text, m, before=80, after=80):
+    s = max(0, m.start()-before); e = min(len(text), m.end()+after)
+    return f"...{text[s:m.start()]}«{text[m.start():m.end()]}»{text[m.end():e]}..."
+
 def classify(user_text, ia_text):
     # Prioridade 1: menção explícita a ser aluno da Uniube
-    if RE_UNIUBE_EXPLICITO.search(user_text):
-        return "CORRETO", "aluno Uniube explicito"
+    m = RE_UNIUBE_EXPLICITO.search(user_text)
+    if m: return "CORRETO", "aluno Uniube explicito", _ctx(user_text, m)
     # Prioridade 2: ex-aluno querendo nova graduação = prospectivo
-    if RE_EX_SEGUNDA.search(user_text):
-        return "ERRADO", "ex-aluno quer nova graduacao"
+    m = RE_EX_SEGUNDA.search(user_text)
+    if m: return "ERRADO", "ex-aluno quer nova graduacao", _ctx(user_text, m)
     # Prioridade 3: explicita não ser aluno
-    if RE_NAO_ALUNO.search(user_text):
-        return "ERRADO", "explicita nao ser aluno"
+    m = RE_NAO_ALUNO.search(user_text)
+    if m: return "ERRADO", "explicita nao ser aluno", _ctx(user_text, m)
     # Prioridade 4: aluno de outra instituição
-    if RE_OUTRA_INSTIT.search(user_text):
-        return "ERRADO", "aluno de outra instituicao"
+    m = RE_OUTRA_INSTIT.search(user_text)
+    if m: return "ERRADO", "aluno de outra instituicao", _ctx(user_text, m)
     # Aluno ativo tratando tema acadêmico
-    if RE_ALUNO_TEMA.search(user_text):
-        return "CORRETO", "aluno tema academico"
-    if RE_SOU_ALUNO_FORTE.search(user_text):
-        return "CORRETO", "declarou ser aluno ativo"
-    if RE_IA_CONFIRM.search(ia_text):
-        return "CORRETO", "IA confirmou aluno"
-    if RE_PROSPECT.search(user_text):
-        return "ERRADO", "prospectivo"
-    return "ERRADO", "sem sinais de aluno"
+    m = RE_ALUNO_TEMA.search(user_text)
+    if m: return "CORRETO", "aluno tema academico", _ctx(user_text, m)
+    m = RE_SOU_ALUNO_FORTE.search(user_text)
+    if m: return "CORRETO", "declarou ser aluno ativo", _ctx(user_text, m)
+    m = RE_IA_CONFIRM.search(ia_text)
+    if m: return "CORRETO", "IA confirmou aluno", _ctx(ia_text, m)
+    m = RE_PROSPECT.search(user_text)
+    if m: return "ERRADO", "prospectivo", _ctx(user_text, m)
+    return "ERRADO", "sem sinais de aluno", ""
 
 def main():
     dfs = [load(f) for f in FILES]
     df = pd.concat(dfs, ignore_index=True)
     print(f"loaded rows={len(df)} convs={df['conversation_id'].nunique()}")
 
-    convs = defaultdict(lambda: {"confirmed":False,"confirmed_main":False,"confirmed_followup":False,"injected":False,"replied":False,"date":None,"user_msgs":[],"ia_msgs":[],"codes":set(),"trigger_msg":None})
+    convs = defaultdict(lambda: {"confirmed":False,"confirmed_main":False,"confirmed_followup":False,"injected":False,"replied":False,"date":None,"user_msgs":[],"ia_msgs":[],"codes":set(),"trigger_msg":None,"evid_acionamento":None,"evid_injecao":None,"evid_envio":None})
 
     for _, row in df.iterrows():
         cid = row["conversation_id"]
@@ -167,6 +171,9 @@ def main():
                 codes = {str(c).upper() for c in resp_codes if c and str(c).upper() != "NULL"}
                 if "validation" in caller:
                     valid_codes |= codes
+                    # captura evidência da primeira validation que confirmou
+                    if codes & SAE_CODES and st["evid_acionamento"] is None:
+                        st["evid_acionamento"] = f"caller: {item.get('caller')}\nresponse: {content[:400]}"
                 elif "decisionchain" in caller or "decision-chain" in caller:
                     chain_codes |= codes
         # Confirmação agora depende apenas do validation (chain ignorado)
@@ -203,8 +210,14 @@ def main():
                     if not isinstance(c, str): continue
                     # Só conta como injetado se o marcador SAE está DENTRO de <realtime>
                     for rt in re.findall(r"<realtime>(.*?)</realtime>", c, re.S):
-                        if SAE_INJECT_MARK.search(rt):
+                        m_mark = SAE_INJECT_MARK.search(rt)
+                        if m_mark:
                             st["injected"] = True
+                            if st["evid_injecao"] is None:
+                                # captura ~300 chars ao redor do marker
+                                start = max(0, m_mark.start()-100)
+                                end = min(len(rt), m_mark.end()+200)
+                                st["evid_injecao"] = f"<realtime>...{rt[start:end]}...</realtime>"
                             break
                     if st["injected"]:
                         break
@@ -212,8 +225,13 @@ def main():
                     break
 
         for t in st["ia_msgs"]:
-            if SAE_INJECT_MARK.search(t):
+            m_mark = SAE_INJECT_MARK.search(t)
+            if m_mark:
                 st["replied"] = True
+                if st["evid_envio"] is None:
+                    start = max(0, m_mark.start()-100)
+                    end = min(len(t), m_mark.end()+200)
+                    st["evid_envio"] = t[start:end]
                 break
 
     total = len(convs)
@@ -238,7 +256,7 @@ def main():
         if not st["confirmed"]: continue
         ut = " ".join(st["user_msgs"]).lower()
         it = " ".join(st["ia_msgs"]).lower()
-        verdict, motivo = classify(ut, it)
+        verdict, motivo, evid_correto = classify(ut, it)
         if st["confirmed_main"] and st["confirmed_followup"]:
             origem = "principal+followup"
         elif st["confirmed_main"]:
@@ -253,6 +271,10 @@ def main():
             "origem": origem,
             "trigger_msg": st["trigger_msg"] or "",
             "user_msgs": " | ".join(st["user_msgs"][:5]),
+            "evid_acionamento": st["evid_acionamento"] or "",
+            "evid_injecao": st["evid_injecao"] or "",
+            "evid_envio": st["evid_envio"] or "",
+            "evid_correto": evid_correto,
         })
 
     out = pd.DataFrame(out_rows)

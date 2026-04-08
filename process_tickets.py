@@ -99,6 +99,9 @@ def main():
         "trigger_msg": None,
         "injected": False,
         "replied": False,
+        "evid_acionamento": None,
+        "evid_injecao": None,
+        "evid_envio": None,
     })
 
     TICKETS_INJECT_MARK = re.compile(
@@ -155,8 +158,13 @@ def main():
                     c = m.get("content", "")
                     if not isinstance(c, str): continue
                     for rt in re.findall(r"<realtime>(.*?)</realtime>", c, re.S):
-                        if TICKETS_INJECT_MARK.search(rt):
+                        m_mark = TICKETS_INJECT_MARK.search(rt)
+                        if m_mark:
                             st["injected"] = True
+                            if st["evid_injecao"] is None:
+                                start = max(0, m_mark.start()-100)
+                                end = min(len(rt), m_mark.end()+200)
+                                st["evid_injecao"] = f"<realtime>...{rt[start:end]}...</realtime>"
                             break
                     if st["injected"]: break
                 if st["injected"]: break
@@ -168,9 +176,15 @@ def main():
                 t = m.get("content") or ""
                 if isinstance(t, list):
                     t = " ".join(c.get("text","") if isinstance(c, dict) else str(c) for c in t)
-                if isinstance(t, str) and TICKETS_INJECT_MARK.search(t):
-                    st["replied"] = True
-                    break
+                if isinstance(t, str):
+                    m_mark = TICKETS_INJECT_MARK.search(t)
+                    if m_mark:
+                        st["replied"] = True
+                        if st["evid_envio"] is None:
+                            start = max(0, m_mark.start()-100)
+                            end = min(len(t), m_mark.end()+200)
+                            st["evid_envio"] = t[start:end]
+                        break
 
         if isinstance(responses, list):
             for item in responses:
@@ -189,6 +203,8 @@ def main():
                 codes &= TICKETS_CODES
                 if "validation" in caller:
                     st["valid_codes"] |= codes
+                    if codes and st["evid_acionamento"] is None:
+                        st["evid_acionamento"] = f"caller: {item.get('caller')}\nresponse: {content[:400]}"
                     if is_followup:
                         st["valid_codes_followup"] |= codes
                     else:
@@ -229,15 +245,41 @@ def main():
             if st["replied"]:  daily[st["date"]]["replied"]  += 1
 
         full_text = " ".join(st["user_msgs"])
-        # Para cada sub-código disparado, verifica se o critério específico bate
+
+        def _ctx(text, m, before=80, after=80):
+            s = max(0, m.start()-before); e = min(len(text), m.end()+after)
+            return f"...{text[s:m.start()]}«{text[m.start():m.end()]}»{text[m.end():e]}..."
+
+        def _first_match(text, code):
+            # Retorna (nome, match_object) do primeiro regex que bate para o code
+            if code in ("F270","F27"):
+                for nome, rg in [("Medicina Humana",RE_MEDICINA_HUMANA),("Valor/Mensalidade",RE_VALORES),
+                                 ("Mestrado/Pós",RE_POS),("Email cadastrado",RE_EMAIL_CADASTRADO),("Acesso/Login",RE_ACESSO_CANDIDATO)]:
+                    m = rg.search(text)
+                    if m: return (nome, m)
+                return (None, None)
+            mapping = {"E461":("Bolsa 50%",RE_BOLSA_50),"E46":("Bolsa 50%",RE_BOLSA_50),
+                       "O242":("Dificuldade matricula",RE_DIF_MATRICULA),"O24":("Dificuldade matricula",RE_DIF_MATRICULA),
+                       "W253":("Falha na Inscricao",RE_FALHA_INSCRICAO),"W25":("Falha na Inscricao",RE_FALHA_INSCRICAO),
+                       "O744":("Atendimento Humano",RE_ATEND_HUMANO),"O74":("Atendimento Humano",RE_ATEND_HUMANO)}
+            if code in mapping:
+                nome, rg = mapping[code]
+                m = rg.search(text)
+                return (nome, m) if m else (None, None)
+            return (None, None)
+
         hits = []
         misses = []
+        evid_correto = ""
         for code in sorted(st["confirmed_codes"]):
-            nome, check = CRITERIA.get(code, ("desconhecido", None))
-            if check and check(full_text):
-                hits.append(f"{nome} ({code})")
+            nome_default = CRITERIA.get(code, ("desconhecido", None))[0]
+            nome_hit, m = _first_match(full_text, code)
+            if nome_hit and m:
+                hits.append(f"{nome_hit} ({code})")
+                if not evid_correto:
+                    evid_correto = f"[{code}/{nome_hit}] {_ctx(full_text, m)}"
             else:
-                misses.append(f"{nome} ({code})")
+                misses.append(f"{nome_default} ({code})")
         if hits:
             verdict = "CORRETO"
             motivo = "bateu: " + "; ".join(hits)
@@ -260,6 +302,10 @@ def main():
             "origem": origem,
             "trigger_msg": st["trigger_msg"] or "",
             "user_msgs": " | ".join(st["user_msgs"][:5]),
+            "evid_acionamento": st["evid_acionamento"] or "",
+            "evid_injecao": st["evid_injecao"] or "",
+            "evid_envio": st["evid_envio"] or "",
+            "evid_correto": evid_correto,
         })
 
     out = pd.DataFrame(out_rows)
