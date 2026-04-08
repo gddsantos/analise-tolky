@@ -221,6 +221,12 @@ with col_linha:
     daily["ok_pct"]  = (daily["CORRETO"] / daily["total"] * 100).round(1)
 
     fig = go.Figure()
+    fig.add_trace(go.Bar(
+        x=daily["date"], y=daily["total"], name="Volume",
+        marker_color="rgba(148,163,184,0.35)",
+        yaxis="y2",
+        hovertemplate="%{x|%d/%m}<br>Volume: %{y}<extra></extra>",
+    ))
     fig.add_trace(go.Scatter(
         x=daily["date"], y=daily["fp_pct"],
         mode="lines+markers", name="Falso positivo %",
@@ -238,11 +244,13 @@ with col_linha:
                   annotation_text="50%", annotation_position="right")
     fig.update_layout(
         yaxis=dict(range=[0, 105], ticksuffix="%", title=""),
+        yaxis2=dict(overlaying="y", side="right", showgrid=False, title="Volume"),
         xaxis_title="",
         legend=dict(orientation="h", yanchor="bottom", y=1.02),
         margin=dict(t=10, b=10, l=0, r=0),
         height=300,
         plot_bgcolor="white",
+        bargap=0.2,
     )
     st.plotly_chart(fig, use_container_width=True)
 
