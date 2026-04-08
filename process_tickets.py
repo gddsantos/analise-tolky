@@ -163,17 +163,20 @@ def main():
         if st["date"]: daily[st["date"]]["confirmed"] += 1
 
         full_text = " ".join(st["user_msgs"])
-        # Para cada código disparado, verifica se o contexto bate com o critério
-        verdicts = []
-        motivos = []
-        for code in sorted(st["confirmed_codes"]):
-            label, check = CRITERIA.get(code, ("desconhecido", None))
-            if check and check(full_text):
-                verdicts.append("CORRETO"); motivos.append(f"{code}:{label}")
-            else:
-                verdicts.append("ERRADO"); motivos.append(f"{code}:{label}-sem evidência")
-        # Conv = CORRETO se PELO MENOS UM código disparado faz sentido no contexto
-        verdict = "CORRETO" if "CORRETO" in verdicts else "ERRADO"
+        # Identifica quais critérios bateram
+        criterios_hit = []
+        if RE_MEDICINA.search(full_text):  criterios_hit.append("Medicina Humana")
+        if RE_VALORES.search(full_text):   criterios_hit.append("Valor/Mensalidade")
+        if RE_POS.search(full_text):       criterios_hit.append("Mestrado/Pós")
+        if RE_EMAIL.search(full_text):     criterios_hit.append("Email cadastrado")
+        if RE_ACESSO.search(full_text):    criterios_hit.append("Acesso/Login")
+
+        if criterios_hit:
+            verdict = "CORRETO"
+            motivo = "bateu: " + ", ".join(criterios_hit)
+        else:
+            verdict = "ERRADO"
+            motivo = "nenhum dos 5 criterios (Medicina/Valor/Pos/Email/Acesso) foi mencionado"
         if verdict == "CORRETO" and st["date"]:
             daily[st["date"]]["correto"] += 1
 
@@ -185,7 +188,7 @@ def main():
         out_rows.append({
             "conversation_id": cid,
             "verdict": verdict,
-            "motivo": " | ".join(motivos),
+            "motivo": motivo,
             "codigos": ",".join(sorted(st["confirmed_codes"])),
             "origem": origem,
             "trigger_msg": st["trigger_msg"] or "",
