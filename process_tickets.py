@@ -28,11 +28,11 @@ def jp(x):
 TICKETS_CODES = {"F27", "F270", "O242", "O744", "E461", "W253", "O24", "O74", "E46", "W25"}
 
 # Critérios por sub-código (regex aplicada ao texto completo da conversa)
-RE_MEDICINA = re.compile(r"\bmedicina\s+humana\b|(?<!veterin[áa]ria\s)\bcurso\s+de\s+medicina(?!\s+veterin)\b|(?<!veterin[áa]ria\s)\bmedicina\b(?!\s+veterin)", re.I)
-RE_VALORES  = re.compile(r"\bvalor(es)?\b|\bpre[çc]o\b|\bmensalidade(s)?\b|\bcusto\b|\bquanto\s+(custa|sai|fica|tá|ta|seria)\b|\binvestimento\b|\bdesconto\b|\bbolsa\s+\d|\bquanto\s+é\b", re.I)
-RE_POS      = re.compile(r"\bmestrado\b|\bp[óo]s[\s\-]?gradua[çc][ãa]o\b|\bdoutorado\b|\bespecializa[çc][ãa]o\b|\bMBA\b|\bp[óo]s\b", re.I)
-RE_EMAIL    = re.compile(r"\bemail\s+(errado|incorreto|desatualizado|trocar|alterar|atualiz)|\be-?mail\s+cadastrad|\btrocar\s+(o\s+)?e?-?mail\b|\bperdi\s+(o\s+)?(acesso\s+(ao|do)\s+)?(meu\s+)?e?-?mail\b|\balterar\s+(meu\s+)?e?-?mail\b", re.I)
-RE_ACESSO   = re.compile(r"\b[áa]rea\s+do\s+candidato\b|\bn[ãa]o\s+consigo\s+(acessar|entrar|logar)\b|\bproblema\s+de\s+(login|acesso)\b|\bsenha\b|\besqueci\s+(a\s+)?senha\b|\btoken\s+n[ãa]o\s+(chega|chegou)\b|\bc[óo]digo\s+n[ãa]o\s+(chega|chegou)\b|\bn[ãa]o\s+(estou\s+)?conseguindo\s+(acessar|ver\s+(as\s+)?aulas|entrar)\b", re.I)
+RE_MEDICINA = re.compile(r"\bmedicina\s+humana\b|\bcurso\s+de\s+medicina\b(?!\s*[\.\,]?\s*veterin)|\bmedicina\b(?![\s\.,]+veterin)", re.I)
+RE_VALORES  = re.compile(r"\bvalor(es)?\b|\bpre[çc]o\b|\bmensalidade(s)?\b|\bcusto\b|\bquanto\s+(custa|sai|fica|tá|ta|seria|est[áa]|é\b)\b|\binvestimento\b|\bdesconto\b|\bbolsa\s+\d|\bquanto\s+(é|sai)\b|\bquanto\s+(eu\s+)?(vou|tenho\s+que)\s+pagar\b", re.I)
+RE_POS      = re.compile(r"\bmestrado\b|\bp[óo]s[\s\-]?gradua[çc][ãa]o\b|\bdoutorado\b|\bespecializa[çc][ãa]o\b|\bMBA\b|\bp[óo]s\b(?!\s+ten)", re.I)
+RE_EMAIL    = re.compile(r"\bemail\s+(errado|incorreto|desatualizado|trocar|alterar|atualiz|n[ãa]o\s+existe)|\be-?mail\s+cadastrad|\btrocar\s+(o\s+)?e?-?mail\b|\bperdi\s+(o\s+)?(acesso\s+(ao|do)\s+)?(meu\s+)?e?-?mail\b|\balterar\s+(meu\s+)?e?-?mail\b|\bdeu\s+erro.{0,30}e?-?mail|\be?-?mail\s+(n[ãa]o\s+)?existe", re.I)
+RE_ACESSO   = re.compile(r"\b[áa]rea\s+do\s+candidato\b|\bn[ãa]o\s+(consigo|estou\s+conseguindo|consegui|to\s+conseguindo)\s+(me\s+)?(acessar|entrar|logar|conectar|finalizar|ver|achar|enviar)|\bproblema\s+de\s+(login|acesso)\b|\bsenha\b|\besqueci\s+(a\s+)?senha\b|\btoken\s+n[ãa]o\s+(chega|chegou)\b|\bc[óo]digo\s+n[ãa]o\s+(chega|chegou)\b|\besperando\s+(receber\s+)?(um\s+|o\s+)?token\b|\bvestibular\s+online.{0,30}n[ãa]o\s+(est[áa]|to)\s+(abrindo|funcionand)|\bdocumento(s)?\s+(em\s+)?pdf.{0,30}n[ãa]o\s+est[áa]\s+enviand", re.I)
 
 # fallback: qualquer indicação de problema/atendimento humano
 RE_HUMANO = re.compile(r"\bfalar\s+com\s+(humano|atendente|pessoa)\b|\batendimento\s+humano\b|\bn[ãa]o\s+(consigo|estou\s+conseguindo)\b|\bproblema\b|\berro\b|\breclama", re.I)
@@ -41,20 +41,20 @@ def re_any(*regs):
     def f(text): return any(r.search(text) for r in regs)
     return f
 
-# F27/F270 = guarda-chuva: vale se qualquer sub-critério bater
-F_UMBRELLA = re_any(RE_MEDICINA, RE_VALORES, RE_POS, RE_EMAIL, RE_ACESSO)
+# Todos os códigos viram umbrella: qualquer um dos 5 critérios = CORRETO
+UMBRELLA = re_any(RE_MEDICINA, RE_VALORES, RE_POS, RE_EMAIL, RE_ACESSO)
 
 CRITERIA = {
-    "F270": ("ticket guarda-chuva",    F_UMBRELLA),
-    "F27":  ("ticket guarda-chuva",    F_UMBRELLA),
-    "O242": ("valor/mensalidade",      RE_VALORES.search),
-    "O24":  ("valor/mensalidade",      RE_VALORES.search),
-    "O744": ("mestrado/pós",           RE_POS.search),
-    "O74":  ("mestrado/pós",           RE_POS.search),
-    "E461": ("email cadastrado",       RE_EMAIL.search),
-    "E46":  ("email cadastrado",       RE_EMAIL.search),
-    "W253": ("acesso/login",           RE_ACESSO.search),
-    "W25":  ("acesso/login",           RE_ACESSO.search),
+    "F270": ("ticket umbrella", UMBRELLA),
+    "F27":  ("ticket umbrella", UMBRELLA),
+    "O242": ("ticket umbrella", UMBRELLA),
+    "O24":  ("ticket umbrella", UMBRELLA),
+    "O744": ("ticket umbrella", UMBRELLA),
+    "O74":  ("ticket umbrella", UMBRELLA),
+    "E461": ("ticket umbrella", UMBRELLA),
+    "E46":  ("ticket umbrella", UMBRELLA),
+    "W253": ("ticket umbrella", UMBRELLA),
+    "W25":  ("ticket umbrella", UMBRELLA),
 }
 
 def main():
