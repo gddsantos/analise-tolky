@@ -41,12 +41,19 @@ Considere acionar quando o usuário mencionar temas relacionados à vida acadêm
     "Tickets": {
         "aval":     ANALISES / "02_tickets_avaliacoes.csv",
         "metadata": ANALISES / "02_tickets_metadata.json",
-        "descricao": "Tickets — abre atendimento humano (Medicina, valores, pós, email, acesso).",
-        "prompt": """- O usuário mencionar ou solicitar informações sobre o curso de Medicina Humana.
-- O usuário perguntar sobre valor, preço, mensalidade ou custo de qualquer curso.
-- O usuário solicitar informações sobre Mestrado ou Pós-graduação.
-- O usuário informar que o e-mail cadastrado está incorreto, desatualizado ou precisa ser corrigido.
-- O usuário informar que não consegue acessar a área do candidato ou possui problema de login/acesso.""",
+        "descricao": "Tickets — abre atendimento humano. Contém 5 sub-automações, cada uma com seu próprio critério.",
+        "sub_prompts": {
+            "F27 / F270 — Tickets Geral / Medicina Humana":
+                "O usuário mencionar ou solicitar informações sobre o curso de Medicina Humana.",
+            "O24 / O242 — Valor / Mensalidade":
+                "O usuário perguntar sobre valor, preço, mensalidade ou custo de qualquer curso.",
+            "O74 / O744 — Mestrado / Pós-graduação":
+                "O usuário solicitar informações sobre Mestrado ou Pós-graduação.",
+            "E46 / E461 — Email cadastrado":
+                "O usuário informar que o e-mail cadastrado está incorreto, desatualizado ou precisa ser corrigido.",
+            "W25 / W253 — Acesso / Login":
+                "O usuário informar que não consegue acessar a área do candidato ou possui problema de login/acesso.",
+        },
     },
     "Uberlândia": {
         "aval":     ANALISES / "03_uberlandia_avaliacoes.csv",
@@ -112,7 +119,13 @@ st.subheader(f"Automação: {aut_nome}")
 st.caption(cfg["descricao"])
 
 with st.expander("📋 Ver prompt/critério da automação"):
-    st.markdown(f"```\n{cfg.get('prompt','(sem prompt)')}\n```")
+    if "sub_prompts" in cfg:
+        for nome, texto in cfg["sub_prompts"].items():
+            st.markdown(f"**{nome}**")
+            st.markdown(f"> {texto}")
+            st.markdown("")
+    else:
+        st.markdown(f"```\n{cfg.get('prompt','(sem prompt)')}\n```")
 
 # ── Cards do funil ───────────────────────────────────────────────────
 pct = lambda n, d: f"{n/d*100:.1f}%" if d else "—"
