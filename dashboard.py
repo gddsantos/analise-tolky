@@ -63,12 +63,25 @@ Considere acionar quando o usuário mencionar temas relacionados à vida acadêm
 - O usuário tiver interesse em se inscrever em qualquer curso QUE SEJA NO CAMPUS DE UBERLÂNDIA.
 - A palavra UBERLÂNDIA for mencionada pelo usuário na conversa.""",
     },
+    "Bolsa 100": {
+        "aval":     ANALISES / "04_bolsa100_avaliacoes.csv",
+        "metadata": ANALISES / "04_bolsa100_metadata.json",
+        "descricao": "Bolsa 100 (Uniube100) — programa de bolsa integral. Deve acionar apenas quando o usuário fala explicitamente sobre BOLSA 100%.",
+        "prompt": """- O usuário FALAR SOBRE BOLSA 100.
+
+Não acionar quando:
+- O usuário solicitar atendimento financeiro
+- O usuário se identificar como aluno da instituição
+- A demanda envolver rematrícula/renovação/disciplinas
+- A solicitação for sobre assuntos acadêmicos de aluno ativo (boletos, AVA, histórico, estágio)""",
+    },
 }
 
 CODIGO_NOMES_AUTO = {
     "P62":  "Tratou sobre Uberlândia",
     "R10":  "Uberlândia",
     "J560": "Uberlândia",
+    "L290": "Inscrição Bolsa 100",
 }
 
 # ── Carregamento ─────────────────────────────────────────────────────
