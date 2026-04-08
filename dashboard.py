@@ -209,6 +209,37 @@ with col_donut:
 
 st.divider()
 
+# ── Sub-códigos (quando disponível) ──────────────────────────────────
+TEM_CODIGOS = "codigos" in aval_df.columns
+
+if TEM_CODIGOS:
+    st.subheader("Sub-automações acionadas")
+    exploded = (
+        aval_df.assign(codigo=aval_df["codigos"].fillna("").str.split(","))
+        .explode("codigo")
+    )
+    exploded["codigo"] = exploded["codigo"].str.strip()
+    exploded = exploded[exploded["codigo"] != ""]
+
+    cnt = (
+        exploded.groupby(["codigo", "verdict"])
+        .size().reset_index(name="n")
+        .sort_values("n", ascending=False)
+    )
+    fig_cod = px.bar(
+        cnt, x="codigo", y="n", color="verdict",
+        color_discrete_map={"CORRETO": "#22C55E", "ERRADO": "#EF4444"},
+        labels={"n": "Conversas", "codigo": "Sub-código", "verdict": ""},
+        text="n",
+    )
+    fig_cod.update_layout(
+        barmode="stack",
+        margin=dict(t=10, b=10, l=0, r=0),
+        height=320,
+        legend=dict(orientation="h", yanchor="bottom", y=1.02),
+    )
+    st.plotly_chart(fig_cod, use_container_width=True)
+
 # ── Motivos ──────────────────────────────────────────────────────────
 col_err, col_ok = st.columns(2)
 
