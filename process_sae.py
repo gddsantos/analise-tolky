@@ -103,7 +103,7 @@ def main():
     df = pd.concat(dfs, ignore_index=True)
     print(f"loaded rows={len(df)} convs={df['conversation_id'].nunique()}")
 
-    convs = defaultdict(lambda: {"confirmed":False,"injected":False,"replied":False,"date":None,"user_msgs":[],"ia_msgs":[],"codes":set()})
+    convs = defaultdict(lambda: {"confirmed":False,"injected":False,"replied":False,"date":None,"user_msgs":[],"ia_msgs":[],"codes":set(),"trigger_msg":None})
 
     for _, row in df.iterrows():
         cid = row["conversation_id"]
@@ -168,6 +168,16 @@ def main():
         if confirmed_codes:
             st["confirmed"] = True
             st["codes"] |= confirmed_codes
+            # trigger_msg: última mensagem do usuário neste request
+            if st["trigger_msg"] is None and isinstance(msgs, list):
+                for m in reversed(msgs):
+                    if isinstance(m, dict) and m.get("role") == "user":
+                        t = m.get("content") or ""
+                        if isinstance(t, list):
+                            t = " ".join(c.get("text","") if isinstance(c, dict) else str(c) for c in t)
+                        if t:
+                            st["trigger_msg"] = t[:500]
+                            break
 
         if isinstance(payloads, list):
             for item in payloads:
@@ -212,6 +222,7 @@ def main():
             "verdict": verdict,
             "motivo": motivo,
             "codigos": ",".join(sorted(st["codes"])),
+            "trigger_msg": st["trigger_msg"] or "",
             "user_msgs": " | ".join(st["user_msgs"][:5]),
         })
 

@@ -321,15 +321,29 @@ elif filtro_v == "❌ Falso positivo":
 if filtro_m != "Todos":
     tbl = tbl[tbl["motivo"] == filtro_m]
 
+TEM_TRIGGER = "trigger_msg" in aval_df.columns
+
 if TEM_CODIGOS:
     tbl["sub_auto"] = tbl["codigos"].fillna("").apply(
         lambda s: ", ".join(fmt_codigo(c.strip()) for c in s.split(",") if c.strip())
     )
-    tbl = tbl[["date", "verdict", "sub_auto", "motivo", "user_msgs", "conversation_id"]].copy()
-    tbl.columns = ["Data", "Veredicto", "Sub-automação", "Motivo", "Mensagens do usuário", "ID conversa"]
+    cols = ["date", "verdict", "sub_auto", "motivo"]
+    labels = ["Data", "Veredicto", "Sub-automação", "Motivo"]
+    if TEM_TRIGGER:
+        cols.append("trigger_msg"); labels.append("Mensagem gatilho")
+    cols += ["user_msgs", "conversation_id"]
+    labels += ["Mensagens do usuário", "ID conversa"]
+    tbl = tbl[cols].copy()
+    tbl.columns = labels
 else:
-    tbl = tbl[["date", "verdict", "motivo", "user_msgs", "conversation_id"]].copy()
-    tbl.columns = ["Data", "Veredicto", "Motivo", "Mensagens do usuário", "ID conversa"]
+    cols = ["date", "verdict", "motivo"]
+    labels = ["Data", "Veredicto", "Motivo"]
+    if TEM_TRIGGER:
+        cols.append("trigger_msg"); labels.append("Mensagem gatilho")
+    cols += ["user_msgs", "conversation_id"]
+    labels += ["Mensagens do usuário", "ID conversa"]
+    tbl = tbl[cols].copy()
+    tbl.columns = labels
 
 tbl["Veredicto"] = tbl["Veredicto"].map({"CORRETO": "✅ Correto", "ERRADO": "❌ Falso positivo"})
 tbl = tbl.sort_values("Data", ascending=False)

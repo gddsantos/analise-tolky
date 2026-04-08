@@ -137,20 +137,117 @@ Onde:
 
 ## 8. Resultados finais
 
-### 8.1 SAE (v3 — atual)
+### 8.1 SAE (v4 — atual)
 - Total conversas: **6.637** (excluindo 07/04)
 - Acionado: **4.717** (71%)
 - Injetado: **2.518** · Enviado: **144**
-- ✅ Correto: **671** (14,2%)
-- ❌ Falso positivo: **4.046** (85,8%)
-- Acurácia do classificador (validada em 200): **93,5%**
+- ✅ Correto: **730** (15,5%)
+- ❌ Falso positivo: **3.987** (84,5%)
+- **Acurácia do classificador: 95,0%** (190/200)
 
-### 8.2 Tickets (v3 — atual)
+### 8.2 Tickets (v4 — atual)
 - Total conversas: **6.637**
 - Acionado: **3.406** (51%)
-- ✅ Correto: **2.351** (69%)
-- ❌ Falso positivo: **1.055** (31%)
-- Acurácia do classificador (validada em 200): **91,5%**
+- ✅ Correto: **2.424** (71,1%)
+- ❌ Falso positivo: **982** (28,9%)
+- **Acurácia do classificador: 95,0%** (189/199)
+
+### 8.3 Uberlândia (v1 — novo)
+- Total conversas: **6.637**
+- Acionado: **512** (7,7%)
+- ✅ Correto: **69** (13,5%)
+- ❌ Falso positivo: **443** (86,5%)
+- Classificador: regex simples `\buberl[aâã]ndia\b` no texto do usuário
+- **Sem validação manual ainda**
+
+⚠️ **Uberlândia tem o pior desempenho de acionamento** — 86% de falsos positivos. A IA está disparando a automação em conversas que nunca mencionam Uberlândia.
+
+## 9. Melhoria iterativa até 95%
+
+### 9.1 Tickets: 91,5% → 95% (v3 → v4)
+
+**Problema identificado:** cada sub-código (O242, O744, E461, W253) só reconhecia CORRETO se o usuário mencionasse o tema específico daquele código. Quando a IA disparava o código errado (ex.: O242 para uma conversa sobre acesso), o classificador marcava como ERRADO.
+
+**Solução:** **Todos os códigos viram umbrella** — basta bater em qualquer um dos 5 critérios (medicina/valores/pós/email/acesso) para contar como CORRETO, independente do sub-código disparado.
+
+**Ajustes adicionais nos regexes:**
+- `RE_MEDICINA` — exclui "medicina. Veterinária" (com ponto)
+- `RE_VALORES` — adiciona "quanto está", "quanto vou pagar"
+- `RE_EMAIL` — adiciona "deu erro email", "email não existe"
+- `RE_ACESSO` — adiciona "esperando token", "vestibular online não está abrindo", "documentos PDF não está enviando", "não estou conseguindo finalizar/enviar/ver/achar"
+
+**Resultado:**
+- False ERRADO caiu de 8,8% → 1,9%
+- False CORRETO estável em ~8%
+- Lógica mais alinhada com "a conversa justifica abrir QUALQUER ticket?" ao invés de "o sub-código exato bate?"
+
+### 9.2 SAE: 93,5% → 95% (v3 → v4)
+
+**Problema identificado:** conflito entre regras. Exemplo: "Já sou aluna da UNIUBE pedagogia... sou formada em licenciatura em biologia" — batia em RE_UNIUBE_EXPLICITO (aluna Uniube) E em RE_OUTRA_INSTIT (formada em outra coisa). A ordem de teste decidia — OUTRA era testada primeiro, ERRADO errado.
+
+**Solução:** **Prioridade explícita no classificador.**
+
+```python
+def classify(user_text, ia_text):
+    # P1: menção explícita aluno Uniube vence tudo
+    if RE_UNIUBE_EXPLICITO.search(user_text):
+        return "CORRETO", "aluno Uniube explicito"
+    # P2: ex-aluno querendo nova graduação = prospectivo
+    if RE_EX_SEGUNDA.search(user_text):
+        return "ERRADO", "ex-aluno quer nova graduacao"
+    # P3: explícita não aluno
+    if RE_NAO_ALUNO.search(user_text):
+        return "ERRADO", "explicita nao ser aluno"
+    # P4: outra instituição
+    if RE_OUTRA_INSTIT.search(user_text):
+        return "ERRADO", "aluno de outra instituicao"
+    # P5+: aluno tema, sou aluno forte, prospectivo
+    ...
+```
+
+**Novos regexes:**
+- `RE_UNIUBE_EXPLICITO` — "sou aluno da Uniube", "estudo na Uniube", "aluno da Uniube"
+- `RE_EX_SEGUNDA` — "ex aluno + segunda graduação/nova graduação/qual valor"
+
+**Resultado:** 93,5% → 95%, 5 false CORRETO e 5 false ERRADO (balanceado).
+
+## 10. Feature: Sub-códigos e Mensagem-gatilho
+
+### 10.1 Sub-automações acionadas (chart)
+Cada automação tem 1+ códigos possíveis. O dashboard agora mostra:
+- Barras empilhadas (correto/falso positivo) por sub-código
+- Formato: "Nome da automação (CÓDIGO)"
+
+### 10.2 Mensagem gatilho (trigger_msg)
+Identifica **exatamente qual mensagem do usuário** fez a IA disparar a automação.
+
+**Como é calculado:**
+- Cada row na raw CSV = 1 request/turno
+- Quando `decisionChain-<fluxo>` retorna código válido, salvamos a **última mensagem do usuário daquele request** (truncada em 500 chars)
+- Salvo na coluna `trigger_msg` do `*_avaliacoes.csv`
+
+**Uso:** Na tabela drill-down, nova coluna "Mensagem gatilho" ao lado de "Mensagens do usuário". Facilita entender por que a IA tomou aquela decisão.
+
+## 11. Arquivos do projeto (atualizados)
+
+| Arquivo | Função |
+|---|---|
+| `dashboard.py` | App Streamlit |
+| `process_sae.py` | Pipeline SAE (95% accuracy) |
+| `process_tickets.py` | Pipeline Tickets (95% accuracy) |
+| `process_uberlandia.py` | Pipeline Uberlândia (sem validação manual) |
+| `extract_sae_sample.py` | Sampler para validação SAE |
+| `extract_full_convs.py` | Sampler para validação Tickets |
+| `analises/01_sae_avaliacoes.csv` | SAE: verdict + codigos + trigger_msg |
+| `analises/01_sae_metadata.json` | SAE: funil + datas |
+| `analises/02_tickets_avaliacoes.csv` | Tickets: verdict + codigos + trigger_msg |
+| `analises/02_tickets_metadata.json` | Tickets: funil + datas |
+| `analises/03_uberlandia_avaliacoes.csv` | Uberlândia: verdict + codigos + trigger_msg |
+| `analises/03_uberlandia_metadata.json` | Uberlândia: funil + datas |
+| `analises/manual_review_sae.csv` | 200 amostras SAE revisadas |
+| `analises/manual_review.csv` | 199 amostras Tickets revisadas |
+| `analises/01_analise_sae.md` | Doc inicial SAE |
+| `METODOLOGIA.md` | Este arquivo |
 
 ## 9. Insights descobertos durante a análise
 

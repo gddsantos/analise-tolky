@@ -69,6 +69,7 @@ def main():
         "date": None,
         "user_msgs": [],
         "ia_msgs": [],
+        "trigger_msg": None,
     })
 
     for _, row in df.iterrows():
@@ -119,6 +120,16 @@ def main():
                     st["valid_codes"] |= codes
                 elif "decisionchain" in caller:
                     st["chain_codes"] |= codes
+                    # guarda trigger da primeira vez que chain teve código Tickets
+                    if codes and st["trigger_msg"] is None and isinstance(msgs, list):
+                        for m in reversed(msgs):
+                            if isinstance(m, dict) and m.get("role") == "user":
+                                t = m.get("content") or ""
+                                if isinstance(t, list):
+                                    t = " ".join(c.get("text","") if isinstance(c, dict) else str(c) for c in t)
+                                if t:
+                                    st["trigger_msg"] = t[:500]
+                                    break
 
     for st in convs.values():
         st["confirmed_codes"] = st["chain_codes"] & st["valid_codes"]
@@ -156,6 +167,7 @@ def main():
             "verdict": verdict,
             "motivo": " | ".join(motivos),
             "codigos": ",".join(sorted(st["confirmed_codes"])),
+            "trigger_msg": st["trigger_msg"] or "",
             "user_msgs": " | ".join(st["user_msgs"][:5]),
         })
 
