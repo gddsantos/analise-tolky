@@ -1,9 +1,9 @@
 id,clf,manual,nota
-d77dc9d4,ERRADO,ERRADO,pix expirado nao e criterio
+d77dc9d4,ERRADO,CORRETO,pix expirado nao e criterio
 ed2878dc,CORRETO,ERRADO,historico escolar 2grad sem criterio
-63d40ecf,ERRADO,ERRADO,falar atendente generico
-c8047bcb,ERRADO,ERRADO,eng quim inscricao sem criterio
-ab1ff5db,CORRETO,ERRADO,reconhecimento diploma estrangeiro
+63d40ecf,ERRADO,CORRETO,falar atendente generico
+c8047bcb,ERRADO,CORRETO,eng quim inscricao sem criterio
+ab1ff5db,CORRETO,CORRETO,reconhecimento diploma estrangeiro
 2a7a3f06,ERRADO,CORRETO,MBA = pos
 0a983090,CORRETO,CORRETO,valor mensalidade pedagogia
 75a1f7e6,CORRETO,CORRETO,especializacao nutricao idoso
@@ -11,12 +11,12 @@ a3ca97d2,CORRETO,CORRETO,valores eng producao
 3d7cd9bb,CORRETO,CORRETO,nao acessa ava
 d1a79dda,ERRADO,ERRADO,biomedicina sem criterio
 bda93825,CORRETO,CORRETO,mestrado educacao
-86a9714a,CORRETO,ERRADO,odontologia graduacao sem criterio
+86a9714a,CORRETO,CORRETO,odontologia graduacao sem criterio
 0f7fb397,CORRETO,ERRADO,adm ead sem criterio
 59742f7d,ERRADO,ERRADO,transferencia sem criterio
 e7fb8d15,ERRADO,ERRADO,email novo nao errado
 70b02afc,CORRETO,CORRETO,valores letras desconto
-a1d94aa0,ERRADO,ERRADO,falar atendente
+a1d94aa0,ERRADO,CORRETO,falar atendente
 93f7c00d,CORRETO,CORRETO,reconhecimento mestrado
 b6228d45,CORRETO,CORRETO,mensalidade transf psico
 a582b9a3,CORRETO,CORRETO,valores eng prod
@@ -28,14 +28,14 @@ bdadb769,CORRETO,CORRETO,mestrado odontopediatria
 96ab4ab7,CORRETO,CORRETO,mensalidade nutricao
 afc67d01,CORRETO,ERRADO,cursos ead psicologia info
 1589ef0b,ERRADO,ERRADO,transferencia
-c90b6431,ERRADO,ERRADO,falar atendente
+c90b6431,ERRADO,CORRETO,falar atendente
 35b92d34,ERRADO,ERRADO,info agronomia
 0a9c1c98,ERRADO,ERRADO,tecnico administracao
 5b586812,ERRADO,ERRADO,biomedicina inscricao
 8440a64a,ERRADO,ERRADO,med vet aguardando
 e3da690f,ERRADO,CORRETO,nao envia documentos sistema
 6714e647,ERRADO,ERRADO,ingresso enem
-3ff59d38,ERRADO,ERRADO,qr code matricula
+3ff59d38,ERRADO,CORRETO,qr code matricula
 9d2af86d,CORRETO,ERRADO,info generico curso
 8f36e8c3,ERRADO,ERRADO,atestado matricula
 bd40201f,ERRADO,CORRETO,perdi acesso email cadastro
@@ -48,22 +48,22 @@ cf34b51c,ERRADO,ERRADO,info logistica
 b345738d,ERRADO,ERRADO,pedagogia inscricao
 65e1368b,ERRADO,ERRADO,pedagogia inscricao
 735d634d,CORRETO,CORRETO,pos imaginologia valor
-b1694ea7,CORRETO,ERRADO,psico bolsa sem valor claro
+b1694ea7,CORRETO,CORRETO,psico bolsa sem valor claro
 4aa5fabc,CORRETO,CORRETO,vestibular medicina
 822c188f,CORRETO,CORRETO,sistemas mensalidade
-f0facacb,ERRADO,ERRADO,eng prod inscricao
-df219989,ERRADO,ERRADO,aproveitamento disciplinas
+f0facacb,ERRADO,CORRETO,eng prod inscricao
+df219989,ERRADO,CORRETO,aproveitamento disciplinas
 d4839c85,CORRETO,CORRETO,valores ciencia dados
 7f73b97c,CORRETO,CORRETO,mestrado educacao
 7c9095fd,CORRETO,CORRETO,valores agronomia
-9a0be66d,ERRADO,ERRADO,si transferencia
+9a0be66d,ERRADO,CORRETO,si transferencia
 5017120e,ERRADO,ERRADO,ed fisica
 24d21176,ERRADO,ERRADO,99 reais matricula
 0c490298,CORRETO,CORRETO,valor biomedicina
-fc21c0fa,ERRADO,ERRADO,psico atendente
-00975017,ERRADO,ERRADO,letras retornar
-eca655e4,ERRADO,ERRADO,atendente generico
-b5bbf6cd,ERRADO,ERRADO,pedagogia atendente
+fc21c0fa,ERRADO,CORRETO,psico atendente
+00975017,ERRADO,CORRETO,letras retornar
+eca655e4,ERRADO,CORRETO,atendente generico
+b5bbf6cd,ERRADO,CORRETO,pedagogia atendente
 3ec3fc4e,CORRETO,CORRETO,mestrado educacao
 330690ec,ERRADO,ERRADO,bio inscricao
 1117e751,ERRADO,ERRADO,fisio inscricao
@@ -74,10 +74,10 @@ ec19617d,ERRADO,ERRADO,ed fisica polo
 55d9e6a1,ERRADO,ERRADO,reabrir matricula
 a3a19ca8,CORRETO,CORRETO,pos psicopatologia
 eed65348,CORRETO,CORRETO,mestrado docencia
-ce0d836d,ERRADO,ERRADO,nutricao
+ce0d836d,ERRADO,CORRETO,nutricao
 e40de7a7,CORRETO,CORRETO,valor eng mecanica
 f4d948eb,CORRETO,CORRETO,pos direito notarial valor
-a85b3955,ERRADO,ERRADO,jornalista
+a85b3955,ERRADO,CORRETO,jornalista
 b9959821,CORRETO,CORRETO,onde vejo valores
 59c5c685,ERRADO,ERRADO,fonoaudio info
 a1b26b11,ERRADO,ERRADO,agronomia transf
@@ -91,12 +91,12 @@ a1b26b11,ERRADO,ERRADO,agronomia transf
 ab0e9c4e,ERRADO,ERRADO,matematica
 4c4c4611,ERRADO,ERRADO,bolsa nao validada
 8e785763,ERRADO,ERRADO,funciona vestibular
-1d99c0c0,ERRADO,ERRADO,atendente
+1d99c0c0,ERRADO,CORRETO,atendente
 bd40a427,CORRETO,CORRETO,valor psicologia
 9b7259e8,ERRADO,ERRADO,eng controle transf
 b0a5f4f0,ERRADO,ERRADO,disciplinas avulsas
 062931fd,ERRADO,ERRADO,solicitacao aluna
-907d684f,ERRADO,ERRADO,ead presencial
+907d684f,ERRADO,CORRETO,ead presencial
 8848a41d,ERRADO,ERRADO,nao consigo matricula
 1f87b926,CORRETO,ERRADO,tec enfermagem
 c5459376,ERRADO,ERRADO,pedagogia transf
@@ -111,7 +111,7 @@ b56449c9,CORRETO,CORRETO,mensalidade eng soft
 1232eacf,CORRETO,CORRETO,senha area candidato
 4ba33d20,CORRETO,CORRETO,pos graduacao
 da4adaa6,CORRETO,CORRETO,valor eng prod
-5e0b629f,CORRETO,ERRADO,confirmar matricula
+5e0b629f,CORRETO,CORRETO,confirmar matricula
 2a11b892,ERRADO,ERRADO,tec seg trabalho
 4a35cceb,ERRADO,ERRADO,qual sala
 231996b2,ERRADO,ERRADO,estetica semipres
@@ -122,7 +122,7 @@ d8f80f99,ERRADO,ERRADO,eng mecanica
 daff11d4,CORRETO,CORRETO,valores matematica
 615655f6,CORRETO,CORRETO,valores curso
 fda2f340,CORRETO,CORRETO,valores pedagogia
-9cb340ab,CORRETO,ERRADO,quer graduacao contabeis
+9cb340ab,CORRETO,CORRETO,quer graduacao contabeis
 6b864f63,ERRADO,ERRADO,psico inscricao
 44db27d2,CORRETO,CORRETO,valor gestao amb
 88246fa8,CORRETO,ERRADO,cancelar boleto
@@ -135,7 +135,7 @@ ae42818a,ERRADO,ERRADO,adm transferencia
 e8e95d17,ERRADO,ERRADO,2grad matematica
 dba0663d,CORRETO,CORRETO,pos estetica
 ea804ee8,ERRADO,ERRADO,veterinaria
-921bb4e6,ERRADO,ERRADO,bio transferencia
+921bb4e6,ERRADO,CORRETO,bio transferencia
 56c41f88,ERRADO,ERRADO,aluna pos boleto
 487ad7d7,ERRADO,ERRADO,lic matematica
 0d51fae1,CORRETO,CORRETO,pos ao vivo
@@ -149,11 +149,11 @@ b68f814c,ERRADO,ERRADO,disciplinas isoladas
 72dd15ff,CORRETO,CORRETO,valor odontologia
 cc0a7406,CORRETO,CORRETO,transf fono valores
 abe737ac,CORRETO,CORRETO,nao acessa aulas ead
-40b53332,ERRADO,ERRADO,eng ia 2grad
+40b53332,ERRADO,CORRETO,eng ia 2grad
 9728894d,ERRADO,ERRADO,codigo pagamento
 104d1a64,ERRADO,ERRADO,duvida matricula
 b1c56183,CORRETO,CORRETO,pos fisio
-b89e7323,ERRADO,ERRADO,contabeis atendente
+b89e7323,ERRADO,CORRETO,contabeis atendente
 3d80c176,ERRADO,ERRADO,falar juliana
 2bf34e3e,ERRADO,ERRADO,agronomia inscricao
 634fd7ce,ERRADO,ERRADO,eng quimica
@@ -162,7 +162,7 @@ d05f65e5,ERRADO,ERRADO,vazio
 6d16dd1c,CORRETO,ERRADO,documentacao
 ec00584d,ERRADO,CORRETO,vest medicina
 f6b2b658,CORRETO,CORRETO,valor direito
-6983dc47,ERRADO,ERRADO,pagamento pix
+6983dc47,ERRADO,CORRETO,pagamento pix
 f63a130a,CORRETO,CORRETO,pos historia arte
 12af4085,CORRETO,CORRETO,pos georref
 0e7ea2f3,CORRETO,CORRETO,esp tcc
@@ -184,7 +184,7 @@ c59acd04,CORRETO,CORRETO,esp tfc
 32362f8a,ERRADO,ERRADO,agronomia inscricao
 6ab2cd6f,CORRETO,CORRETO,desconto 50
 e62d9a75,ERRADO,ERRADO,tec enfermagem
-c7fca039,ERRADO,ERRADO,cc transferencia
+c7fca039,ERRADO,CORRETO,cc transferencia
 06e16d86,CORRETO,CORRETO,esp valor duracao
 9f927ea8,CORRETO,CORRETO,vest medicina
 e279f8a8,ERRADO,ERRADO,adm publica bio

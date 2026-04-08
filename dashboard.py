@@ -43,16 +43,16 @@ Considere acionar quando o usuário mencionar temas relacionados à vida acadêm
         "metadata": ANALISES / "02_tickets_metadata.json",
         "descricao": "Tickets — abre atendimento humano. Contém 5 sub-automações, cada uma com seu próprio critério.",
         "sub_prompts": {
-            "F27 / F270 — Tickets Geral / Medicina Humana":
-                "O usuário mencionar ou solicitar informações sobre o curso de Medicina Humana.",
-            "O24 / O242 — Valor / Mensalidade":
-                "O usuário perguntar sobre valor, preço, mensalidade ou custo de qualquer curso.",
-            "O74 / O744 — Mestrado / Pós-graduação":
-                "O usuário solicitar informações sobre Mestrado ou Pós-graduação.",
-            "E46 / E461 — Email cadastrado":
-                "O usuário informar que o e-mail cadastrado está incorreto, desatualizado ou precisa ser corrigido.",
-            "W25 / W253 — Acesso / Login":
-                "O usuário informar que não consegue acessar a área do candidato ou possui problema de login/acesso.",
+            "F270 — Gerais":
+                "- Medicina Humana\n- valor/preço/mensalidade/custo de curso\n- Mestrado/Pós-graduação\n- email cadastrado errado/desatualizado\n- não consegue acessar área do candidato/login",
+            "E461 — Bolsa 50%":
+                "Mencionar explicitamente 'bolsa de 50%' (NÃO aciona para bolsa genérica, ENEM, ProUni, FIES).",
+            "O242 — Dificuldade de finalizar matrícula":
+                "- Pagar matrícula\n- Consultar status/resultado do vestibular\n- Anexar documentos / dificuldade para anexar",
+            "W253 — Falha na Inscrição":
+                "Erro técnico, API, timeout, falha ao consultar/inscrever, sistema fora do ar.",
+            "O744 — Atendimento Humano":
+                "Pedido explícito de falar com atendente, humano, pessoa, consultor, operador.",
         },
     },
     "Uberlândia": {
@@ -273,16 +273,16 @@ CODIGO_NOMES = {
     "D71":  "SAE",
     "D710": "SAE",
     "N43":  "SAE 2",
-    "F27":  "Tickets Geral",
-    "F270": "Tickets Geral",
-    "O24":  "Valor/Mensalidade",
-    "O242": "Valor/Mensalidade",
-    "O74":  "Mestrado/Pós",
-    "O744": "Mestrado/Pós",
-    "E46":  "Email cadastrado",
-    "E461": "Email cadastrado",
-    "W25":  "Acesso/Login",
-    "W253": "Acesso/Login",
+    "F27":  "Gerais",
+    "F270": "Gerais",
+    "E46":  "Bolsa 50%",
+    "E461": "Bolsa 50%",
+    "O24":  "Dificuldade finalizar matrícula",
+    "O242": "Dificuldade finalizar matrícula",
+    "W25":  "Falha na Inscrição",
+    "W253": "Falha na Inscrição",
+    "O74":  "Atendimento Humano",
+    "O744": "Atendimento Humano",
     "P62":  "Tratou sobre Uberlândia",
     "R10":  "Uberlândia",
     "J560": "Uberlândia",

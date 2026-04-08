@@ -24,37 +24,62 @@ def jp(x):
     try: return json.loads(str(x))
     except Exception: return None
 
-# Códigos da automação Tickets (v1: F27, v2: F270/O242/O744/E461/W253)
+# Códigos da automação Tickets (Uniube)
 TICKETS_CODES = {"F27", "F270", "O242", "O744", "E461", "W253", "O24", "O74", "E46", "W25"}
 
-# Critérios por sub-código (regex aplicada ao texto completo da conversa)
-RE_MEDICINA = re.compile(r"\bmedicina\s+humana\b|\bcurso\s+de\s+medicina\b(?!\s*[\.\,]?\s*veterin)|\bmedicina\b(?![\s\.,]+veterin)", re.I)
-RE_VALORES  = re.compile(r"\bvalor(es)?\b|\bpre[çc]o\b|\bmensalidade(s)?\b|\bcusto\b|\bquanto\s+(custa|sai|fica|tá|ta|seria|est[áa]|é\b)\b|\binvestimento\b|\bdesconto\b|\bbolsa\s+\d|\bquanto\s+(é|sai)\b|\bquanto\s+(eu\s+)?(vou|tenho\s+que)\s+pagar\b", re.I)
-RE_POS      = re.compile(r"\bmestrado\b|\bp[óo]s[\s\-]?gradua[çc][ãa]o\b|\bdoutorado\b|\bespecializa[çc][ãa]o\b|\bMBA\b|\bp[óo]s\b(?!\s+ten)", re.I)
-RE_EMAIL    = re.compile(r"\bemail\s+(errado|incorreto|desatualizado|trocar|alterar|atualiz|n[ãa]o\s+existe)|\be-?mail\s+cadastrad|\btrocar\s+(o\s+)?e?-?mail\b|\bperdi\s+(o\s+)?(acesso\s+(ao|do)\s+)?(meu\s+)?e?-?mail\b|\balterar\s+(meu\s+)?e?-?mail\b|\bdeu\s+erro.{0,30}e?-?mail|\be?-?mail\s+(n[ãa]o\s+)?existe", re.I)
-RE_ACESSO   = re.compile(r"\b[áa]rea\s+do\s+candidato\b|\bn[ãa]o\s+(consigo|estou\s+conseguindo|consegui|to\s+conseguindo)\s+(me\s+)?(acessar|entrar|logar|conectar|finalizar|ver|achar|enviar)|\bproblema\s+de\s+(login|acesso)\b|\bsenha\b|\besqueci\s+(a\s+)?senha\b|\btoken\s+n[ãa]o\s+(chega|chegou)\b|\bc[óo]digo\s+n[ãa]o\s+(chega|chegou)\b|\besperando\s+(receber\s+)?(um\s+|o\s+)?token\b|\bvestibular\s+online.{0,30}n[ãa]o\s+(est[áa]|to)\s+(abrindo|funcionand)|\bdocumento(s)?\s+(em\s+)?pdf.{0,30}n[ãa]o\s+est[áa]\s+enviand", re.I)
-
-# fallback: qualquer indicação de problema/atendimento humano
-RE_HUMANO = re.compile(r"\bfalar\s+com\s+(humano|atendente|pessoa)\b|\batendimento\s+humano\b|\bn[ãa]o\s+(consigo|estou\s+conseguindo)\b|\bproblema\b|\berro\b|\breclama", re.I)
+# === Sub-automações Uniube — Tickets ===
+# F270 — Gerais (umbrella: medicina humana / valores / pós / email / acesso)
+RE_MEDICINA_HUMANA = re.compile(r"\bmedicina\s+humana\b|\bcurso\s+de\s+medicina\b(?!\s*[\.\,]?\s*veterin)|\bmedicina\b(?![\s\.,]+veterin)", re.I)
+RE_VALORES  = re.compile(r"\bvalor(es)?\b|\bpre[çc]o\b|\bmensalidade(s)?\b|\bcusto\b|\bquanto\s+(custa|sai|fica|t[áa]|ta|seria|est[áa])\b|\binvestimento\b|\bquanto\s+[ée]\b|\bquanto\s+(eu\s+)?(vou|tenho\s+que)\s+pagar\b", re.I)
+RE_POS      = re.compile(r"\bmestrado\b|\bp[óo]s[\s\-]?gradua[çc][ãa]o\b|\bdoutorado\b|\bespecializa[çc][ãa]o\b|\bMBA\b|\bp[óo]s\b", re.I)
+RE_EMAIL_CADASTRADO = re.compile(r"\bemail\s+(errado|incorreto|desatualizado|trocar|alterar|atualiz|n[ãa]o\s+existe)|\be-?mail\s+cadastrad|\btrocar\s+(o\s+)?e?-?mail\b|\bperdi\s+(o\s+)?(acesso\s+(ao|do)\s+)?(meu\s+)?e?-?mail\b|\balterar\s+(meu\s+)?e?-?mail\b|\bdeu\s+erro.{0,30}e?-?mail", re.I)
+RE_ACESSO_CANDIDATO = re.compile(r"\b[áa]rea\s+do\s+candidato\b|\bn[ãa]o\s+(consigo|estou\s+conseguindo)\s+(me\s+)?(acessar|entrar|logar|conectar|ver)|\bproblema\s+de\s+(login|acesso)\b|\besqueci\s+(a\s+)?senha\b|\btoken\s+n[ãa]o\s+(chega|chegou)\b|\bvestibular\s+online.{0,30}n[ãa]o\s+(est[áa]|to)\s+abrindo", re.I)
 
 def re_any(*regs):
     def f(text): return any(r.search(text) for r in regs)
     return f
 
-# Todos os códigos viram umbrella: qualquer um dos 5 critérios = CORRETO
-UMBRELLA = re_any(RE_MEDICINA, RE_VALORES, RE_POS, RE_EMAIL, RE_ACESSO)
+CHECK_GERAIS = re_any(RE_MEDICINA_HUMANA, RE_VALORES, RE_POS, RE_EMAIL_CADASTRADO, RE_ACESSO_CANDIDATO)
+
+# E461 — Bolsa 50%
+RE_BOLSA_50 = re.compile(r"\bbolsa\s+(de\s+)?50\s*%?|\bbolsa\s+(de\s+)?cinq[uü]enta(\s+por\s+cento)?|\b50%?\s+de\s+bolsa\b|\buniube\s*50\b", re.I)
+
+# O242 — Dificuldade de finalizar a matrícula
+RE_DIF_MATRICULA = re.compile(
+    r"\bpagar\s+(a\s+)?matr[íi]cula\b|\bpagamento\s+(da\s+)?matr[íi]cula\b"
+    r"|\bfinalizar\s+(a\s+)?matr[íi]cula\b|\bn[ãa]o\s+consigo\s+(finalizar|pagar|fazer)\s+(a\s+)?matr[íi]cula\b"
+    r"|\bstatus\s+(do|da)\s+vestibular\b|\bresultado\s+(do|da)\s+vestibular\b|\bsitua[çc][ãa]o\s+(do|da)\s+vestibular\b"
+    r"|\banexar\s+documento|\benviar\s+documento|\banexar\s+pdf|\bn[ãa]o\s+consigo\s+(enviar|anexar)"
+    r"|\bboleto\s+(da\s+)?matr[íi]cula\b|\bqr\s*code\b|\bpix\b.{0,30}matr[íi]cula",
+    re.I)
+
+# W253 — Falha na Inscrição (erro técnico/API)
+RE_FALHA_INSCRICAO = re.compile(
+    r"\bdeu\s+erro\b|\berro\s+(ao|na|de|t[ée]cnico)|\btimeout\b|\bfalha\s+(na|no|de)\s+(inscri|sistema|api)"
+    r"|\bn[ãa]o\s+(est[áa]|to)\s+funcionand|\bsistema\s+(fora|n[ãa]o\s+funciona)|\bbugou\b"
+    r"|\binscri[çc][ãa]o\s+n[ãa]o\s+(vai|funciona|completa)|\bn[ãa]o\s+consigo\s+(me\s+)?inscrev",
+    re.I)
+
+# O744 — Atendimento Humano
+RE_ATEND_HUMANO = re.compile(
+    r"\b(falar|conversar)\s+com\s+(um\s+|uma\s+)?(atendente|humano|pessoa|consultor|operador)"
+    r"|\batendimento\s+humano\b|\bquero\s+(um\s+)?humano\b"
+    r"|\btransferir\s+para\s+(atend|humano|pessoa)"
+    r"|\bme\s+transferir\b|\bfalar\s+com\s+algu[ée]m\b"
+    r"|\bprefiro\s+(um\s+)?(humano|pessoa|atendente)",
+    re.I)
 
 CRITERIA = {
-    "F270": ("ticket umbrella", UMBRELLA),
-    "F27":  ("ticket umbrella", UMBRELLA),
-    "O242": ("ticket umbrella", UMBRELLA),
-    "O24":  ("ticket umbrella", UMBRELLA),
-    "O744": ("ticket umbrella", UMBRELLA),
-    "O74":  ("ticket umbrella", UMBRELLA),
-    "E461": ("ticket umbrella", UMBRELLA),
-    "E46":  ("ticket umbrella", UMBRELLA),
-    "W253": ("ticket umbrella", UMBRELLA),
-    "W25":  ("ticket umbrella", UMBRELLA),
+    "F270": ("Gerais", CHECK_GERAIS),
+    "F27":  ("Gerais", CHECK_GERAIS),
+    "E461": ("Bolsa 50%", RE_BOLSA_50.search),
+    "E46":  ("Bolsa 50%", RE_BOLSA_50.search),
+    "O242": ("Dificuldade finalizar matricula", RE_DIF_MATRICULA.search),
+    "O24":  ("Dificuldade finalizar matricula", RE_DIF_MATRICULA.search),
+    "W253": ("Falha na Inscricao", RE_FALHA_INSCRICAO.search),
+    "W25":  ("Falha na Inscricao", RE_FALHA_INSCRICAO.search),
+    "O744": ("Atendimento Humano", RE_ATEND_HUMANO.search),
+    "O74":  ("Atendimento Humano", RE_ATEND_HUMANO.search),
 }
 
 def main():
@@ -204,20 +229,21 @@ def main():
             if st["replied"]:  daily[st["date"]]["replied"]  += 1
 
         full_text = " ".join(st["user_msgs"])
-        # Identifica quais critérios bateram
-        criterios_hit = []
-        if RE_MEDICINA.search(full_text):  criterios_hit.append("Medicina Humana")
-        if RE_VALORES.search(full_text):   criterios_hit.append("Valor/Mensalidade")
-        if RE_POS.search(full_text):       criterios_hit.append("Mestrado/Pós")
-        if RE_EMAIL.search(full_text):     criterios_hit.append("Email cadastrado")
-        if RE_ACESSO.search(full_text):    criterios_hit.append("Acesso/Login")
-
-        if criterios_hit:
+        # Para cada sub-código disparado, verifica se o critério específico bate
+        hits = []
+        misses = []
+        for code in sorted(st["confirmed_codes"]):
+            nome, check = CRITERIA.get(code, ("desconhecido", None))
+            if check and check(full_text):
+                hits.append(f"{nome} ({code})")
+            else:
+                misses.append(f"{nome} ({code})")
+        if hits:
             verdict = "CORRETO"
-            motivo = "bateu: " + ", ".join(criterios_hit)
+            motivo = "bateu: " + "; ".join(hits)
         else:
             verdict = "ERRADO"
-            motivo = "nenhum dos 5 criterios (Medicina/Valor/Pos/Email/Acesso) foi mencionado"
+            motivo = "nao bateu: " + "; ".join(misses)
         if verdict == "CORRETO" and st["date"]:
             daily[st["date"]]["correto"] += 1
 
