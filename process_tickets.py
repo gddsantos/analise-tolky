@@ -66,6 +66,8 @@ def main():
         "confirmed_codes": set(),
         "chain_codes": set(),
         "valid_codes": set(),
+        "valid_codes_main": set(),
+        "valid_codes_followup": set(),
         "date": None,
         "user_msgs": [],
         "ia_msgs": [],
@@ -101,6 +103,14 @@ def main():
                         break
                     except Exception: pass
 
+        payloads = jp(row.get("payloads")) or []
+        is_followup = False
+        if isinstance(payloads, list):
+            for it in payloads:
+                if isinstance(it, dict) and "followup" in (it.get("caller") or "").lower():
+                    is_followup = True
+                    break
+
         if isinstance(responses, list):
             for item in responses:
                 if not isinstance(item, dict): continue
@@ -118,6 +128,10 @@ def main():
                 codes &= TICKETS_CODES
                 if "validation" in caller:
                     st["valid_codes"] |= codes
+                    if is_followup:
+                        st["valid_codes_followup"] |= codes
+                    else:
+                        st["valid_codes_main"] |= codes
                 elif "decisionchain" in caller:
                     st["chain_codes"] |= codes
                     # guarda trigger da primeira vez que chain teve código Tickets
@@ -132,7 +146,8 @@ def main():
                                     break
 
     for st in convs.values():
-        st["confirmed_codes"] = st["chain_codes"] & st["valid_codes"]
+        # Confirmação depende apenas do validation (chain ignorado)
+        st["confirmed_codes"] = st["valid_codes"]
 
     total = len(convs)
     confirmed = sum(1 for c in convs.values() if c["confirmed_codes"])
@@ -162,11 +177,17 @@ def main():
         if verdict == "CORRETO" and st["date"]:
             daily[st["date"]]["correto"] += 1
 
+        has_main = bool(st["valid_codes_main"])
+        has_fu = bool(st["valid_codes_followup"])
+        if has_main and has_fu: origem = "principal+followup"
+        elif has_main: origem = "principal"
+        else: origem = "followup"
         out_rows.append({
             "conversation_id": cid,
             "verdict": verdict,
             "motivo": " | ".join(motivos),
             "codigos": ",".join(sorted(st["confirmed_codes"])),
+            "origem": origem,
             "trigger_msg": st["trigger_msg"] or "",
             "user_msgs": " | ".join(st["user_msgs"][:5]),
         })

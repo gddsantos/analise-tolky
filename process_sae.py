@@ -103,7 +103,7 @@ def main():
     df = pd.concat(dfs, ignore_index=True)
     print(f"loaded rows={len(df)} convs={df['conversation_id'].nunique()}")
 
-    convs = defaultdict(lambda: {"confirmed":False,"injected":False,"replied":False,"date":None,"user_msgs":[],"ia_msgs":[],"codes":set(),"trigger_msg":None})
+    convs = defaultdict(lambda: {"confirmed":False,"confirmed_main":False,"confirmed_followup":False,"injected":False,"replied":False,"date":None,"user_msgs":[],"ia_msgs":[],"codes":set(),"trigger_msg":None})
 
     for _, row in df.iterrows():
         cid = row["conversation_id"]
@@ -139,6 +139,14 @@ def main():
                     except Exception:
                         pass
 
+        # Detecta se esse request é um followup (IA reprocessando)
+        is_followup = False
+        if isinstance(payloads, list):
+            for it in payloads:
+                if isinstance(it, dict) and "followup" in (it.get("caller") or "").lower():
+                    is_followup = True
+                    break
+
         chain_codes, valid_codes = set(), set()
         if isinstance(responses, list):
             for item in responses:
@@ -164,10 +172,15 @@ def main():
                     valid_codes |= codes
                 elif "decisionchain" in caller or "decision-chain" in caller:
                     chain_codes |= codes
-        confirmed_codes = (chain_codes & valid_codes) & SAE_CODES
+        # Confirmação agora depende apenas do validation (chain ignorado)
+        confirmed_codes = valid_codes & SAE_CODES
         if confirmed_codes:
             st["confirmed"] = True
             st["codes"] |= confirmed_codes
+            if is_followup:
+                st["confirmed_followup"] = True
+            else:
+                st["confirmed_main"] = True
             # trigger_msg: última mensagem do usuário neste request
             if st["trigger_msg"] is None and isinstance(msgs, list):
                 for m in reversed(msgs):
@@ -217,11 +230,18 @@ def main():
         ut = " ".join(st["user_msgs"]).lower()
         it = " ".join(st["ia_msgs"]).lower()
         verdict, motivo = classify(ut, it)
+        if st["confirmed_main"] and st["confirmed_followup"]:
+            origem = "principal+followup"
+        elif st["confirmed_main"]:
+            origem = "principal"
+        else:
+            origem = "followup"
         out_rows.append({
             "conversation_id": cid,
             "verdict": verdict,
             "motivo": motivo,
             "codigos": ",".join(sorted(st["codes"])),
+            "origem": origem,
             "trigger_msg": st["trigger_msg"] or "",
             "user_msgs": " | ".join(st["user_msgs"][:5]),
         })
