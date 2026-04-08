@@ -100,7 +100,7 @@ def main():
     df = pd.concat(dfs, ignore_index=True)
     print(f"loaded rows={len(df)} convs={df['conversation_id'].nunique()}")
 
-    convs = defaultdict(lambda: {"confirmed":False,"confirmed_main":False,"confirmed_followup":False,"injected":False,"replied":False,"date":None,"user_msgs":[],"ia_msgs":[],"codes":set(),"trigger_msg":None})
+    convs = defaultdict(lambda: {"confirmed":False,"confirmed_main":False,"confirmed_followup":False,"injected":False,"replied":False,"date":None,"user_msgs":[],"ia_msgs":[],"codes":set(),"trigger_msg":None,"evid_acionamento":None,"evid_injecao":None,"evid_envio":None})
 
     for _, row in df.iterrows():
         cid = row["conversation_id"]
@@ -167,6 +167,9 @@ def main():
                 codes = {str(c).upper() for c in resp_codes if c and str(c).upper() != "NULL"}
                 if "validation" in caller:
                     valid_codes |= codes
+                    # captura evidência da primeira validation que confirmou
+                    if codes & SAE_CODES and st["evid_acionamento"] is None:
+                        st["evid_acionamento"] = f"caller: {item.get('caller')}\nresponse: {content[:400]}"
                 elif "decisionchain" in caller or "decision-chain" in caller:
                     chain_codes |= codes
         # Confirmação agora depende apenas do validation (chain ignorado)
@@ -203,8 +206,14 @@ def main():
                     if not isinstance(c, str): continue
                     # Só conta como injetado se o marcador SAE está DENTRO de <realtime>
                     for rt in re.findall(r"<realtime>(.*?)</realtime>", c, re.S):
-                        if SAE_INJECT_MARK.search(rt):
+                        m_mark = SAE_INJECT_MARK.search(rt)
+                        if m_mark:
                             st["injected"] = True
+                            if st["evid_injecao"] is None:
+                                # captura ~300 chars ao redor do marker
+                                start = max(0, m_mark.start()-100)
+                                end = min(len(rt), m_mark.end()+200)
+                                st["evid_injecao"] = f"<realtime>...{rt[start:end]}...</realtime>"
                             break
                     if st["injected"]:
                         break
@@ -212,8 +221,13 @@ def main():
                     break
 
         for t in st["ia_msgs"]:
-            if SAE_INJECT_MARK.search(t):
+            m_mark = SAE_INJECT_MARK.search(t)
+            if m_mark:
                 st["replied"] = True
+                if st["evid_envio"] is None:
+                    start = max(0, m_mark.start()-100)
+                    end = min(len(t), m_mark.end()+200)
+                    st["evid_envio"] = t[start:end]
                 break
 
     total = len(convs)
@@ -253,6 +267,9 @@ def main():
             "origem": origem,
             "trigger_msg": st["trigger_msg"] or "",
             "user_msgs": " | ".join(st["user_msgs"][:5]),
+            "evid_acionamento": st["evid_acionamento"] or "",
+            "evid_injecao": st["evid_injecao"] or "",
+            "evid_envio": st["evid_envio"] or "",
         })
 
     out = pd.DataFrame(out_rows)

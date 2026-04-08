@@ -394,3 +394,42 @@ tbl = tbl.sort_values("Data", ascending=False)
 
 st.dataframe(tbl, use_container_width=True, height=400)
 st.caption(f"{len(tbl):,} conversas exibidas".replace(",", "."))
+
+st.divider()
+
+# ── Inspetor de evidências ───────────────────────────────────────────
+st.subheader("🔎 Inspetor de evidências de uma conversa")
+st.caption("Cole o ID de uma conversa para ver as evidências brutas (dados da plataforma) de acionamento, injeção e envio.")
+inspect_id = st.text_input("ID da conversa", placeholder="cole o conversation_id aqui")
+
+if inspect_id:
+    row = aval_df[aval_df["conversation_id"] == inspect_id.strip()]
+    if not len(row):
+        st.warning("ID não encontrado nesta automação.")
+    else:
+        r = row.iloc[0]
+        st.markdown(f"**Códigos:** `{r.get('codigos','')}`  ·  **Veredicto:** {r['verdict']}  ·  **Origem:** {r.get('origem','—')}")
+        st.markdown(f"**Mensagem gatilho:** {r.get('trigger_msg','—')}")
+
+        tab1, tab2, tab3 = st.tabs(["🟢 Acionamento", "🟡 Injeção no contexto", "🔵 Envio ao usuário"])
+        with tab1:
+            ev = r.get("evid_acionamento") if "evid_acionamento" in r else None
+            if ev and str(ev).strip():
+                st.code(str(ev), language="json")
+                st.caption("Evidência do `decisionChain-validation` retornando o código da automação.")
+            else:
+                st.info("Sem evidência de acionamento.")
+        with tab2:
+            ev = r.get("evid_injecao") if "evid_injecao" in r else None
+            if ev and str(ev).strip():
+                st.code(str(ev), language="text")
+                st.caption("Trecho da tag `<realtime>` no system prompt do `createAssistantResponse`.")
+            else:
+                st.info("Não houve injeção no contexto (ou não há evidência salva).")
+        with tab3:
+            ev = r.get("evid_envio") if "evid_envio" in r else None
+            if ev and str(ev).strip():
+                st.code(str(ev), language="text")
+                st.caption("Trecho da resposta da IA ao usuário contendo o marcador da automação.")
+            else:
+                st.info("A IA não repassou a instrução ao usuário.")

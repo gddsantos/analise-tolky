@@ -42,6 +42,7 @@ def main():
         "injected": False,
         "replied": False,
         "trigger_msg": None,
+        "evid_acionamento": None,
     })
 
     for _, row in df.iterrows():
@@ -96,6 +97,8 @@ def main():
                 codes &= UBE_CODES
                 if "validation" in caller:
                     st["valid_codes"] |= codes
+                    if codes and st["evid_acionamento"] is None:
+                        st["evid_acionamento"] = f"caller: {item.get('caller')}\nresponse: {content[:400]}"
                     if is_followup:
                         st["valid_codes_followup"] |= codes
                     else:
@@ -156,6 +159,7 @@ def main():
             "origem": origem,
             "trigger_msg": st["trigger_msg"] or "",
             "user_msgs": " | ".join(st["user_msgs"][:5]),
+            "evid_acionamento": st["evid_acionamento"] or "",
         })
 
     out = pd.DataFrame(out_rows)

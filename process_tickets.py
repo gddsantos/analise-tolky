@@ -99,6 +99,9 @@ def main():
         "trigger_msg": None,
         "injected": False,
         "replied": False,
+        "evid_acionamento": None,
+        "evid_injecao": None,
+        "evid_envio": None,
     })
 
     TICKETS_INJECT_MARK = re.compile(
@@ -155,8 +158,13 @@ def main():
                     c = m.get("content", "")
                     if not isinstance(c, str): continue
                     for rt in re.findall(r"<realtime>(.*?)</realtime>", c, re.S):
-                        if TICKETS_INJECT_MARK.search(rt):
+                        m_mark = TICKETS_INJECT_MARK.search(rt)
+                        if m_mark:
                             st["injected"] = True
+                            if st["evid_injecao"] is None:
+                                start = max(0, m_mark.start()-100)
+                                end = min(len(rt), m_mark.end()+200)
+                                st["evid_injecao"] = f"<realtime>...{rt[start:end]}...</realtime>"
                             break
                     if st["injected"]: break
                 if st["injected"]: break
@@ -168,9 +176,15 @@ def main():
                 t = m.get("content") or ""
                 if isinstance(t, list):
                     t = " ".join(c.get("text","") if isinstance(c, dict) else str(c) for c in t)
-                if isinstance(t, str) and TICKETS_INJECT_MARK.search(t):
-                    st["replied"] = True
-                    break
+                if isinstance(t, str):
+                    m_mark = TICKETS_INJECT_MARK.search(t)
+                    if m_mark:
+                        st["replied"] = True
+                        if st["evid_envio"] is None:
+                            start = max(0, m_mark.start()-100)
+                            end = min(len(t), m_mark.end()+200)
+                            st["evid_envio"] = t[start:end]
+                        break
 
         if isinstance(responses, list):
             for item in responses:
@@ -189,6 +203,8 @@ def main():
                 codes &= TICKETS_CODES
                 if "validation" in caller:
                     st["valid_codes"] |= codes
+                    if codes and st["evid_acionamento"] is None:
+                        st["evid_acionamento"] = f"caller: {item.get('caller')}\nresponse: {content[:400]}"
                     if is_followup:
                         st["valid_codes_followup"] |= codes
                     else:
@@ -260,6 +276,9 @@ def main():
             "origem": origem,
             "trigger_msg": st["trigger_msg"] or "",
             "user_msgs": " | ".join(st["user_msgs"][:5]),
+            "evid_acionamento": st["evid_acionamento"] or "",
+            "evid_injecao": st["evid_injecao"] or "",
+            "evid_envio": st["evid_envio"] or "",
         })
 
     out = pd.DataFrame(out_rows)
