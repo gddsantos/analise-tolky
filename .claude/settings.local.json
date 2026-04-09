@@ -11,7 +11,10 @@
       "Bash(railway:*)",
       "Bash(pip show:*)",
       "Bash(huggingface-cli whoami:*)",
-      "Bash(gh api:*)"
+      "Bash(gh api:*)",
+      "Bash(gh pr create --base stage --head dev --title 'feat: inspetor de evidencias com 4 abas' --body ':*)",
+      "Bash(gh pr:*)",
+      "Bash(git push:*)"
     ]
   }
 }
