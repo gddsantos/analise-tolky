@@ -6,12 +6,12 @@ import pandas as pd
 csv.field_size_limit(10_000_000)
 
 FILES = [
-    "relatorio_automacoes_uniube_agregado_01.03_202603311646.csv",
-    "relatorio_automacoes_uniube_agregado_09.03_202603311542.xlsx",
-    "relatorio_automacoes_uniube_agregado_16.03_202603311537.xlsx",
-    "relatorio_automacoes_uniube_agregado_23.03_202603311534.xlsx",
-    "relatorio_automacoes_uniube_final_marco_202604071619.csv",
-    "relatorio_automacoes_uniube_abril_202604071615.csv",
+    "arquivos dados/Uniube Março csv/relatorio_automacoes_uniube1_202604091637-002.csv",
+    "arquivos dados/Uniube Março csv/relatorio_automacoes_uniube2_202604091646.csv",
+    "arquivos dados/Uniube Março csv/relatorio_automacoes_uniube3_202604091651.csv",
+    "arquivos dados/Uniube Março csv/relatorio_automacoes_uniube4_202604091701.csv",
+    "arquivos dados/Uniube Março csv/relatorio_automacoes_uniube5_202604091705.csv",
+    "arquivos dados/relatorio_automacoes_uniube_abril_202604071615.csv",
 ]
 SAE_CODES = {"D71","D710","N43"}
 SAE_INJECT_MARK = re.compile(r"Entre em contato diretamente com o SAE|WhatsApp da Mentoria", re.I)
