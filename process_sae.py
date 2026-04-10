@@ -11,13 +11,21 @@ FILES = [
     "arquivos dados/Uniube Março csv/relatorio_automacoes_uniube3_202604091651.csv",
     "arquivos dados/Uniube Março csv/relatorio_automacoes_uniube4_202604091701.csv",
     "arquivos dados/Uniube Março csv/relatorio_automacoes_uniube5_202604091705.csv",
-    "arquivos dados/relatorio_automacoes_uniube_abril_202604071615.csv",
+    "arquivos dados/abril/relatorio_automacoes_uniube_abril_202604071615.csv",
+    "arquivos dados/abril/relatorio_automacoes_uniube_abri2l_202604101412.csv",
 ]
 
+COLS = ["conversation_id", "all_request_messages", "main_request_messages", "payloads", "responses"]
+
 def load(f):
-    if f.endswith(".csv"):
-        return pd.read_csv(f, engine="python")
-    return pd.read_excel(f)
+    return pd.read_csv(f, usecols=COLS, engine="python")
+
+def _iter_all():
+    for f in FILES:
+        df = load(f)
+        print(f"  {f}: {len(df)} rows")
+        yield from df.iterrows()
+        del df
 
 def jparse(x):
     if x is None: return None
@@ -36,9 +44,24 @@ RE_PROSPECT = re.compile(r"\bpretendo\b|\bvestibular\s+online\b|\bfazer\s+(a\s+)
 RE_OUTRA_INSTIT = re.compile(r"\bsou\s+(aluno|aluna)\s+d[aeo]\s+(unifran|ufu|ifsudeste|uninter|unicamp|usp|anhanguera|estacio|unopar|unibras|cesc|unihorizontes|outra)\b|\bestou\s+(no\s+\d+|cursando).{0,50}(unifran|ufu|uninter|anhanguera|unibras|cesc)|\btransfer[êe]ncia\s+externa\s+para|\bsou\s+formad[ao]\s+em\s+\w+(?!\s*pela?\s+uniube)|\bex\s+aluna?.{0,40}\bsegunda\s+gradua|\benviei\s+(meu\s+)?hist[óo]rico.{0,30}an[áa]lise", re.I)
 
 # Sinais de aluno ativo / ex-aluno em tema acadêmico
-RE_SOU_ALUNO_FORTE = re.compile(r"\b(j[áa]\s+)?sou\s+(o\s+)?(aluno|aluna)\b|\bj[áa]\s+sou\b|\bsou\s+ex[\s\-]?(aluno|aluna)\b|\bj[áa]\s+fui\s+alun|\bsou\s+(uma\s+)?ex[\s\-]?(aluno|aluna)\b|\bestudo\s+(na|no)\s+uniube\b|\bsou\s+estudante\s+(do|da|de)\s+\d+[°º]?\s+per[ií]odo\b|\bsou\s+formad[ao]\s+(em|pela?)\s+uniube\b|\baluno\s+da\s+uniube\b|\bj[áa]\s+fa[çc]o.{0,30}\b(na\s+)?uniube\b|\bfa[çc]o\s+(o\s+)?curso.{0,30}\bpela?\s+uniube\b|\bcursando.{0,30}\buniube\b|\bme\s+formei\s+(em|na)\s+uniube\b|\bfiz\s+(com|na)\s+(voc|uniube)|\baluno\b\s*(\.|$|\?)", re.I)
+RE_SOU_ALUNO_FORTE = re.compile(
+    r"\b(j[áa]\s+)?sou\s+(o\s+)?(aluno|aluna)\b|\bj[áa]\s+sou\b"
+    r"|\bsou\s+ex[\s\-]?(aluno|aluna)\b|\bj[áa]\s+fui\s+alun|\bfui\s+alun[oa]\b"
+    r"|\bsou\s+(uma\s+)?ex[\s\-]?(aluno|aluna)\b"
+    r"|\bestudo\s+(na|no)\s+uniube\b|\bj[áa]\s+estou\s+estudando\b|\bj[áa]\s+estudo\b"
+    r"|\bsou\s+estudante\s+(do|da|de)\s+\d+[°º]?\s+per[ií]odo\b"
+    r"|\bsou\s+formad[ao]\s+(em|pela?)\s+uniube\b"
+    r"|\baluno\s+da\s+uniube\b|\baluna\s+da\s+uniube\b"
+    r"|\bsou\s+\w+\s+da\s+uniube\b"
+    r"|\bj[áa]\s+fa[çc]o.{0,30}\b(na\s+)?uniube\b|\bfa[çc]o\s+(o\s+)?curso.{0,30}\bpela?\s+uniube\b"
+    r"|\bcursando.{0,30}\buniube\b|\bme\s+formei\s+(em|na)\s+uniube\b"
+    r"|\bfiz\s+(com|na)\s+(voc|uniube)|\baluno\b\s*(\.|$|\?)"
+    r"|\bex[\s\-]?alun[oa]\b"
+    , re.I)
 RE_ALUNO_TEMA = re.compile(
     r"\btrancar\s+(meu|o)\s+curso\b|\bdestrancar\b|\breativar\s+(minha\s+)?matr|\breabrir\s+matr"
+    r"|\btranquei\s+(a\s+)?matr[íi]cula\b|\btranquei\s+(meu|o)\s+curso\b"
+    r"|\binicie?i\s+(o\s+)?curso.{0,40}(retornar|voltar|retomar)"
     r"|\bmeu\s+hist[óo]rico\b|\bhist[óo]rico\s+(escolar|acad[êe]mico|digital)\b"
     r"|\bdiploma\s+digital\b|\b2[ªa]?\s+via\s+(do\s+)?diploma\b|\bdiploma\s+(da|do)\s+minha\s+gradua"
     r"|\bn[ãa]o\s+(consigo|estou\s+conseguindo|consegui)\s+(me\s+)?(conectar|acessar|logar|achar)"
@@ -49,8 +72,13 @@ RE_ALUNO_TEMA = re.compile(
     r"|\batestado\s+de\s+matr[ií]cula\b"
     r"|\btermo\s+de\s+est[áa]gio\b|\bcomprova[cç][ãa]o\s+de\s+est[áa]gio\b|\bdocumenta[cç][ãa]o\s+de\s+est[áa]gio\b"
     r"|\bproblema\s+(com|no|cm)\s+financeiro\b|\bresolver\s+(um\s+)?problema.{0,20}\bfinanceiro\b|\bnegociar\s+d[íi]vida\b"
+    r"|\b(zap|whatsapp?|n[úu]mero|falar\s+com)\s+(do\s+|d[ao]\s+)?financeiro\b|\bsetor\s+financeiro\b"
     r"|\bcancelar\s+(a\s+)?minha\s+compra\b|\bquero\s+(o\s+)?estorno\b|\bfui\s+aluno.{0,40}\bdiploma\b"
     r"|\bfiz\s+(a\s+)?minha\s+matr[íi]cula\b|\bj[áa]\s+(fiz|paguei)\s+(a\s+)?(minha\s+)?matr[íi]cula\b"
+    r"|\bj[áa]\s+consegui\s+me\s+matricular\b|\bfazendo\s+(minha\s+)?matr[íi]cula\b"
+    r"|\bgerando\s+pix\s+(para|pra)\s+matr[íi]cula\b|\bestou\s+gerando\s+pix\b"
+    r"|\brenova(r)?\s+matr[íi]cula\b|\brenovar\s+(a\s+)?matr[íi]cula\b"
+    r"|\bpagar\s+(a\s+)?mensalidade\b|\bpagar\s+(uma\s+)?mensalidade\b|\bquero\s+pagar\s+(uma\s+)?mensalidade\b"
     r"|\bpaguei\s+(a\s+)?matr[íi]cula\s+(no\s+)?(s[áa]bado|ontem|hoje|semana\s+passada)\b"
     r"|\bs[óo]\s+uma\s+mat[ée]ria\s+foi\s+aprovada\b|\baceite\s+do\s+contrato\b"
     r"|\borienta[cç][ãa]o\s+(quanto\s+)?(às|as|para)?\s*mensalidades\b|\bdivida\b|\bd[íi]vida\b"
@@ -65,6 +93,7 @@ RE_ALUNO_TEMA = re.compile(
     r"|\baluna?\s+da\s+uniube\b|\bsou\s+aluno\s+da\s+uniube\b"
     r"|\bex[\s\-]?aluno.{0,30}\b(precisa|preciso|gostaria)|\bex[\s\-]?aluna.{0,30}\b(precisa|preciso|gostaria)"
     r"|\bfa[çc]o.{0,15}\bna\s+uniube\b|\bfez\s+(com|na)\s+(voc|uniube)"
+    r"|\bj[áa]\s+estou\s+estudando\b|\bmas\s+j[áa]\s+estou\s+estudando\b"
     , re.I)
 RE_IA_CONFIRM = re.compile(r"como\s+voc[êe]\s+j[áa]\s+[ée]\s+aluno|como\s+voc[êe]\s+j[áa]\s+[ée]\s+aluna", re.I)
 
@@ -100,13 +129,9 @@ def classify(user_text, ia_text):
     return "ERRADO", "sem sinais de aluno", ""
 
 def main():
-    dfs = [load(f) for f in FILES]
-    df = pd.concat(dfs, ignore_index=True)
-    print(f"loaded rows={len(df)} convs={df['conversation_id'].nunique()}")
-
     convs = defaultdict(lambda: {"confirmed":False,"confirmed_main":False,"confirmed_followup":False,"injected":False,"replied":False,"date":None,"user_msgs":[],"ia_msgs":[],"codes":set(),"trigger_msg":None,"evid_acionamento":None,"evid_injecao":None,"evid_envio":None})
 
-    for _, row in df.iterrows():
+    for _, row in _iter_all():
         cid = row["conversation_id"]
         st = convs[cid]
 

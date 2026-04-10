@@ -11,7 +11,8 @@ FILES = [
     "arquivos dados/Uniube Março csv/relatorio_automacoes_uniube3_202604091651.csv",
     "arquivos dados/Uniube Março csv/relatorio_automacoes_uniube4_202604091701.csv",
     "arquivos dados/Uniube Março csv/relatorio_automacoes_uniube5_202604091705.csv",
-    "arquivos dados/relatorio_automacoes_uniube_abril_202604071615.csv",
+    "arquivos dados/abril/relatorio_automacoes_uniube_abril_202604071615.csv",
+    "arquivos dados/abril/relatorio_automacoes_uniube_abri2l_202604101412.csv",
 ]
 
 # (nome_no_dashboard, substring no caller, deve ser decisionChain mas NAO validation)

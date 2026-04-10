@@ -11,9 +11,20 @@ FILES = [
     "arquivos dados/Uniube Março csv/relatorio_automacoes_uniube3_202604091651.csv",
     "arquivos dados/Uniube Março csv/relatorio_automacoes_uniube4_202604091701.csv",
     "arquivos dados/Uniube Março csv/relatorio_automacoes_uniube5_202604091705.csv",
-    "arquivos dados/relatorio_automacoes_uniube_abril_202604071615.csv",
+    "arquivos dados/abril/relatorio_automacoes_uniube_abril_202604071615.csv",
+    "arquivos dados/abril/relatorio_automacoes_uniube_abri2l_202604101412.csv",
 ]
-def load(f): return pd.read_excel(f) if f.endswith(".xlsx") else pd.read_csv(f, engine="python")
+COLS = ["conversation_id", "all_request_messages", "main_request_messages", "payloads", "responses"]
+
+def load(f):
+    return pd.read_csv(f, usecols=COLS, engine="python")
+
+def _iter_all():
+    for f in FILES:
+        df = load(f)
+        print(f"  {f}: {len(df)} rows")
+        yield from df.iterrows()
+        del df
 def jp(x):
     if x is None or isinstance(x, float): return None
     try: return json.loads(str(x))
@@ -26,10 +37,6 @@ UBE_CODES = {"P62", "R10", "J560"}
 RE_UBERLANDIA = re.compile(r"\buberl[aâã]ndia\b|\buber\s*l[aâã]ndia\b|\bvila\s+g[áa]vea\b|\buberlandia\b", re.I)
 
 def main():
-    dfs = [load(f) for f in FILES]
-    df = pd.concat(dfs, ignore_index=True)
-    print(f"loaded rows={len(df)} convs={df['conversation_id'].nunique()}")
-
     convs = defaultdict(lambda: {
         "chain_codes": set(),
         "valid_codes": set(),
@@ -45,7 +52,7 @@ def main():
         "evid_acionamento": None,
     })
 
-    for _, row in df.iterrows():
+    for _, row in _iter_all():
         cid = row["conversation_id"]
         st = convs[cid]
 
