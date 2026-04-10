@@ -2261,6 +2261,16 @@ Rua: João Paulo 2, n° 44, centro. Carauari-Am «Bolsa 100»% EAD..."
 response: {""response"":[""L290""]}",
 96b65a91-21a1-4fb3-b4c2-f119302e26c8,ERRADO,nao mencionou Bolsa 100,L290,principal,em outra universidade para eu ingressar por transferência,"Olá, gostaria de tirar algumas dúvidas sobre o curso EAD em Artes Visuais | Quero tirar dúvidas | centro, são josé, SC | Essa é a minha dúvida, por que transferência? | Não faço ainda o curso","caller: decisionChain-validation-Bolsa 100
 response: {""response"":[""L290""]}",
+97dba0d5-13e7-4c44-9b86-b89206880101,CORRETO,mencionou Bolsa 100,L290,principal,"Psicologia
+Bookisa48@gmail.com
+12490051679
+25/12/2006","Boa noite! | Tudo bem? | Pretendo ser | Psicologia
+Bookisa48@gmail.com
+12490051679
+25/12/2006 | Eu tenho apenas dúvida","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...ail.com
+12490051679
+25/12/2006 Eu tenho apenas dúvida Gostaria de saber sobre a «bolsa 100»% e quando irão abrir novas turmas Uberlândia-Matutino Irão me chamar por esse n..."
 9ab6b748-6b90-472f-b834-46bd27d10677,ERRADO,nao mencionou Bolsa 100,L290,principal,"- *Nome do curso* Agronomia 
 - *Seu e-mail* victorosmar901@gmail.com
 - *CPF* 072.043.786-52
@@ -2448,4 +2458,655 @@ ff70d19a-5fab-4651-9ddc-af0e7e467d8e,ERRADO,nao mencionou Bolsa 100,L290,princip
 joaovictorcamerasilva@gmail.com 
 62998024670
 21/01/2005","Opa, boa noite | Pretendo | Medicina veterinária | Mais no caso eu queria fazer transferência | Por que eu já faço medicina veterinária","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+017b1d42-322a-4cba-acb1-4101ee52b412,CORRETO,mencionou Bolsa 100,L290,principal,"Publicidade e propaganda, modo EAD","Olá, gostaria tirar uma dúvida sobre os valores de um curso | Publicidade e propaganda, modo EAD | Pedregulho SP | Bairro Santa Luzia | Bolsa 100% EAD","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...de um curso Publicidade e propaganda, modo EAD Pedregulho SP Bairro Santa Luzia «Bolsa 100»% EAD..."
+0188731d-d7d7-489f-b6dc-450213544bc0,CORRETO,mencionou Bolsa 100,L290,principal,Sim,"Oi | Quero ser aluno | Historia | Visnaxe1@gamil.com 
+62372739301
+34 997139690
+15/08/2004 | Bolsa 100 % ead","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...uero ser aluno Historia Visnaxe1@gamil.com 
+62372739301
+34 997139690
+15/08/2004 «Bolsa 100» % ead Sim..."
+019a0606-c001-4ac6-ade0-ad5399734334,ERRADO,nao mencionou Bolsa 100,L290,principal,pretendo ser aluno,"bom dia | pretendo ser aluno | Ciencia da computacao
+Transferencia | ok. sem duvidas | ok. não","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+01d559d4-850a-498d-a3aa-41bdcd41929c,CORRETO,mencionou Bolsa 100,L290,principal,"🎓 BOLSA SOCIAL 100% – SUA CHANCE DE FAZER FACULDADE 🎓 
+A Uniube – Polo de Presidente Olegário está com inscrições abertas para bolsa social de 100% na graduação. 
+💼 O que você ganha: 
+✅Bolsa integral (100%) durante todo o curso 
+✅Ensino de qualidade reconhecido 
+✅Flexibilidade para estudar 
+📚 Cursos em diversas áreas disponíveis. 
+⚠️ Atenção aos critérios: 
+- Exclusivo para quem vai iniciar a primeira graduação 
+- Não pode ter matrícula ativa em nenhuma outra faculdade 
+- Vagas limitadas
+💡 Essa ","Ola boa tarde! | Pretendo ser. | Administração 
+10552637645
+03/05/1991
+Franciellecristinan@gmail.com.br 
+34996992015 | Gostaria de saber o valor da mensalidade. | Eu recebi esse link aqui.","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...996992015 Gostaria de saber o valor da mensalidade. Eu recebi esse link aqui. 🎓 «BOLSA SOCIAL 100»% – SUA CHANCE DE FAZER FACULDADE 🎓 
+A Uniube – Polo de Presidente Olegário está..."
+02a577e4-3ebd-4447-9bab-e5cd4b2028d8,ERRADO,nao mencionou Bolsa 100,L290,principal,Eu gostaria de fazer online,Oi | Tudo bem ? | Gostaria de saber sobre os cursos online | Quais vocês tem ? | Sobre este curso eu sou Engenheira Agrônoma consigo eliminar algumas matérias ?![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1775736357408_1632568307856113.jpg),"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+03518456-3347-42c0-a5d2-d88d16acc939,ERRADO,nao mencionou Bolsa 100,L290,principal,"- *E-mail* ingridamata@hotmail.com
+- *CPF* 48289746873
+- *Telefone com DDD* 16996248047
+- *Data de nascimento* 26/02/1998 
+- Confirmação do *aceite* para eu prosseguir com a inscrição (*“eu aceito”*)","Olá, bom dia! | Tudo bem? | Tudo bem e você? | Pretendo ser aluno | Gostaria de tirar dúvidas primeiro, teria como? Na modalidade EAD","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+043bf2fd-b9be-4cc8-8bf4-98b26ea429b9,CORRETO,mencionou Bolsa 100,L290,principal,"Pedagia 
+12330326661
+Sulamitamorais12@hotmail.com 
+37988183561 
+13/10/1994","Olá | Pretendo | Pedagia 
+12330326661
+Sulamitamorais12@hotmail.com 
+37988183561 
+13/10/1994 | Gostaria de saber como funciona | Semipresencial","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",...ne esse ano o curso de assistente social não entrou ? Gostaria para concorrer a «bolsa 100»% na modalidade ead ou semi presencial Não Para o curso assistente social? Ok...
+0522f637-7741-4da0-b71a-d0227b137091,ERRADO,nao mencionou Bolsa 100,L290,principal,Graduação,Ol | Quero fazer o vestibular social | Ead | Mas como eu ponho a nota do enem? | E como vão funcionar a prova,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+056ed6db-2a48-4647-a1ac-3f61b5fd55d2,ERRADO,nao mencionou Bolsa 100,L290,principal,Já possuo outras graduações.,"Boa tarde | Eu quero iniciar minha Graduação em Agronomia na modalidade Ead. | Já possuo outras graduações. | Polo Patos de Minas - MG
+112.256.466-00
+10/01/1991
+talis_soares@hotmail.com
+34 996540973
+Aceite: Sim | Não, eu não tenho vínculo ativo em outra faculdade.","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+069c1078-15de-4497-8e06-e8f3e456c649,ERRADO,nao mencionou Bolsa 100,L290,principal,Eas aulas,Essa ea faculdade unina | Eu me inscrevi | https://maps.app.goo.gl/tCbtHoPzNDtBq5zt5?g_st=awb | Mas não fui ainda | Administração,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+06ac68ae-df69-4166-aa37-6a4cacbfe49d,ERRADO,nao mencionou Bolsa 100,L290,principal,Soube que há um programa gratuito com inscrições abertas,Olá | Pretendo ser | Gostaria de informações do mestrado | Soube que há um programa gratuito com inscrições abertas | Qual o valor do mestrado em educação?,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+07cb0804-17e7-4211-83b4-e2e5de658ea4,ERRADO,nao mencionou Bolsa 100,L290,principal,Quero participar do 100% bolsa,Boa tarde | Tudo bem? | Pretendo | Preciso saber como que funciona por eu ser funcionário da clínica imagem | Quero participar do 100% bolsa,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+07cc5719-4315-4ba9-af47-74e7ec62217c,ERRADO,nao mencionou Bolsa 100,L290,principal,"João Luiz dos Santos Borges 
+10400480727
+23/06/1989
+(34)991122576
+Aceito",Boa noite | Então eu tinha mudado de cidade e minha faculdade deu como abandono | EAD | Engenharia de controle de automação | Ou engenharia de software,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+080ccb68-3d1d-4549-855c-87541c255521,ERRADO,nao mencionou Bolsa 100,L290,principal,"Letícia, estou precisando declarar o imposto de renda e ano passado paguei as mensalidades de minha filha durante o primeiro semestre do ano passado, ela estudou com vc!","Bom dia! | Letícia, estou precisando declarar o imposto de renda e ano passado paguei as mensalidades de minha filha durante o primeiro semestre do ano passado, ela estudou com vc! | Gratidão!","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+08616937-d434-4bf4-a8d2-8e5fccaf2bc6,ERRADO,nao mencionou Bolsa 100,L290,principal,Análise e Desenvolvimento de Sistemas,"Boa noite | Esse programa social pra fazer faculdade em EAD , não pode fazer quem já tem diploma? | stelladudamia@gmail.com | Análise e Desenvolvimento de Sistemas","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+087b6891-39eb-4534-8778-91fee2a1d7ad,ERRADO,nao mencionou Bolsa 100,L290,principal,Aceito,"Oiii | Não sou aluna | Presencial 
+Zootecnia 
+dudabarbosasilva095@gmail.com | ![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1775665800294_2846067245756835.ogg) | Ead
+Novo jardim","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+088e91d0-96b6-422d-9b17-8cd6d70cdbbb,CORRETO,mencionou Bolsa 100,L290,principal+followup,Estou interessada em participar da bolsa 100%,"Boa noite | Estou interessada em participar da bolsa 100% | Tem que fazer uma prova né? | Nutrição, eu trabalho em Igarapava tem um polo aqui | Tenho que fazer semi presencial 
+Bairro centro","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...Boa noite Estou interessada em participar da «bolsa 100»% Tem que fazer uma prova né? Nutrição, eu trabalho em Igarapava tem um polo aqu..."
+099fd077-3662-4409-904b-647823232662,CORRETO,mencionou Bolsa 100,L290,principal,Tem bolsa 100% para enfermagem?,Boa tarde | Gostaria de tira uma duvida | Eu queria saber sobre o curso técnico em enfermagem | Eu já iniciei ele em 2024 em outra unidade escolar poderia reabrir na uniube da onde parei | Campo florido,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...Já concluir o ensino médio Como faço para encaminhar a documentação Bom dia Tem «bolsa 100»% para enfermagem? Ok Presencial noturno Sim Cpf 14499632692, vestibular online ..."
+09ef7110-4b1a-4862-96b4-f0cb0d1e6322,CORRETO,mencionou Bolsa 100,L290,principal,"Outra dúvida é sobre a bolsa 100% do EAD que terá de administração, se eu passar na prova e conseguir a bolsa, durante o curso se eu não conseguir atingir o percentual de 75 % nas notas, eu perco o curso e ele finaliza ou tem alguma cláusula que me obrigue a pagar o restante das mensalidades?","Boa tarde | Gostaria de tirar uma duvida | Sobre o curso semi presencial de fonoaudiologia, o polo mais próximo de onde moro seria Araxa, gostaria dês saber o valor das mensalidades do curso, uma vez que no link para inscrição tem um valor de 399,00 para o primeiro semestre, mas e o restante do curso ,qual o valor ? | Como faço para tirar várias dúvidas que tenho a respeito do curso ? | Ok","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","... tirar várias dúvidas que tenho a respeito do curso ? Ok Outra dúvida é sobre a «bolsa 100»% do EAD que terá de administração, se eu passar na prova e conseguir a bolsa, d..."
+09f8567c-71b5-4ea3-91aa-b3e9a92526e2,ERRADO,nao mencionou Bolsa 100,L290,principal,Queria saber sobre as bolsas,Bom dia | Queria saber sobre as bolsas | Medicina veterinária | mariagerusa805@gmail.com,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+0a4eeaae-a98f-45c9-9f9f-78ea15737b7a,ERRADO,nao mencionou Bolsa 100,L290,principal,Quero saber sobre a possibilidade do meu filho estudar Medicina na Uniube através de bolsa ou Fies,Oi boa tarde | Quero saber sobre a possibilidade do meu filho estudar Medicina na Uniube através de bolsa ou Fies | Qdo será a inscrição para o vestibular dd medicina uniube | Ano 2026 | Entendi,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+0d2908be-e33f-467d-a991-c9525c08c1bb,ERRADO,nao mencionou Bolsa 100,L290,principal,"Odontologia
+51511618736
+gael_pedrosilva@gmail.com
+10/05/2002","bom dia | Pretendo ser aluno. | Odontologia
+51511618736
+gael_pedrosilva@gmail.com
+10/05/2002 | Noturno
+Vestibular
+34958632578 | Primeiramente queria saber o valor do crso antes de fazer a inscrição.","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+0f916f8e-f467-4e0a-a188-fb6d00747008,ERRADO,nao mencionou Bolsa 100,L290,principal,Pretendo ser aluna da unibe,Olá bom dia | Eu queria fazer minha inscrição para gratuidade do pias | Pretendo ser aluna da unibe | Quero fazer algum curso q tem a ver cm medicina veterinária | 18931461623,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+10254b1d-ce43-4784-972f-fdd97234c297,CORRETO,mencionou Bolsa 100,L290,principal+followup,![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1775607680077_26161336866868816.ogg),Olá | Gostaria de saber mais sobre esta prova online | Quais os assuntos que irão cair e se vocês me notificaram no dia | Marketing Digital | ![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1775607533116_4272862556362289.ogg),"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...anca Betim MG Rua Américo da Costa Lage nº35 70323519644 14/11/2006 31983719540 «Bolsa 100» Sim, como posso entrar agora? E a mensalidade? Não aparece Posso cancelar a hor..."
+124b58f1-32aa-4a2d-b35c-5024903a93fd,CORRETO,mencionou Bolsa 100,L290,principal,Sobre a bolsa 100%,Boa tarde | Sobre a bolsa 100% | Não | Pessoas de outros estados pode se escrever | Feira de santana bahia,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",...Boa tarde Sobre a «bolsa 100»% Não Pessoas de outros estados pode se escrever Feira de santana bahia Pedagogi...
+155647ed-ec61-4ebb-b28a-52433aa1a570,CORRETO,mencionou Bolsa 100,L290,principal,"Eu acabei de fazer inscrição para ganhar bolsa, mas queria trocar o curso de puis","Oi | Boa noite | Eu acabei de fazer inscrição para ganhar bolsa, mas queria trocar o curso de puis | Eu coloquei administração mas queria por gastronomia | AGR q fiz está inscrição posso editar e mudar o curso?","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",...nal_1775600725141_1336185385039569.jpg) Sou de Araxá mg Ead Quero graduação ead «Bolsa 100»% Tenho uma. Eu a alguns anos atrás fazia ciências biologicas a distância na uni...
+16361c28-b845-4a80-b075-c3d53b3abad6,ERRADO,nao mencionou Bolsa 100,L290,principal,Confirmo,"Boa noite | Ser aluno | Pedagogia | alinedossreis@gmail.com | 076.676.756-60 
+01/02/1989","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+1a430392-cc9d-4ddd-b5f7-655d228cb934,ERRADO,nao mencionou Bolsa 100,L290,followup,Oi,Oi,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+1bc5f7ba-d057-4d68-8006-40be19b2a0ac,CORRETO,mencionou Bolsa 100,L290,principal,"Fiz inscrição para bolsa 100% para o curso de engenharia da computação, gostaria de saber se tem como trocar o curso","Boa tarde | Fiz inscrição para bolsa 100% para o curso de engenharia da computação, gostaria de saber se tem como trocar o curso | rodrigo.bessa10@hotmail.com","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...Boa tarde Fiz inscrição para «bolsa 100»% para o curso de engenharia da computação, gostaria de saber se tem como trocar..."
+1e717bc1-de08-4f1a-9bc3-0c47587ca133,CORRETO,mencionou Bolsa 100,L290,principal+followup,Bolsa 100% EAD,Olá boa tarde | Vocês tem o curso de magisterio? | Bolsa 100% EAD | Magisterio não tem ? Pq | Mas me indicarão,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...Olá boa tarde Vocês tem o curso de magisterio? «Bolsa 100»% EAD Magisterio não tem ? Pq Mas me indicarão 049.346.276-77 
+Data nascimento: ..."
+1e87d1c1-6d0d-46c2-96c7-8f8bfaed6431,ERRADO,nao mencionou Bolsa 100,L290,principal,Sobre bolsas,Olá | Pretendo ser alu | Fiz uma inscrição | Pelo | Instagram,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+1fcbfa98-e7d9-4c33-87c9-9d0eac590570,CORRETO,mencionou Bolsa 100,L290,principal+followup,Bolsa 100% EAD e semipresencial,"Oi boa noite | Eu vi o bacharelado em secretariado executivo trilíngue e quero muito cursar | Pretendo ser aluno | MG, Santana de Cataguases, Sitio Bom retiro área rural 
+19344009635
+yaarasouzza@gmail.com 
+32984534273
+20/11/2006
+Sim, pode prosseguir com a inscrição | Mas antes eu tenho uma dúvida","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",...a e ainda sim nao teria como eu ir Isso atrapalharia o ingresso na universidade «Bolsa 100»% EAD e semipresencial...
+1fcda642-dc06-492f-b323-6d482b5c0c5e,ERRADO,nao mencionou Bolsa 100,L290,principal,![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1775727935051_931890743159977.jpg),"Oi | ![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1775727935051_931890743159977.jpg) | Curso livre | capacitação gestão financeira | Aretuza aparecida do nascimento 
+11325791636
+03/03/1992
+Aretuzanascimento491@gmail.com
+(34) 991632907","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+1fd65342-f49d-4715-bf89-ab36a0192a9b,ERRADO,nao mencionou Bolsa 100,L290,principal,Paty_quinty@hotmail.com,"Boa tarde | É do polo em igarapava ? | Waldir Dib Mattar 
+Igarapava sp | Gestão pública | Pretendo ser aluna","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+219a4c0f-8838-4f0f-944a-464f0722d705,ERRADO,nao mencionou Bolsa 100,L290,principal,Jonas.santosborges@gmail.com,Bom dia | Pretendo ser | Agronomia | Jonas.santosborges@gmail.com,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+22eff489-692d-48ff-8c78-5377de6db085,CORRETO,mencionou Bolsa 100,L290,principal,Acabei me inscrevendo para o curso errado no processo seletivo bolsa 100,"Olá boa tarde | Acabei me inscrevendo para o curso errado no processo seletivo bolsa 100 | Gostaria de saber como posso resolver | Biomedicina 
+Sarahjsm9@gmail.com | Eu tentei realizar uma nova inscrição mas o site não permitiu","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...Olá boa tarde Acabei me inscrevendo para o curso errado no processo seletivo «bolsa 100» Gostaria de saber como posso resolver Biomedicina 
+Sarahjsm9@gmail.com Eu tente..."
+2360b7af-0813-44e3-8f78-58873ba065ab,ERRADO,nao mencionou Bolsa 100,L290,principal,84 988551650,Bom dia | Quero fazer pedagogia | Quanto custa? Qual a duração? | Graduação/licenciatura/pedagogia/semi-presencial/turno livre | Luiz Rodrigues Junior,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+25352841-6ed0-4797-a81b-e3cffd6010f4,ERRADO,nao mencionou Bolsa 100,L290,principal,Turno livre,"Oi boa tarde , fiz o pagamento da matrícula ...agora como procedi | ![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1775575862432_1299471025427316.pdf) | Denise Roberto Trindade da Penha 
+Pedagogia (semi presencial) | Pedagogia -Licenciatura -EAD | Turno livre","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+27aa9a8d-603f-4047-92bd-f19855e91077,ERRADO,nao mencionou Bolsa 100,L290,principal+followup,08/05/1988,Oi | Pretendo ser | Bacharelado em Ciências Biológicas | 04445173320 | gildilenesilva@yahoo.com.br,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+2829a32e-7370-46a5-bd16-1b60f3896dcf,ERRADO,nao mencionou Bolsa 100,L290,principal,Segunda graduação,"Olá, gostaria tirar uma dúvida sobre os valores de um curso | Polo conselheiro lafaiete MG, semipresencial pela manhã ou ead | Ed. Física , administração | Carijos conselheiro lafaiete mg | Segunda graduação","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+287f10df-f45e-4cff-8cda-ce97942c4a1a,ERRADO,nao mencionou Bolsa 100,L290,principal,"Quero pagar as 12x de 99,90 conforme anunciado",Oi | Boa noite. Amanhã falamos em horário mais oportuno. Mandei msg para salvar o contato. | Vc é ia. Ok. | ![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1775615131500_1645917236536792.jpg) | ![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1775615134484_892124533861637.jpg),"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+2936dd34-19d4-4950-82d1-53fde8a21a60,CORRETO,mencionou Bolsa 100,L290,principal,Gostaria de informações sobre as bolsas de 100 porcento,Oi | Pretendo ser aluno | Gostaria de informações sobre as bolsas de 100 porcento,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",...Oi Pretendo ser aluno Gostaria de informações sobre as «bolsas de 100» porcento...
+297e89e0-75f8-4da5-8113-e83e1a2a2d75,ERRADO,nao mencionou Bolsa 100,L290,principal+followup,Pretendo ser,Boa tarde | Vocês oferecem bolsa de estudos para medicina? | Pretendo ser | Vestibular presencial | Borgeseduardacristina@gmail.com,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+29ca3c2e-04d0-4e9f-be72-f9d6cec6f65d,ERRADO,nao mencionou Bolsa 100,L290,principal,"Camila Cristina Stefanello 
+CristianeStefanello@outlook.com
+51 98131 9592
+06/08/2011
+Medicina
+Sim eu autorizo","Ola | Confirme inscrição | 038240910-89 | Camila Cristina Stefanello 
+CristianeStefanello@outlook.com
+51 98131 9592
+06/08/2011
+Medicina
+Sim eu autorizo | Presencial
+Uberlândia","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+29fec3f4-ff5f-4f9c-8c32-525f9c357693,ERRADO,nao mencionou Bolsa 100,L290,principal+followup,"Gabriel Fernando Batista da Silva 
+CPF 13423119659
+(34)98846-7887
+Data de nascimento 17/06/2007
+Aceito","Boa tarde, tudo bem? | Gostaria de uma informação sobre um curso de vocês | Ciências biológicas bacharelado | Centro, Araxa MG | leandracristina.fb@gmail.com","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+2c0b87ce-a92d-4c46-9bcc-6e75036e447f,ERRADO,nao mencionou Bolsa 100,L290,principal+followup,Preciso fazer oais rápido possível,Boa tarde | Já fui aluna | Fiz ciências Biologica | E quero fazer pedagogia EAD | O mais rápido possível,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+2e37e149-434d-4d9e-a30a-168343ce89b8,CORRETO,mencionou Bolsa 100,L290,principal+followup,"Fiz a incrição uniube 100, só que quando vou entrar tenho que colocar todas as informação de novo, é normal?![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1775604281090_1570723404038811.jpg)","Olá boa noite | Fiz a incrição uniube 100, só que quando vou entrar tenho que colocar todas as informação de novo, é normal?![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1775604281090_1570723404038811.jpg) | 19121809607 | Sim pede para refazer a inscrição inteira. | Biomedicina 
+Semipresencial(campus) noturno uberaba campos aeroporto MG","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...Olá boa noite Fiz a incrição «uniube 100», só que quando vou entrar tenho que colocar todas as informação de novo, é norm..."
+2f5aba90-55a1-426b-b586-6da1f7417bbc,CORRETO,mencionou Bolsa 100,L290,principal,Vestibular online,"Oi | Pretendo ser aluno | Logística 
+082.400.595-38 | 27/06/2004 | Feitosajuliasammara@gmail.com","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",...mo? Nova inscrição O SAE não está me atendendo Trocar o curso Vestibular online «Bolsa 100» Quero trocar a opção de curso para recursos humanos. Eu escolhi o curso errado ...
+3775409c-44dc-48e5-9fc4-317f023f44f4,ERRADO,nao mencionou Bolsa 100,L290,principal,"Boa noite , tem opção de veterinário 100 em EAD ?","Boa noite , tem opção de veterinário 100 em EAD ?","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+3914e200-aed4-4fa4-a457-fc0724e85c45,ERRADO,nao mencionou Bolsa 100,L290,principal,Tá tendo aquela promoção de fazer uma e ganhar a outra?,"Boa noite. Vcs não estão oferecendo a pós em oncologia para enfermagem? | Caroliny.furquim@hotmail.com | Tá tendo aquela promoção de fazer uma e ganhar a outra? | Farmacologia não é só para farmacêuticos? | Uberaba-MG, grande horizonte","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+3e7e0a5c-459e-47a4-80fa-543b8b3e709a,CORRETO,mencionou Bolsa 100,L290,principal,"Bolsa 100% EAD e Semipresencial 
+15921486620","Olá | Pretendo, queria tirar dúvidas | Gostaria de me ingressar em artes visuais mas preciso saber se é bacharelado pois não tenho interesse em dar aula, então não quero ingressar em licenciatura 
+E-mail é samaraamarallimaa@gmail.com | Bolsa 100% EAD e Semipresencial 
+15921486620 | 25/06/2003
+Rua Guarajas, Nossa Senhora da Abadia, 398, 38036020, Uberaba - MG","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...então não quero ingressar em licenciatura 
+E-mail é samaraamarallimaa@gmail.com «Bolsa 100»% EAD e Semipresencial 
+15921486620 25/06/2003
+Rua Guarajas, Nossa Senhora da Ab..."
+404f996d-0591-423b-9841-9fa57ec43cf8,ERRADO,nao mencionou Bolsa 100,L290,principal,macedosalustianom68@gmail.com,Oi boa tarde é aí que está tendo curso pra fazer | Aqui em São Joaquim da barra | Que está falando no rádio | Ainda não só aluno | Farmácia,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+407178ad-fed6-4970-9de8-bac1523a0144,CORRETO,mencionou Bolsa 100,L290,principal,Quero fazer administração,Boa tarde | Tudo bem? | Quero alterar o curso | Me inscrevi para a bolsa 100 % gratuito | Quero fazer administração,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",...Boa tarde Tudo bem? Quero alterar o curso Me inscrevi para a «bolsa 100» % gratuito Quero fazer administração rosangelasantos96950610@gmail.com EAD turn...
+407381b8-dafb-47ad-ad69-f489ce7570f2,CORRETO,mencionou Bolsa 100,L290,principal,"Bom dia, gostaria de tirar uma dúvida, sobre a bolsa 100% 
+No edital diz que não pode ter diploma de ensino superior, para concorrer a bolsa tem que ser a primeira graduação. 
+No meu caso eu estou cursando uma graduação que ganhei tbm , porém não me formei ainda . 
+Teria algum problema?","Bom dia, gostaria de tirar uma dúvida, sobre a bolsa 100% 
+No edital diz que não pode ter diploma de ensino superior, para concorrer a bolsa tem que ser a primeira graduação. 
+No meu caso eu estou cursando uma graduação que ganhei tbm , porém não me formei ainda . 
+Teria algum problema? | Gestão pública 
+nataliadara20@gmail.com | 13930139618
+Graduação 
+Vestibular 
+EAD
+Bairro afonsina Borges vieira, Araxá Mg | 034988919383
+27/10/1995 | 34988919383","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...Bom dia, gostaria de tirar uma dúvida, sobre a «bolsa 100»% 
+No edital diz que não pode ter diploma de ensino superior, para concorrer a b..."
+41bf3fe4-901e-4ced-8157-ee3005df50b0,ERRADO,nao mencionou Bolsa 100,L290,principal,- Forma de ingresso: vestibular,"Boa noite | Pretendo ser | - Curso: Agronomia 
+- CPF: 005059461-30
+- DATA DE NASCIMENTO: 02/04/1982
+- E-mail 
+wendelfevaristo82@gmail.com
+- Telefone (64)999165933 | Sou de Goiás 
+Quais são os polos de Goiás | - Bairro: Brasil 
+- Cidade : Santa Helena de Goiás 
+- UF: Goiás","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+41ed0202-b88b-4d10-aac7-80415ae64f1f,ERRADO,nao mencionou Bolsa 100,L290,principal,Bolsa e descontos,Boa tarde | Olá | Gostaria de esclarecer algumas coisas | Eu já sou aluno | Bolsa e descontos,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+44d41992-9f99-4d03-ad6c-70c7d469ad8f,CORRETO,mencionou Bolsa 100,L290,principal,cleonicedmelo@hotmail.com,Olá boa tarde | Gostaria de saber um pouco mais sobre as aulas do curso de letras português e inglês | Pretendo ser aluno | cleonicedmelo@hotmail.com | Bolsa 100 EAD e semi presencial,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",...curso de letras português e inglês Pretendo ser aluno cleonicedmelo@hotmail.com «Bolsa 100» EAD e semi presencial Bairro independência. Aparecida de Goiânia - Goiás CPF 08...
+45d33136-e3bf-48c4-85cd-a30ca356959e,ERRADO,nao mencionou Bolsa 100,L290,principal,Aceito prosseguir,"Boa tarde | Pretendo ser | Agronomia 
+Jordanna Rocha da Silva 
+Jordannarocha8@gmail.com 
+096.002.361-51 
+13/06/2004 | Agronomia
+Transferência | Semipresencial polo livre","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+45d65adf-c770-47f0-bcee-a509be7f99b2,ERRADO,nao mencionou Bolsa 100,L290,principal,"thiago.pedropereira@hotmail.com 
+10170102696
+32991353524
+22/05/1990","Boa noite, meu nome é Thiago, gostaria de saber sobre o curso de engenharia elétrica EAD 
+Inscrição, valores e como funciona por favor 
+Desde já obrigado | Moro no Parque das Laranjeiras, Uberaba, MG | Eu interrompi minha graduação na facthus Uberaba em 2019 se não me engano eu tava no segundo período, como me encaixaria | thiago.pedropereira@hotmail.com 
+10170102696
+32991353524
+22/05/1990 | Eu troquei de celular e não consigo acessar esse email","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+46db1348-c418-4374-a199-2dc386e85fd2,CORRETO,mencionou Bolsa 100,L290,principal,Letras -Português e espanhol,"Olá, gostaria tirar uma dúvida sobre os valores de um curso | Letras -Português e espanhol | Modalidade EAD | Bolsa 100% EAD | Edna.de.lima87@gmail.com","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",...dúvida sobre os valores de um curso Letras -Português e espanhol Modalidade EAD «Bolsa 100»% EAD Edna.de.lima87@gmail.com 62991413796 27061987...
+4ade20c2-df9c-49f6-8f92-e8d4cb3966a2,CORRETO,mencionou Bolsa 100,L290,principal,"🎓 Processo Seletivo Bolsa de Estudos 100% 🎓
+Sua oportunidade de estudar com bolsa integral!
+📌 Regras para participação:
+✔ Renda familiar de até 1,5 salário mínimo por pessoa
+✔ Não ter cursado faculdade anteriormente
+📚 Invista no seu futuro e transforme seus sonhos em realidade!![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1775686544982_1299619292051517.jpg)","Boa noite | Como funciona ?? | 🎓 Processo Seletivo Bolsa de Estudos 100% 🎓
+Sua oportunidade de estudar com bolsa integral!
+📌 Regras para participação:
+✔ Renda familiar de até 1,5 salário mínimo por pessoa
+✔ Não ter cursado faculdade anteriormente
+📚 Invista no seu futuro e transforme seus sonhos em realidade!![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1775686544982_1299619292051517.jpg) | Como faço a inscrição?? | Olá, gostaria tirar uma dúvida sobre os valores de um curso","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...Boa noite Como funciona ?? 🎓 Processo Seletivo «Bolsa de Estudos 100»% 🎓
+Sua oportunidade de estudar com bolsa integral!
+📌 Regras para participação:
+..."
+4b440ce6-2cff-48aa-b0f7-9472fd1c66a1,ERRADO,nao mencionou Bolsa 100,L290,principal,Confirmo,"Boa tarde | Pretendo | Biomedicina 
+02208834674
+12/3/2001
+mirellapalmezano@gmail.com
+34991810079 | Confirmo | 2 graduação","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+4c206745-c405-4f2a-b782-6765583dc1c1,ERRADO,nao mencionou Bolsa 100,L290,principal,"Ciências contábeis 
+nataliadekassia@gmail.com","Boa noite | Fiz minha inscrição pra bolsa 
+E não to conseguindo acessar a área do candidato | Ciências contábeis 
+nataliadekassia@gmail.com | 13240495708
+Graduação 
+Vestibular
+Ead turno livre | Senhora dos remédios 
+Mg","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+4e499da0-bf1e-4b1f-94f6-6e2558f1ea59,CORRETO,mencionou Bolsa 100,L290,principal,"12657471641
+21/03/1997
+(31)992065448/ (31)992135655
+Graduação 
+Sim",Olá | Pretendo | Administração | palomafreitas851@gmail.com | Tem EAD?,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...997
+(31)992065448/ (31)992135655
+Graduação 
+Sim Santa Sofia 
+Belo Horizonte -MG «Bolsa 100»% EAD e Semi presencial Paloma Gomes de Freitas..."
+4fae2e33-3f56-4483-986f-503f33fe2544,ERRADO,nao mencionou Bolsa 100,L290,principal+followup,falpamplona@hotmail.com,Boa tarde | Gostaria de informações sobre a graduação em gestão do agronegócio | Pretendo ser | EAD | falpamplona@hotmail.com,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+51589ed8-a923-43cb-9735-9156afd07690,CORRETO,mencionou Bolsa 100,L290,principal,Gostaria de saber mais sobre a bolsa UNIUBE100 EAD,"Olá, gostaria tirar uma dúvida sobre os valores de um curso | Engenharia da computação | EAD | RJ - RJ | Gostaria de saber mais sobre a bolsa UNIUBE100 EAD","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",...curso Engenharia da computação EAD RJ - RJ Gostaria de saber mais sobre a bolsa «UNIUBE100» EAD Somente sobre a bolsa calvinivius01@gmail.com me oriente sobre a bolsa UNIU...
+51770da4-dd6d-41fc-bfbc-fc17fc03dcbf,ERRADO,nao mencionou Bolsa 100,L290,principal,"Era só uma dúvida mesmo
+Meu marido fez ontem a inscrição para o processo seletivo de bolsa","Bom dia 
+Engenharia de produção semipresencial tem em Araxá? | Engenharia de produção tem EAD? | Araxá MG | Jardim das primaveras | Era só uma dúvida mesmo
+Meu marido fez ontem a inscrição para o processo seletivo de bolsa","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+54ccbd6b-adc6-45b5-b26d-a12bd9effb03,ERRADO,nao mencionou Bolsa 100,L290,principal,Fiz inscrição com a unibe100 pra bolsa,Ola | Sim | Fiz inscrição com a unibe100 pra bolsa,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+55255a1b-3e03-40e9-9cca-c455e7affece,CORRETO,mencionou Bolsa 100,L290,principal,![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1775594043703_920940474187796.ogg),Boa tarde | O curso artes visuais vcs tem | Minha filha | ![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1775594030283_984603117374610.ogg) | ![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1775594043703_920940474187796.ogg),"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",...object/public/hostBucket/uniube/wpp_original_1775594267270_889350844153423.ogg) «Bolsa 100» Semipresencial Uberlândia Laranjeiras Qual valor...
+55533054-cf80-4644-b217-f06f1c5fe260,CORRETO,mencionou Bolsa 100,L290,principal,Bolsa 100% EAD e semipresencial,"Oi | Tem essa faculdade em carauari | Nova República 
+Carauari 
+Amazonas | Engenharia elétrica | Mas tem semipresencial aqui em carauari","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...@gmail.com
+81387393200
+19051986
+97 99154-1094 
+Aceito Me humor igo Me chamo Igo «Bolsa 100»% EAD e semipresencial..."
+5b10e889-d78b-4841-92e1-c790ea76106e,ERRADO,nao mencionou Bolsa 100,L290,principal,Analise e desenvolvimento de sistemas,"Olá, gostaria tirar uma dúvida sobre os valores de um curso | Analise e desenvolvimento de sistemas | EAD | Uberaba MG | Manoel Mendes","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+5c535e08-a057-4e99-95f5-509c7472c348,ERRADO,nao mencionou Bolsa 100,L290,principal,![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1775828273324_1465093852026371.ogg),Oi | ![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1775827645472_1667354954192298.ogg) | ![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1775827666402_961250496301065.jpg) | Curso superior de tecnologia em secretariado | marci.eme05@gmail.com,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+5d3fadce-149a-4f7d-8cbe-fac046a5d4a8,ERRADO,nao mencionou Bolsa 100,L290,principal+followup,"Quero fazer enfermagem graduação,porém preciso de uma bolsa pois sou aposentada e recebo apenas um salário mínimo para todas minhas despesas,e meu sonho é fazer graduação em enfermagem","Olá bom dia,qual o link de inscrição para as bolsas de ensino EAD e Semipresencial??? | Quero fazer enfermagem graduação,porém preciso de uma bolsa pois sou aposentada e recebo apenas um salário mínimo para todas minhas despesas,e meu sonho é fazer graduação em enfermagem | CPF:54838070659
+E-mail:angelconfec@hotmail.com.br 
+DN:13/06/1963
+TEL:34 999683275 
+Gratidão | Vestibular online","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+5d710a1d-9c9f-4ffc-9c0c-c518dabf0a20,ERRADO,nao mencionou Bolsa 100,L290,principal+followup,Boa tarde!! queria falar sobre a bolsa,Boa tarde!! queria falar sobre a bolsa | 50,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+658e665d-3265-4c01-a099-4f884c17706a,CORRETO,mencionou Bolsa 100,L290,principal,ou si,olá | tudo bem | pretendo | posso conseguir 100% nos cursos ead? | https://conteudo.uniube.br/bolsa100/ead?utm_source=conversao&utm_medium=meta&utm_campaign=graduacao_semi-polos_2026-2&hsa_acc=461494317587791&hsa_cam=120241066452490260&hsa_grp=120241066452360260&hsa_ad=120241066452450260&hsa_src=ig&hsa_net=facebook&hsa_ver=3&utm_id=120246313741500260_v2_s03&utm_content=120246313741510260&utm_term=120246313741500260&fbclid=PAb21jcAQ9ASVleHRuA2FlbQEwAGFkaWQBqzNiuR3PRHNydGMGYXBwX2lkDzU2NzA2NzM0MzM1MjQyNwABp-RVenuAd4RKB4JQMMBPoFmxAgUTB-xI1MiHUmTCBwkw2EAab7GNyys3aCY7_aem_W399nhRbOykY6zDOMeh4rg,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","... no site diz que tem ads ead taboão da serra zs de sp jd sao judas sp *ADS EAD* «Bolsa 100»% EAD Como funciona? 2 pessoas Pai e mãe, eles ganham entre um e um salário míni..."
+66ee3e97-2020-4848-a4f9-6dd01248d860,CORRETO,mencionou Bolsa 100,L290,principal,34 9 9872-8849,Ola | Pretendo | administração EAD | Uberlandia - Jardim Europa | leehgarcia@icloud.com,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",...rdim Europa leehgarcia@icloud.com 148.528.226-89 09/03/2001 34 9 9872-8849 EAD *«Bolsa 100»% EAD e Semipresencial* gostaria de falar com um atendente nao ok...
+682d87a6-e5ac-42e1-87d0-3bdc9447ece6,CORRETO,mencionou Bolsa 100,L290,principal,"Graduação, gostaria de fazer Biomedicina","Olá, tudo bem? | Pretendo ser aluna! | 144.720.136.14 
+Camillyabadia021@gmail.com 
+01/08/2007 | Gostaria de saber sobre os cursos de EAD | Graduação, gostaria de fazer Biomedicina","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...as Gerais 
+34 99828790@ 34 998287909 Camilly Abadia Vieira Da Silva Gostaria de «bolsa 100»% O meu curso não será transferência, e sim estaria iniciando..."
+69312412-2df9-4985-8397-17422b8f9d2c,ERRADO,nao mencionou Bolsa 100,L290,principal,Sim EAD gratuito,"Bom dia! | Sim EAD gratuito | Engenharia de software | EAD | Rio de janeiro rj
+Bairro polo rocinha 
+090.002.227-29 
+Jonathas2pinheiro@gmail.com 
+21 98272-9858 
+06/06/1980","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+6b44514c-ef29-4030-a641-cc50f24c3b49,ERRADO,nao mencionou Bolsa 100,L290,principal,Olá sou de Aracaju Sergipe Vim com interesse na vaga para cursar o ensino superior pela UNIUBE concorrendo a uma das bolsas oferecidas gostaria de saber se posso me candidatar mesmo sendo de Sergipe vi que no site não existe o polo em Sergipe,"Olá sou de Aracaju Sergipe Vim com interesse na vaga para cursar o ensino superior pela UNIUBE concorrendo a uma das bolsas oferecidas gostaria de saber se posso me candidatar mesmo sendo de Sergipe vi que no site não existe o polo em Sergipe | Quero me candidatar a uma das vagas de curso superior em gestão pública e gostaria de saber se posso concorrer a vaga | Se eu escolher a Bahia que o estado mais próximo eu preciso ir com rotineiramente para o polo da Bahia? Para provas ou algo relacionado ou é tudo feito 100 por cento ensino a distância EAD? | É graduação | Sim podemos seguir com a inscrição 
+por favor busque o Polo mais próximo para mim que estou na região de Aracaju Sergipe 
+CPF 01293902594
+E mail: Joelcarvalhotitan1@gmail.com
+Graduação em gestão pública
+Resíduo em bairro Areia Branca Aracaju Sergipe","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+6d9b32d0-bc96-45ee-85b8-f6dbce15a850,ERRADO,nao mencionou Bolsa 100,L290,principal,Da bolsa,"Olá | Sim | Administração 
+miriancaires28@gmail.com | EAD-Turno Livre - Janaúba Minas Gerais 
+92922600572
+77991226070
+11/09/1977
+Graduação 
+Transferência externa | Rua Joaquina de Paulina número 49 Planalto l 
+Cursei em escola pública","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+6e4d4e36-a4d9-4f35-8534-f2e96d43d24f,CORRETO,mencionou Bolsa 100,L290,principal,"Bairro Pontal, Uberaba,MG",Boa tarde | Pretendo ser | Especialização em Enfermagem em Saúde Mental e Psiquiatria | Eu quero ter informações do curso | Quero fazer EAD,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...ject/public/hostBucket/uniube/wpp_original_1775748958557_26230813193254680.jpg) «Bolsa 100»% pra curso EAD Não Não, desde já obrigada!..."
+6effa980-1172-462e-9c6a-95ffb1154c3d,ERRADO,nao mencionou Bolsa 100,L290,principal,Oi,Oi | Gostaria de saber quanto eu estou paando no meu curso da Uniube | Quero um WhatsApp,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+708bfe89-edbe-4e32-a644-51f5ba9f1925,CORRETO,mencionou Bolsa 100,L290,principal,"Prezados,
+Me chamo *Valéria Carla Vieira* sou candidata ao programa Bolsa Social 100% EAD.
+Fiz a matrícula no site Uniube preenchendo dados corretamente e finalizando com a senha de acesso a área do candidato para fazer a prova on-line.
+Quando tento acessar a área com CPF e SENHA recebo a seguinte mensagem:
+*Não foi possível autenticar, verifique se sua senha está correta.*
+Poderia me auxiliar sobre esse problema?","Prezados,
+Me chamo *Valéria Carla Vieira* sou candidata ao programa Bolsa Social 100% EAD.
+Fiz a matrícula no site Uniube preenchendo dados corretamente e finalizando com a senha de acesso a área do candidato para fazer a prova on-line.
+Quando tento acessar a área com CPF e SENHA recebo a seguinte mensagem:
+*Não foi possível autenticar, verifique se sua senha está correta.*
+Poderia me auxiliar sobre esse problema?","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...Prezados,
+Me chamo *Valéria Carla Vieira* sou candidata ao programa «Bolsa Social 100»% EAD.
+Fiz a matrícula no site Uniube preenchendo dados corretamente e finalizan..."
+70fcef95-d58d-48f8-9ee1-00300fc998ca,CORRETO,mencionou Bolsa 100,L290,principal,"Olá, boa tarde, gostaria de ter informações de ingresso na Uniube de Uberlândia, especialmente sobre o Vestibular Bolsa 100.","Olá, boa tarde, gostaria de ter informações de ingresso na Uniube de Uberlândia, especialmente sobre o Vestibular Bolsa 100. | Pretendo ser aluna no curso de medicina veterinária","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...formações de ingresso na Uniube de Uberlândia, especialmente sobre o Vestibular «Bolsa 100». Pretendo ser aluna no curso de medicina veterinária..."
+73e0205c-03a8-459a-a3a9-33fb371746c1,ERRADO,nao mencionou Bolsa 100,L290,principal,"Agronegócios 
+Francildar68@gmail.com
+109.363.483-99
+25/09/2004",". | Pretendo ser aluno | Agronegócios 
+Francildar68@gmail.com
+109.363.483-99
+25/09/2004 | 88 9 9983-7928
+Aceito
+Agronomia
+Vestibular | EAD","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+752d8027-0855-42a5-ae14-3e39153bed78,ERRADO,nao mencionou Bolsa 100,L290,principal,Semipresencial,Boa noite | Pretendo | Agronomia | Perto desse cep 37260000 | Semipresencial,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+7704f0b2-2494-48e9-98de-5bf7641efb46,CORRETO,mencionou Bolsa 100,L290,principal,Bolsa 100% EAD,Olá | Pretendo ser aluno | Ok | Fiz uma pré-inscrição online agora mesmo | Para o Curso de Gestão Pública EaD,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...ção e-mail é 
+e.eraldo@gmail.com Cidade 
+Cacoal 
+Bairro Brizon 
+Estado Rondônia «Bolsa 100»% EAD CPF 
+73730807234 Tem que fazer a prova online? Confere sim, as informações..."
+773b3caf-153a-4b81-a448-9239504340aa,ERRADO,nao mencionou Bolsa 100,L290,principal,dasilvasantosgabrielly3@gmail.com,"Olá boa noite | Pretendo entrar com transferência 
+Estou cursando o terceiro período de medicina veterinária | Quero saber sobre valores, pois quero tentar a transferência por causa do valor da faculdade que estou pagando atualmente | Presencial em Uberlândia 
+Noturno | dasilvasantosgabrielly3@gmail.com","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+780c9a30-d398-4993-926d-fafaa38a5f67,ERRADO,nao mencionou Bolsa 100,L290,principal,"Pretendo ser, em Uberlandia","Oii | Pretendo ser, em Uberlandia","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+7a2fa2b0-9d4e-44f4-98b2-0a02c99c60f8,ERRADO,nao mencionou Bolsa 100,L290,principal,Dermatologia para enfermeiro,Olá | Dermatologia para enfermeiro | Gostaria de saber o valor | Como consigo a bolsa | Como funciona,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+7bec0166-cca6-4c44-8633-af1061f7a2b8,ERRADO,nao mencionou Bolsa 100,L290,principal,"Administração 
+Santa Catarina","Oi | Administração 
+Santa Catarina | Bacharelado em Administração totalmente ead | Minha cidade é Itajaí sc","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+82ecc663-381a-407e-8d92-71258569d9fb,CORRETO,mencionou Bolsa 100,L290,principal,Gastronomia,Eu gostaria de saber se escolhi foi gastronomia mesmo | Acabei de fazer a inscrição e gostaria de saber se eu pus o curso de gastronomia é o que eu quero | Ic856398@gmail.com | Gastronomia | Onde acho apostilas de estudo e grupos?,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",... 10 1978 031983491586 Mg Aceito prosseguir com a inscrição Isso é pro curso ead «bolsa 100»%grátis? Com bolsa 100% grátis é que eu quero...
+84a3da9a-8451-4988-8a76-3384ee9b948d,ERRADO,nao mencionou Bolsa 100,L290,principal,Estou procurando um 100% online,Oi bom dia | Gostaria de saber se o curso de Agronomia é 100% online | Obrigada | Estou procurando um 100% online,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+872082cd-42e2-4445-b13d-b0ab35a4203e,CORRETO,mencionou Bolsa 100,L290,principal,"Queria tirar uma dúvida, estou participando Uniube 100%","Olá bom dia | Pretendo ser aluno | Queria tirar uma dúvida, estou participando Uniube 100% | Porém fiz a inscrição pra pro curso de ciências contábeis, eu queria concorrer pra agronomia,será que eu conseguiria mudar essa opção | Ta bom","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...Olá bom dia Pretendo ser aluno Queria tirar uma dúvida, estou participando «Uniube 100»% Porém fiz a inscrição pra pro curso de ciências contábeis, eu queria concorrer..."
+872ac684-034d-4ac3-bf8c-f4699b3c6181,ERRADO,nao mencionou Bolsa 100,L290,principal,Quais cursos disponíveis pra bolsas integrais gratuitas em Monte Alegre de Minas?,Boa noite | Minha irmã pretende | Quais cursos disponíveis pra bolsas integrais gratuitas em Monte Alegre de Minas?,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+87c4216f-c168-4f0c-ad92-d1cf5422e6c1,CORRETO,mencionou Bolsa 100,L290,principal+followup,Tem de dois anos de duração?,Olá bom dia | Pretendo ser aluna | Gostaria de saber a durabilidade dos cursos com bolsa 100% | Tem de dois anos de duração? | Qual a duração dos cursos de graduação,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",...Olá bom dia Pretendo ser aluna Gostaria de saber a durabilidade dos cursos com «bolsa 100»% Tem de dois anos de duração? Qual a duração dos cursos de graduação Quais tem ...
+88182cd0-8cb2-462a-a380-fc15d776bd98,CORRETO,mencionou Bolsa 100,L290,principal,Bolsa 100%,Ola | Araxá | Graduação a distância | Engenharia cívil | Bolsa 100%,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...Ola Araxá Graduação a distância Engenharia cívil «Bolsa 100»% Consultor de captação 10213871696
+mrogerio888@gmail.com 
+34984422231
+02/06/202..."
+8e07664f-619e-42f0-9cd2-7ca2383d85a1,ERRADO,nao mencionou Bolsa 100,L290,principal,Enem,"Boa tarde | Pretendo ser | Pedagogia 
+18806713795
+foeschiris@gmail.com | 27995323772 | 16/08/2006","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+8e8a2ee8-284a-4d5a-bda5-ef426df583fa,CORRETO,mencionou Bolsa 100,L290,principal,Inscrever no bolsa 100 por cento,Inscrever no bolsa 100 por cento,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",...Inscrever no «bolsa 100» por cento...
+8f2ebbd2-2717-401e-94e9-a16340f2a4d6,ERRADO,nao mencionou Bolsa 100,L290,principal,Ok pode passar,Boa noite | Não sou aluno. Primeiro contato | Vocês tem cursos EAD? | E onde vocês ficam no estado do Rio de Janeiro | Qual valor do curso?,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+9677817d-b209-4e21-ba65-cf2c15ae1b5c,ERRADO,nao mencionou Bolsa 100,L290,principal,Eu ouvi fala que tinha um uma prova que iria acontecer dia 24 de Abril para bolsa,Bom dia | Não sou | Ciência da computação | fariaefraim@gmail.com | Eu ouvi fala que tinha um uma prova que iria acontecer dia 24 de Abril para bolsa,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+9a2f0037-a5bd-4d06-926b-472065f47afe,CORRETO,mencionou Bolsa 100,L290,principal,Como faço.pra me inscrever para bolsas 100% pela Uniube,Oi | Bom dia | Como faço.pra me inscrever para bolsas 100% pela Uniube | É qualquer curso ou tem um específico? | Ok,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",...Oi Bom dia Como faço.pra me inscrever para «bolsas 100»% pela Uniube É qualquer curso ou tem um específico? Ok Curso: Estética e cosmét...
+9b603aac-5560-4abf-9bef-906cab0c67d2,ERRADO,nao mencionou Bolsa 100,L290,principal,Sim,"Olá bom dia,tudo bem? | Pretende ser aluno da Uniube | Farmácia | emmilyrobertinha@gmail.com | Presencial","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+9fb2e999-d4fa-41a1-9a85-a500e87fcaef,ERRADO,nao mencionou Bolsa 100,L290,principal,"Perfeito, João Pedro! Pelo histórico, você tinha interesse em *Ciências Econômicas (EAD)* na Uniube.
+Para eu seguir com sua *inscrição*, preciso de:
+- *Curso escolhido:* confirma *Ciências Econômicas (EAD)*? Sim 
+- *Seu e-mail* joaopedrogomes050@icloud.com
+- *CPF* (somente números) 70185741100
+- *Data de nascimento* (18/12/2001) 
+- *Telefone com DDD* (somente números, sem o 55) 64999882246
+Quando você me confirmar que posso prosseguir com a inscrição, eu registro o *aceite* e sigo com o envio.","Boa noite | Pretendo | Perfeito, João Pedro! Pelo histórico, você tinha interesse em *Ciências Econômicas (EAD)* na Uniube.
+Para eu seguir com sua *inscrição*, preciso de:
+- *Curso escolhido:* confirma *Ciências Econômicas (EAD)*? Sim 
+- *Seu e-mail* joaopedrogomes050@icloud.com
+- *CPF* (somente números) 70185741100
+- *Data de nascimento* (18/12/2001) 
+- *Telefone com DDD* (somente números, sem o 55) 64999882246
+Quando você me confirmar que posso prosseguir com a inscrição, eu registro o *aceite* e sigo com o envio. | Vocês tem polo em em jataí Goiás ? | Bairro primavera 3","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+a1c4e5cc-fa05-4e7e-b880-fb5702152dfd,CORRETO,mencionou Bolsa 100,L290,principal,"Entendi, no caso seria no polo de Cachoeiro de itapemirim es, pela bolsa 100","Bom dia | Bom dia, gostaria de tirar uma dúvida como e o curso de fisioterapia de vocês do início ao fim as etapas oque acontece em cada semestre durante os 5 anos a parte de estágio e TCC | Entendi, no caso seria no polo de Cachoeiro de itapemirim es, pela bolsa 100 | EAD, 
+osimarrangel2018@gmail.com | 15008151797
+28992544927
+17/10/1998
+Cachoeiro de itapemirim es.dr Gilson Carone","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...stágio e TCC Entendi, no caso seria no polo de Cachoeiro de itapemirim es, pela «bolsa 100» EAD, 
+osimarrangel2018@gmail.com 15008151797
+28992544927
+17/10/1998
+Cachoeiro d..."
+a283f43b-ae0b-40a6-9710-9a922f327315,CORRETO,mencionou Bolsa 100,L290,principal,A prova que fiz foi para a bolsa 100%,Fiz a prova como vejo o resultado? | Está lá convocado então que dizer aprovado? | Yasmymleite144@gmail.com curso enfermagem | A prova que fiz foi para a bolsa 100% | Como passei na prova ganhei a bolsa?,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",... aprovado? Yasmymleite144@gmail.com curso enfermagem A prova que fiz foi para a «bolsa 100»% Como passei na prova ganhei a bolsa? Qual a próxima etapa do processo Ok Quand...
+a552a99b-fff6-46b5-a310-3ff6bd453c77,ERRADO,nao mencionou Bolsa 100,L290,principal,autorizo sim,"olá, bom dia | pretendo ser | biomedicina 
+isisbeatrizfreitas@gmail.com
+41243614838
+11985015250
+03/12/2007 | presencial 
+vestibular 
+não | autorizo sim","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+a66999b4-751d-430a-9325-cf85a60b2226,ERRADO,nao mencionou Bolsa 100,L290,principal,Quero Nutrição,Em Brasília | Sim | Nem Brasília | O polo | Quero Nutrição,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+a726f079-e211-4a66-8e57-8a87a942dc7d,CORRETO,mencionou Bolsa 100,L290,principal,?,Olá bom dia!! | Eu fiz minha inscrição para bolsa 100% uniube... e gostaria de saber quando será a prova | ? | Administração | Palomaferreira2609@gmail.com,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",...Olá bom dia!! Eu fiz minha inscrição para «bolsa 100»% uniube... e gostaria de saber quando será a prova ? Administração Palomaferrei...
+b0c99769-0c30-416c-9bdb-cb1e31073d08,CORRETO,mencionou Bolsa 100,L290,principal,Fiz a inscrição para o vestibular 100 por cento,Fiz a inscrição para o vestibular 100 por cento | Meu nome e Anelito curso de gastronomia | Ribeiroanelito2@gmail.com | Gastronomia | Bairro major prates,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",...iroanelito2@gmail.com Gastronomia Bairro major prates 15969514608 Montes claros «Bolsa 100»%ead e semepresencial 20/04/2004 Sim e mg e a cidade e Montes claros Escolhi EaD...
+b11d6f28-a468-42a5-bacc-8cc29391ccc4,CORRETO,mencionou Bolsa 100,L290,principal,Olá. Gostaria de saber como encontro no site o regulamento para participar da seleção para bolsa social 100%?,Olá. Gostaria de saber como encontro no site o regulamento para participar da seleção para bolsa social 100%?,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",...ia de saber como encontro no site o regulamento para participar da seleção para «bolsa social 100»%?...
+b14b69ce-ef97-4c42-9e36-cb0bd2b76d32,ERRADO,nao mencionou Bolsa 100,L290,principal+followup,Bolsa social,"Oi | Pretendo ser | Bolsa social | Educação física bacharel EAD, campo belo 
+Geiciferreira00@gmail.com | Semipresencial campo belo","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+b31a4305-71d8-4d6c-b223-09d3cc2c4a29,CORRETO,mencionou Bolsa 100,L290,principal,"Pedagogia 
+mariaeduardasoarescarvalho522@gmail.com 
+07386964129
+26/03/2005
+64999391207","Olá | Pretendo ser aluno | Pedagogia 
+mariaeduardasoarescarvalho522@gmail.com 
+07386964129
+26/03/2005
+64999391207 | Graduação semipresencial 
+Bolsa 100%","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...alho522@gmail.com 
+07386964129
+26/03/2005
+64999391207 Graduação semipresencial 
+«Bolsa 100»%..."
+b375eeca-c310-4a31-8220-38024b5a946b,ERRADO,nao mencionou Bolsa 100,L290,principal,"É possível conseguir bolsa fazendo essas matérias isoladas ,","Boa note | Noite | Gostaria de saber se é possível realizar matérias isoladas | É possível conseguir bolsa fazendo essas matérias isoladas ,","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+b504b47e-233d-42f6-a7ad-bd1a85d98d0d,CORRETO,mencionou Bolsa 100,L290,principal,"Eu me inscrevi no uniube bolsa 100%, porém eu coloquei o dia do meu aniversário errado, tem algum problema?![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1775742200253_4456376881349661.jpg)","Oii bom dia 
+Tudo bem?b | E não sei por onde muda | Eu me inscrevi no uniube bolsa 100%, porém eu coloquei o dia do meu aniversário errado, tem algum problema?![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1775742200253_4456376881349661.jpg) | 31/08/1998 | Ai mesmo assim eu vou precisar fazer uma nova inscrição?","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...Oii bom dia 
+Tudo bem?b E não sei por onde muda Eu me inscrevi no uniube «bolsa 100»%, porém eu coloquei o dia do meu aniversário errado, tem algum problema?![](htt..."
+b80327d1-333d-4e5a-8d9a-cde5f46d16a1,ERRADO,nao mencionou Bolsa 100,L290,principal,"Brenda Vitória, perfeito: *Especialização em Enfermagem Cirúrgica* foi encontrada e dá pra seguir com sua inscrição.
+Seu atendimento já está com *ticket aberto*: 
+- *Protocolo:* YGTS39E3 
+- *Criado em:* 09/04/2026, 13:31:26
+Para eu prosseguir, me envie por favor: 
+- *E-mail*brendaemanuelly485@gmail.com 
+- *CPF* (somente números) 07677045332
+- *Data de nascimento*12/12/2002 (dd/MM/aaaa) 
+- *Telefone* (DDD + número, só números, sem o 55) 64993074408
+- *Bairro/região, cidade e UF* onde você mora (p",Oie | Pretendo ser | Quais cursos EAD | ? | Radiologia,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+b83fd9f9-e418-4ee2-8e0c-54c073deb740,ERRADO,nao mencionou Bolsa 100,L290,principal,quero saber é como consigo bolsa na faculdade de pedagogia,boa tarde | nao sou aluno | quero saber é como consigo bolsa na faculdade de pedagogia | Para conseguir a bolsa voce precisa fazer uma prova e estar entre as 3 primeiras colocações. Ser sua primeira graduação e sua renda nao pode passar de 1 salario minimo e meio por integrante da familia | a proxima turma esta prevista para quando ?,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+baecd09e-4778-4bcd-9b88-8ab2d725230d,ERRADO,nao mencionou Bolsa 100,L290,principal,Por favor,"Ooi bom dia | Pretendo ser aluno da uniube | Fisioterapia 
+Graduação 
+Vestibular 
+12520329602 | Ontem estava tentando fazer o vestibular on-line 
+Meu celular deu pane travou eu tive que enviar a prova sem fazer como que eu devo fazer agora ? | Ok obrigada","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+c05acf25-3612-474b-ba45-90a528198af0,CORRETO,mencionou Bolsa 100,L290,principal,Fiz minha inscrição pro bolsa 100 mas foi errado,"Fiz minha inscrição pro bolsa 100 mas foi errado | Curso escolhido pedagogia 
+Cpf 12422669689
+Vestibular online bolsa100 semi presencial | Polos | Ponte nova | Centro MG","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...Fiz minha inscrição pro «bolsa 100» mas foi errado Curso escolhido pedagogia 
+Cpf 12422669689
+Vestibular online bol..."
+c0c97fa5-2c3e-4e38-9ff1-bc84f142a837,ERRADO,nao mencionou Bolsa 100,L290,principal,Tenho uma dúvida em relação a bolsa social. Como sei se o curso é realmente 100% EAD? Administração.,"Olá bom dia! | Pretendo | Tenho outra dúvida | Tenho uma dúvida em relação a bolsa social. Como sei se o curso é realmente 100% EAD? Administração. | Entendi, onde seria o polo mais próximo?
+Moro em Ponta Grossa-PR 84016330","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+c513f1f1-b1f8-472a-a706-19c126ce87ce,ERRADO,nao mencionou Bolsa 100,L290,principal,Pretendo ser aluno,"Oi bom dia, tenho uma dúvida. | Pretendo ser aluno | Publicidade e propaganda - Comunicação social 
+03768592022 
+21/08/2001 | São Luiz Gonzaga
+Passo Fundo 
+RS
+Camiladasilva2108@gmail.com | Minha dúvida é referente ao Polo, ficou na cidade de Cruz Alta RS, eu preciso ir até lá?","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+c75b10fb-4c86-45bb-a730-ab0b8f993ad4,ERRADO,nao mencionou Bolsa 100,L290,principal,Boa tarde nao vai ter nenhum prova pra bolsa,Boa tarde nao vai ter nenhum prova pra bolsa,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+c7a8aa85-5c8e-4a08-8f61-24269bd15e5d,CORRETO,mencionou Bolsa 100,L290,principal,"Realizo a faculdade de agronomia no Campus Uniube de Araxá, e vi que estão com uma bolsa social de 100% no polo, eu posso estar fazendo 2 graduações ao mesmo tempo?","Gostaria de tirar uma duvida | Boa tarde | Realizo a faculdade de agronomia no Campus Uniube de Araxá, e vi que estão com uma bolsa social de 100% no polo, eu posso estar fazendo 2 graduações ao mesmo tempo?","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...lizo a faculdade de agronomia no Campus Uniube de Araxá, e vi que estão com uma «bolsa social de 100»% no polo, eu posso estar fazendo 2 graduações ao mesmo tempo?..."
+c7d6a88c-47c0-4b00-8801-f714eed7d95f,ERRADO,nao mencionou Bolsa 100,L290,principal,Online,"Oi boa tarde! | Pretendo ser | Auxiliar de saúde bucal | Técnico. Ja concluí | csoares30.cs@gmail.com 
+136.265.566-03
+05/03/1997","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+c8da61e6-89be-45b7-b962-7e0b996471b0,CORRETO,mencionou Bolsa 100,L290,principal+followup,Pretendo ser aluno,"Boa noite | Vi uma reportagem que estão com bolsas 100% gratuitas EAD | Pretendo ser aluno | Direito
+caue.rodrigues0103@gmail.com | 13147777693
+34996456356
+01031994","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...Boa noite Vi uma reportagem que estão com «bolsas 100»% gratuitas EAD Pretendo ser aluno Direito
+caue.rodrigues0103@gmail.com 13147777..."
+ce344f05-1d3d-482e-91e3-06f2ca6b866c,ERRADO,nao mencionou Bolsa 100,L290,principal,Só que sou de Betim,"Oii tudo bem??? | Oii tudo bem?? | Sou a dayanne e me interessei em nutrição | Só que sou de Betim | A mais perto pra mim R. Coimbra, 370 A - São João, Betim - MG, 32655-508","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+ce53fe1d-9f6d-429b-9625-8653f527644b,CORRETO,mencionou Bolsa 100,L290,principal+followup,Gostaria de saber sobre a bolsa 100,. | Olá | Pretendo ser aluno | Gostaria de saber sobre a bolsa 100 | Psicológica,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",".... Olá Pretendo ser aluno Gostaria de saber sobre a «bolsa 100» Psicológica Presencial Uberaba noturno Como funciona esse "" vestibular Online ?..."
+cf93c6b0-29bb-4022-9196-01dd5d838e78,CORRETO,mencionou Bolsa 100,L290,principal,"Leopoldino de Oliveira 579 parque do mirante
+Uberaba
+MG
+70246500603","Bom dia! | Bom dia! Gostaria de tirar uma dúvida sobre a bolsa social | Fiz o processo de seleção de cursos informações pessoais criei senha, e me inscrevi . Porém posteriormente ao tentar entrar no portal do candidato diz que minhas informações não foram credenciadas | Logística Ead
+Geison231a@gmail.com | Leopoldino de Oliveira 579 parque do mirante
+Uberaba
+MG
+70246500603","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...algum documento sobre oq “estudar” para a prova? São questões abertas? Redação? «Bolsa 100»% ead Victor Gabriel Gonçalves da Silva 
+03/11/2006 Não obrigado Se caso eu perd..."
+d394909a-559e-41b1-9f48-2cc979706bb3,ERRADO,nao mencionou Bolsa 100,L290,principal,Agronegócio,Oi boa tarde | Tudo bem | Vcs tem técnico em agropecuária ai | Em ead | Não sou aluno ainda,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+d8b186c4-6a09-44be-ae71-a0deef56069b,ERRADO,nao mencionou Bolsa 100,L290,principal,juliana.supervisao2019@gmail.com,Boa tarde | Gostaria de saber sobre aproveitamento de disciplinas | Gostaria de fazer fonoaudiologia | E sou formada em Biologia e Pedagogia | Quando começa o semi presencial noturno Uberlândia,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+da1f8dec-46ab-4eb8-8481-66c1306ccd8c,ERRADO,nao mencionou Bolsa 100,L290,principal+followup,"Educação física 
+gilbertobaxista@gmail.com","Nada está dando certo Aqui | Pretendo ser | Educação física 
+gilbertobaxista@gmail.com | Semi presencial
+89299019134
+17/12/1978
+61995277273 | Semipresencial","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+e0c0cba3-1d41-4066-b720-a65f5d461fb3,ERRADO,nao mencionou Bolsa 100,L290,principal,Quero informações...,Tem segunda licenciatura? | Sou formada em Letras - Língua Portuguesa e Espanhola | Quero cursar a segunda licenciatura em Educação Especial | Quero informações... | Agradeço. Mas preciso da outra.,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+e26c84a3-df8d-489c-bd2e-9864d2a1f01d,ERRADO,nao mencionou Bolsa 100,L290,principal,"Oi Me inscrevi em uma vaga para Tecnologia da informação na Uniube EAD. para concorrer a vga 100 % online . Isso procede mesmo né , essa prova no dia 24 e 25 ?","Oi Me inscrevi em uma vaga para Tecnologia da informação na Uniube EAD. para concorrer a vga 100 % online . Isso procede mesmo né , essa prova no dia 24 e 25 ? | Travessa marta Batista nº 117 - Centro - Itaporanga - Sertão da Paraíba . joabemc85@gmail.com . Ja fiz minha inscrição .","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+e2a66b55-8f9d-4c6a-abc4-0d98348f243a,CORRETO,mencionou Bolsa 100,L290,principal,Olá eu quero saber informações sobre uma possível candidatura nas bolsas de 100% que vocês estão ofertando com 2 mil vagas por todo o Brasil,Olá eu quero saber informações sobre uma possível candidatura nas bolsas de 100% que vocês estão ofertando com 2 mil vagas por todo o Brasil | Eu tenho uma dúvida | Pernambuco possui apenas o polo arcoverde que é muito distante de Recife | Como eu posso de Recife fazer o curso sem precisar frequentar o polo ? Isso é possível ? | Graduação ead em análise e desenvolvimento de sistemas,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",...Olá eu quero saber informações sobre uma possível candidatura nas «bolsas de 100»% que vocês estão ofertando com 2 mil vagas por todo o Brasil Eu tenho uma dúvid...
+e6634efb-ff66-4659-ba0b-4c48e73cbf89,ERRADO,nao mencionou Bolsa 100,L290,principal,"Preciso da orientação porque eu não sei, vou começar agora então seria vestibular ?",Oie tenho uma dúvida | As aulas são em que horários ? | Outra dúvida | As parcelas vão mudando de valor durante os semestres? | Pretendo,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+e6daf5d8-9beb-47dc-900d-f0a31e4a41b6,ERRADO,nao mencionou Bolsa 100,L290,principal,mbs060999@gmail.com,"olá | queria saber se tem fisioterapia | em anápolis- go é só EAD ou tem semipresencial | Jardim Alexandrina , Anápolis - Goiás | mbs060999@gmail.com","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+e919543a-e425-4896-b5c2-6624f37a0a76,ERRADO,nao mencionou Bolsa 100,L290,principal,não sou aluno,ola | sim | oi | não sou aluno,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+ea5bc19a-95e0-4c36-abf9-9708190e6f02,ERRADO,nao mencionou Bolsa 100,L290,principal,"Eu me inscrevi pra participar de uma bolsa , ou seja, fazer o curso 100% gratuito","Olá | Pretendo | Eu me inscrevi pra participar de uma bolsa , ou seja, fazer o curso 100% gratuito | Curso: pedagogia
+LICENCIATURA 
+elipercamp@gmail.com","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+ec8092d4-2c04-4d7a-98dc-dc14688ad358,CORRETO,mencionou Bolsa 100,L290,principal,"Bom dia! Tudo bem?
+Gostaria de saber se está tendo a bolsa 100%.","Bom dia! Tudo bem?
+Gostaria de saber se está tendo a bolsa 100%. | Curso: Administração 
+E-mail: zaineoliveira322@gmail.com","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...Bom dia! Tudo bem?
+Gostaria de saber se está tendo a «bolsa 100»%. Curso: Administração 
+E-mail: zaineoliveira322@gmail.com..."
+ec974e88-b9a6-41a2-9614-037cff026e7e,ERRADO,nao mencionou Bolsa 100,L290,principal,"Oi, Jaqueline! Tudo bem? 
+Vi as opções de pagamento, mas no momento o valor à vista ou parcelado com juros acaba ficando um pouco fora do que eu consigo agora.
+Queria saber se existe a possibilidade de algum valor diferenciado, bolsa ativa ou até um link com condições melhores, como parcelamento sem juros no boleto ou algum desconto na matrícula, pra eu conseguir iniciar o quanto antes.
+Tenho bastante interesse em começar já, só estou tentando ajustar essa parte financeira mesmo.","Oi, Jaqueline! Tudo bem? 
+Vi as opções de pagamento, mas no momento o valor à vista ou parcelado com juros acaba ficando um pouco fora do que eu consigo agora.
+Queria saber se existe a possibilidade de algum valor diferenciado, bolsa ativa ou até um link com condições melhores, como parcelamento sem juros no boleto ou algum desconto na matrícula, pra eu conseguir iniciar o quanto antes.
+Tenho bastante interesse em começar já, só estou tentando ajustar essa parte financeira mesmo.","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+ee6e0d4c-d452-4ea9-bd97-3a94b037ce9c,ERRADO,nao mencionou Bolsa 100,L290,principal,"EAD, Graduação, 2ª Graduação","Boa tarde. | Pretendo ser aluno | Engenharia Civil, evertontostes@gmail.com, 260.089.928-65, (16)99252-8015, 24/09/1976 | EAD, Graduação, 2ª Graduação | Jardim do Bosque, Frutal e MG","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+f09046e2-b983-4e91-8eb8-b44b7c29a129,CORRETO,mencionou Bolsa 100,L290,principal,E como funciona,Ola | Gostaria de saber quais os cursos EAD que estão oferecendo bolsa 100% | E como funciona | Pedagogia | Patrocinio/MG,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",...Ola Gostaria de saber quais os cursos EAD que estão oferecendo «bolsa 100»% E como funciona Pedagogia Patrocinio/MG Mais esse curso entta na bolsa?...
+f2150a6e-2e44-461a-99c8-d58c7e565967,ERRADO,nao mencionou Bolsa 100,L290,principal,"Olá, gostaria de saber esse 100% da bolsa é até o final do curso?","Olá, gostaria de saber esse 100% da bolsa é até o final do curso? | Trabalho Jurídicos e Notariais | Primeiro preciso saber como funciona. | Rio de Janeiro 
+EAD | emfrente2023@gmail.com","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+f2ffebea-8e79-4856-8574-c27c03347374,ERRADO,nao mencionou Bolsa 100,L290,principal+followup,Eu moro no bairro Boa sorte,"sim | fisica licenciatura, 27 996154932, transferencia | nathan santos calero, 17808870781 | caleronathan03@gmail.com | 03/02/2000","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+f3278dce-186c-4347-ac6b-00e5912bce75,ERRADO,nao mencionou Bolsa 100,L290,principal,"- *Nome completo* Julia Gomes dos Santos
+- Se você *já concluiu o Ensino Médio* (sim ou não) Sim e superior também","Oii, tudo bem? queria mais informações sobre um mba disponível na plataforma | estou numa situação, tenho este subsídio para ser usado mas precisaria submeter hoje com nota fiscal, realizando a adesão, é possível receber a nota fiscal antes das 17h? | https://uniube.br/curso/ead/pos-graduacao/mba-em-business-intelligence | - *Bairro (ou região)* Bairro Petrópolis
+- *Cidade* Porto Alegre
+- *Estado (UF)* RS
+- *Seu e-mail* juliagsantos@yahoo.com.br | - *CPF* (somente números) 03946172075
+- *Data de nascimento* (dd/MM/aaaa) 25/09/1997
+- *Telefone com DDD* (somente números, sem +55) 53 999 522 297
+- Sua confirmação de que *concorda em prosseguir com a inscrição* (*aceite*) Sim, aceito","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+f47ec8e1-7086-4793-b867-93a05aa6af0a,CORRETO,mencionou Bolsa 100,L290,principal,"Gostaria de cancelar uma indicação que fiz para bolsa 100 de administração, selecionei o curso errado. ainda não fiz a prova","Olá | Gostaria de cancelar uma indicação que fiz para bolsa 100 de administração, selecionei o curso errado. ainda não fiz a prova | Biomedicina 
+Gabifurtadof@icloud.com | 70032249683
+19/07/2002
+Graduação 
+Vestibular | Semi presencial BARBACENA MG","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","...Olá Gostaria de cancelar uma indicação que fiz para «bolsa 100» de administração, selecionei o curso errado. ainda não fiz a prova Biomedicina ..."
+f56e57ed-15a7-4270-86e5-62c30d9c08f0,ERRADO,nao mencionou Bolsa 100,L290,principal,MBA em Logística e Gerenciamento da Cadeia de Suprimentos,OlÁ bom dia | Estou tentando concluir uma inscrição mas pede para colocar cupom de desconto | pois é... no final pede para preencher cupom de desconto | ![](https://nkjijobbprgiftwtwucv.supabase.co/storage/v1/object/public/hostBucket/uniube/wpp_original_1775739884073_965553116417355.jpg) | Logística,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+f67431ee-732f-41c7-a221-5acd7630e51a,CORRETO,mencionou Bolsa 100,L290,principal,Bolsa 100% EAD,"Olá, gostaria tirar uma dúvida sobre os valores de um curso | Nao sou aluna, gostaria de saber sobre a graduação secretariado executivo EAD | Paraiba, João Pessoa, bairro Jardim Oceania | E-mail celia.sousadf@gmail.com | Bolsa 100% EAD","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}","... EAD Paraiba, João Pessoa, bairro Jardim Oceania E-mail celia.sousadf@gmail.com «Bolsa 100»% EAD Ele vai entrar em contato comigo? 704.901.981-04 
+61983692092 
+02/09/1979 ..."
+fa17c4c0-5e91-4bc7-9a8d-74a83ccc836d,ERRADO,nao mencionou Bolsa 100,L290,principal,Esse tbm é pagado,Boa tarde | Tudo bem | Vcs fazem fisioterapia | E pagado | Achei que era pelo SUS,"caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+fdbb1716-99a1-48c9-881d-deeb8b9c88c1,ERRADO,nao mencionou Bolsa 100,L290,principal,"Shopping Park 
+Uberlândia/MG","Olá bom dia, tudo bem? | Pretendo ser aluno | Biomedicina 
+Jordanabarcelos97@icloud.com
+12015314628
+07/08/1997
+34999003446 | EAD
+Graduação parte da manhã | Shopping Park 
+Uberlândia/MG","caller: decisionChain-validation-Bolsa 100
+response: {""response"":[""L290""]}",
+ffa14a53-35f4-474b-a52e-49b97fabce76,ERRADO,nao mencionou Bolsa 100,L290,principal,Tenho interesse em engenharia ambiental e sanitária,"Oi | Boa noite, tudo bem? | Tenho interesse em engenharia ambiental e sanitária | EAD 100%?","caller: decisionChain-validation-Bolsa 100
 response: {""response"":[""L290""]}",
