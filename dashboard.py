@@ -106,22 +106,19 @@ def load_automacao(nome):
     EXCLUIR = {"2026-04-07"}
     excluidos = {c for c, d in meta["conv_dates"].items() if d in EXCLUIR}
     aval = aval[~aval["conversation_id"].isin(excluidos)].copy()
-    n_excl = len(excluidos)
-    meta["funnel"] = dict(meta["funnel"])
-    meta["funnel"]["total"]     = max(0, meta["funnel"]["total"] - n_excl)
-    new_confirmed = int((aval["verdict"].notna()).sum())
-    delta = meta["funnel"]["confirmed"] - new_confirmed
-    meta["funnel"]["confirmed"] = new_confirmed
-    meta["funnel"]["injected"]  = max(0, meta["funnel"]["injected"] - delta)
-    meta["funnel"]["replied"]   = max(0, meta["funnel"]["replied"]  - delta)
-
-    funnel = meta["funnel"]
-    funnel["correto"] = int((aval["verdict"] == "CORRETO").sum())
-    funnel["errado"]  = int((aval["verdict"] == "ERRADO").sum())
 
     daily = meta.get("daily_funnel", {})
-    # excluir dias incompletos
-    daily = {d: v for d, v in daily.items() if d not in {"2026-04-07"}}
+    daily = {d: v for d, v in daily.items() if d not in EXCLUIR}
+
+    # Recalcular funil somando daily dos dias não excluídos
+    funnel = {
+        "total":     sum(v.get("total", 0) for v in daily.values()),
+        "confirmed": sum(v.get("confirmed", 0) for v in daily.values()),
+        "injected":  sum(v.get("injected", 0) for v in daily.values()),
+        "replied":   sum(v.get("replied", 0) for v in daily.values()),
+        "correto":   int((aval["verdict"] == "CORRETO").sum()),
+        "errado":    int((aval["verdict"] == "ERRADO").sum()),
+    }
 
     return aval, funnel, daily
 
