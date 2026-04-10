@@ -159,6 +159,7 @@ def main():
 
         if verdict == "CORRETO" and st["date"]:
             daily[st["date"]]["correto"] += 1
+            daily[st["date"]]["replied"] += 1
 
         has_main = bool(st["valid_codes_main"])
         has_fu = bool(st["valid_codes_followup"])
