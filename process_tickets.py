@@ -215,9 +215,7 @@ def main():
                         st["valid_codes_followup"] |= codes
                     else:
                         st["valid_codes_main"] |= codes
-                elif "decisionchain" in caller:
-                    st["chain_codes"] |= codes
-                    # guarda trigger da primeira vez que chain teve código Tickets
+                    # guarda trigger da primeira vez que o validation confirmou
                     if codes and st["trigger_msg"] is None and isinstance(msgs, list):
                         for m in reversed(msgs):
                             if isinstance(m, dict) and m.get("role") == "user":
@@ -227,6 +225,8 @@ def main():
                                 if t:
                                     st["trigger_msg"] = t[:500]
                                     break
+                elif "decisionchain" in caller:
+                    st["chain_codes"] |= codes
 
     for st in convs.values():
         # Confirmação depende apenas do validation (chain ignorado)
@@ -250,7 +250,8 @@ def main():
             if st["injected"]: daily[st["date"]]["injected"] += 1
             if st["replied"]:  daily[st["date"]]["replied"]  += 1
 
-        full_text = " ".join(st["user_msgs"])
+        user_text = " ".join(st["user_msgs"])
+        ia_text = " ".join(st["ia_msgs"])
 
         def _ctx(text, m, before=80, after=80):
             s = max(0, m.start()-before); e = min(len(text), m.end()+after)
@@ -277,13 +278,25 @@ def main():
         hits = []
         misses = []
         evid_correto = ""
+        gatilho_origem = ""
         for code in sorted(st["confirmed_codes"]):
             nome_default = CRITERIA.get(code, ("desconhecido", None))[0]
-            nome_hit, m = _first_match(full_text, code)
+            # Tenta no texto do usuário primeiro
+            nome_hit, m = _first_match(user_text, code)
+            origem_hit = "user" if nome_hit else None
+            if not nome_hit:
+                # Depois tenta no texto da IA
+                nome_hit, m = _first_match(ia_text, code)
+                origem_hit = "ia" if nome_hit else None
             if nome_hit and m:
                 hits.append(f"{nome_hit} ({code})")
                 if not evid_correto:
-                    evid_correto = f"[{code}/{nome_hit}] {_ctx(full_text, m)}"
+                    src_text = user_text if origem_hit == "user" else ia_text
+                    evid_correto = f"[{code}/{nome_hit}/{origem_hit}] {_ctx(src_text, m)}"
+                    gatilho_origem = origem_hit
+                elif origem_hit == "user" and gatilho_origem == "ia":
+                    # Prefere user como origem se qualquer código bateu no user
+                    gatilho_origem = "user"
             else:
                 misses.append(f"{nome_default} ({code})")
         if hits:
@@ -304,6 +317,7 @@ def main():
             "conversation_id": cid,
             "verdict": verdict,
             "motivo": motivo,
+            "gatilho_origem": gatilho_origem,
             "codigos": ",".join(sorted(st["confirmed_codes"])),
             "origem": origem,
             "trigger_msg": st["trigger_msg"] or "",

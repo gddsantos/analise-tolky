@@ -36,7 +36,13 @@ def jparse(x):
 
 SAE_CODES = {"D71", "N43", "D710"}
 # unused placeholder kept
-SAE_INJECT_MARK = re.compile(r"Entre em contato diretamente com o SAE|WhatsApp da Mentoria", re.I)
+SAE_INJECT_MARK = re.compile(
+    r"0800\s*940\s*2444"
+    r"|\b34\s*3319\s*8798\b"
+    r"|553433198798"
+    r"|entre\s+em\s+contato\s+diretamente\s+com\s+o\s+SAE",
+    re.I,
+)
 
 # Sinais fortes de prospectivo (não-aluno) — têm prioridade
 RE_NAO_ALUNO = re.compile(r"\bn[ãa]o\s+sou\s+(aluno|aluna)\b|\bn\s+sou\s+(aluno|aluna)\b|\bainda\s+n[ãa]o\s+sou\b|\bpretendo\s+ser\s+alun|\bquero\s+ser\s+alun|\bpretende\s+ser\s+alun|\bestou\s+pretendendo\b|\bcadastro\s+pra\s+ser\b|\bn[ãa]o\s+sou\s+aluno\s+(da|do)\s+uniube\b", re.I)
@@ -249,6 +255,9 @@ def main():
                 if st["injected"]:
                     break
 
+        # Só detecta envio se a automação SAE foi confirmada nesta conversa
+        if not st["confirmed"]:
+            continue
         for t in st["ia_msgs"]:
             m_mark = SAE_INJECT_MARK.search(t)
             if m_mark:
