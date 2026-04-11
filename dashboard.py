@@ -398,12 +398,18 @@ st.divider()
 # ── Drill-down ───────────────────────────────────────────────────────
 st.subheader("Conversas — drill-down")
 
-f1, f2 = st.columns(2)
+TEM_GATILHO = "gatilho_origem" in aval_df.columns
+
+f1, f2, f3 = st.columns(3)
 filtro_v = f1.selectbox("Veredicto", ["Todos", "✅ Correto", "❌ Falso positivo"])
 filtro_m = f2.selectbox(
     "Motivo",
     ["Todos"] + sorted(aval_df["motivo"].dropna().unique().tolist()),
 )
+if TEM_GATILHO:
+    filtro_g = f3.selectbox("Gatilho veio de", ["Todos", "👤 Usuário", "🤖 IA"])
+else:
+    filtro_g = "Todos"
 
 tbl = aval_df.copy()
 if filtro_v == "✅ Correto":
@@ -412,6 +418,10 @@ elif filtro_v == "❌ Falso positivo":
     tbl = tbl[tbl["verdict"] == "ERRADO"]
 if filtro_m != "Todos":
     tbl = tbl[tbl["motivo"] == filtro_m]
+if filtro_g == "👤 Usuário":
+    tbl = tbl[tbl["gatilho_origem"] == "user"]
+elif filtro_g == "🤖 IA":
+    tbl = tbl[tbl["gatilho_origem"] == "ia"]
 
 TEM_TRIGGER = "trigger_msg" in aval_df.columns
 TEM_ORIGEM = "origem" in aval_df.columns
@@ -426,7 +436,9 @@ else:
     cols = ["date", "verdict"]
     labels = ["Data", "Veredicto"]
 if TEM_ORIGEM:
-    cols.append("origem"); labels.append("Origem")
+    cols.append("origem"); labels.append("Origem (principal/followup)")
+if TEM_GATILHO:
+    cols.append("gatilho_origem"); labels.append("Gatilho")
 cols.append("motivo"); labels.append("Motivo")
 if TEM_TRIGGER:
     cols.append("trigger_msg"); labels.append("Mensagem gatilho")
@@ -436,6 +448,8 @@ tbl = tbl[cols].copy()
 tbl.columns = labels
 
 tbl["Veredicto"] = tbl["Veredicto"].map({"CORRETO": "✅ Correto", "ERRADO": "❌ Falso positivo"})
+if "Gatilho" in tbl.columns:
+    tbl["Gatilho"] = tbl["Gatilho"].map({"user": "👤 Usuário", "ia": "🤖 IA"}).fillna("—")
 tbl = tbl.sort_values("Data", ascending=False)
 
 st.dataframe(tbl, use_container_width=True, height=400)

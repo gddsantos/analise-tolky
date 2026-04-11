@@ -44,6 +44,10 @@ RE_BOLSA100 = re.compile(
     re.I,
 )
 
+# Marcador da instrução injetada pela automação Bolsa 100
+# Texto canônico: "consultor de captação irá dar continuidade ao atendimento"
+B100_INJECT_MARK = re.compile(r"consultor\s+de\s+capta[çc][ãa]o", re.I)
+
 def main():
     convs = defaultdict(lambda: {
         "valid_codes": set(),
@@ -55,6 +59,10 @@ def main():
         "ia_msgs": [],
         "trigger_msg": None,
         "evid_acionamento": None,
+        "injected": False,
+        "replied": False,
+        "evid_injecao": None,
+        "evid_envio": None,
     })
 
     for _, row in _iter_all():
@@ -115,7 +123,7 @@ def main():
                         st["valid_codes_followup"] |= codes
                     else:
                         st["valid_codes_main"] |= codes
-                elif "decisionchain" in caller:
+                    # guarda trigger da primeira vez que validation confirmou
                     if codes and st["trigger_msg"] is None and isinstance(msgs, list):
                         for m in reversed(msgs):
                             if isinstance(m, dict) and m.get("role") == "user":
@@ -129,8 +137,53 @@ def main():
     for st in convs.values():
         st["confirmed_codes"] = st["valid_codes"]
 
+    # Detecta injeção (<realtime>) e envio ao usuário (nas ia_msgs)
+    for _, row in _iter_all():
+        cid = row["conversation_id"]
+        st = convs[cid]
+        if not st["confirmed_codes"]: continue
+        if st["injected"] and st["replied"]: continue
+
+        payloads = jp(row.get("payloads")) or []
+        if isinstance(payloads, list) and not st["injected"]:
+            for item in payloads:
+                if not isinstance(item, dict): continue
+                caller = (item.get("caller") or "").lower()
+                if "createassistantresponse" not in caller: continue
+                pl = jp(item.get("payload") or "")
+                if not isinstance(pl, dict): continue
+                for m in pl.get("messages", []):
+                    if not isinstance(m, dict): continue
+                    if m.get("role") != "system": continue
+                    c = m.get("content", "")
+                    if not isinstance(c, str): continue
+                    for rt in re.findall(r"<realtime>(.*?)</realtime>", c, re.S):
+                        m_mark = B100_INJECT_MARK.search(rt)
+                        if m_mark:
+                            st["injected"] = True
+                            if st["evid_injecao"] is None:
+                                s = max(0, m_mark.start()-100)
+                                e = min(len(rt), m_mark.end()+200)
+                                st["evid_injecao"] = f"<realtime>...{rt[s:e]}...</realtime>"
+                            break
+                    if st["injected"]: break
+                if st["injected"]: break
+
+        if not st["replied"]:
+            for t in st["ia_msgs"]:
+                m_mark = B100_INJECT_MARK.search(t)
+                if m_mark:
+                    st["replied"] = True
+                    if st["evid_envio"] is None:
+                        s = max(0, m_mark.start()-100)
+                        e = min(len(t), m_mark.end()+200)
+                        st["evid_envio"] = t[s:e]
+                    break
+
     total = len(convs)
     confirmed = sum(1 for c in convs.values() if c["confirmed_codes"])
+    injected = sum(1 for c in convs.values() if c["injected"])
+    replied  = sum(1 for c in convs.values() if c["replied"])
 
     out_rows = []
     conv_dates = {}
@@ -143,23 +196,35 @@ def main():
         if not st["confirmed_codes"]: continue
         if st["date"]:
             daily[st["date"]]["confirmed"] += 1
-            daily[st["date"]]["injected"] += 1
+            if st["injected"]:
+                daily[st["date"]]["injected"] += 1
+            if st["replied"]:
+                daily[st["date"]]["replied"] += 1
 
-        full_text = " ".join(st["user_msgs"])
-        m_b = RE_BOLSA100.search(full_text)
-        if m_b:
+        user_text = " ".join(st["user_msgs"])
+        ia_text = " ".join(st["ia_msgs"])
+        m_user = RE_BOLSA100.search(user_text)
+        m_ia = RE_BOLSA100.search(ia_text) if not m_user else None
+        if m_user:
             verdict = "CORRETO"
-            motivo = "mencionou Bolsa 100"
-            s = max(0, m_b.start()-80); e = min(len(full_text), m_b.end()+80)
-            evid_correto = f"...{full_text[s:m_b.start()]}«{full_text[m_b.start():m_b.end()]}»{full_text[m_b.end():e]}..."
+            motivo = "usuario mencionou Bolsa 100"
+            gatilho_origem = "user"
+            s = max(0, m_user.start()-80); e = min(len(user_text), m_user.end()+80)
+            evid_correto = f"...{user_text[s:m_user.start()]}«{user_text[m_user.start():m_user.end()]}»{user_text[m_user.end():e]}..."
+        elif m_ia:
+            verdict = "CORRETO"
+            motivo = "IA mencionou Bolsa 100"
+            gatilho_origem = "ia"
+            s = max(0, m_ia.start()-80); e = min(len(ia_text), m_ia.end()+80)
+            evid_correto = f"...{ia_text[s:m_ia.start()]}«{ia_text[m_ia.start():m_ia.end()]}»{ia_text[m_ia.end():e]}..."
         else:
             verdict = "ERRADO"
             motivo = "nao mencionou Bolsa 100"
+            gatilho_origem = ""
             evid_correto = ""
 
         if verdict == "CORRETO" and st["date"]:
             daily[st["date"]]["correto"] += 1
-            daily[st["date"]]["replied"] += 1
 
         has_main = bool(st["valid_codes_main"])
         has_fu = bool(st["valid_codes_followup"])
@@ -170,11 +235,14 @@ def main():
             "conversation_id": cid,
             "verdict": verdict,
             "motivo": motivo,
+            "gatilho_origem": gatilho_origem,
             "codigos": ",".join(sorted(st["confirmed_codes"])),
             "origem": origem,
             "trigger_msg": st["trigger_msg"] or "",
             "user_msgs": " | ".join(st["user_msgs"][:5]),
             "evid_acionamento": st["evid_acionamento"] or "",
+            "evid_injecao": st["evid_injecao"] or "",
+            "evid_envio": st["evid_envio"] or "",
             "evid_correto": evid_correto,
         })
 
@@ -185,7 +253,7 @@ def main():
     correto = int((out["verdict"]=="CORRETO").sum())
     errado  = int((out["verdict"]=="ERRADO").sum())
     meta = {
-        "funnel": {"total": total, "confirmed": confirmed, "injected": confirmed, "replied": correto},
+        "funnel": {"total": total, "confirmed": confirmed, "injected": injected, "replied": replied},
         "conv_dates": conv_dates,
         "daily_funnel": {d: dict(v) for d, v in daily.items()},
     }
